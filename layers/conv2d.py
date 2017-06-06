@@ -7,4 +7,9 @@ class Conv2d:
         self.padding_height = ph
         self.stride_width = sw
         self.stride_height = sh
-
+    
+    def __forward():
+        pass
+    
+    def __backward():
+        pass
