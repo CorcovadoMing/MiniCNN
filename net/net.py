@@ -20,12 +20,19 @@ class Net:
         else:
             raise TypeError
 
+    def forward(self):
+        imm_result = self.train_x
+        for i in self.layers:
+            imm_result = i._forward(imm_result)
+        self.output = imm_result
+
     def debug(self):
         try:
             print 'Layers:', self.layers
             print 'Train_x', self.train_x
             print 'Train_y', self.train_y
-            print 'Test_x', self.test_x
-            print 'Test_y', self.test_y
+            #print 'Test_x', self.test_x
+            #print 'Test_y', self.test_y
+            print 'Output', self.output
         except:
             pass
