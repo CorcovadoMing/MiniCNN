@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 class Net:
     def __init__(self):
@@ -23,14 +24,17 @@ class Net:
     def forward(self):
         imm_result = self.train_x
         for i in self.layers:
+            now = time.time()
             imm_result = i._forward(imm_result)
+            print str(i), time.time() - now
+            now = time.time()
         self.output = imm_result
 
     def debug(self):
         try:
-            print 'Layers:', self.layers
-            print 'Train_x', self.train_x
-            print 'Train_y', self.train_y
+            #print 'Layers:', self.layers
+            #print 'Train_x', self.train_x
+            #print 'Train_y', self.train_y
             #print 'Test_x', self.test_x
             #print 'Test_y', self.test_y
             print 'Output', self.output

@@ -12,7 +12,10 @@ class Softmax:
     def _forward(self, x):
         # Cache the input for backward use
         self.input = x
-        output = np.dot(np.transpose(self.weights), x) + self.bias
-        calibrate = np.max(output)
-        output = output - calibrate
-        return np.exp(output) / np.sum(np.exp(output))
+        output = []
+        for i in x:
+            imm_result = np.dot(np.transpose(self.weights), i) + self.bias
+            calibrate = np.max(imm_result)
+            imm_result -= calibrate
+            output.append(np.exp(imm_result) / np.sum(np.exp(imm_result)))
+        return output
