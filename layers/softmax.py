@@ -1,2 +1,6 @@
 class Softmax:
-    pass
+    def __init__(self, c):
+        self.classes = c
+    
+    def _forward(self, x):
+        return x
