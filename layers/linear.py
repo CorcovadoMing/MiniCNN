@@ -1,0 +1,2 @@
+class Linear:
+    pass
