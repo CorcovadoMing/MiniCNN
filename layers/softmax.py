@@ -7,8 +7,11 @@ class Softmax:
         self.classes = c
         
         # Random kernel initialization
-        self.weights = np.random.rand(i, c)
+        self.weights = np.random.normal(0, 1, (i, c))
         self.bias = np.random.rand()
+
+    def softmax_derivative(self, probs):
+        return np.diag(probs) - np.dot(np.expand_dims(probs, 1), np.expand_dims(probs, 0))
     
     def _forward(self, x):
         # Cache the input for backward use
@@ -19,12 +22,13 @@ class Softmax:
             calibrate = np.max(imm_result)
             imm_result -= calibrate
             output.append(np.exp(imm_result) / np.sum(np.exp(imm_result)))
-        return np.array(output)[:, :, -1]
+        return np.array(output)
 
     def _backward(self, e):
-        self.d_weights = self.input.T.dot(e)
-        self.d_bias = e.sum()
-        e = e.dot(self.weights.T)
-        print e.shape
-        print self.input.shape
+        self.d_weights = np.dot(e.T, self.input).T
+        self.d_bias = 0
+    
+    def _update(self, step):
+        self.weights -= step * self.d_weights
+        self.bias -= step * self.d_bias
 
