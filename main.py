@@ -8,7 +8,7 @@ if __name__ == '__main__':
     net = Net()
     net.push(Conv2d(3, 3, 1, 3)) # 1x5x5 -> 3x3x3
     net.push(Reshape((27, 1)))
-    net.push(Softmax(2))
+    net.push(Softmax(27, 2))
     net.input(x, y, 'train')
     net.forward()
     net.debug()
