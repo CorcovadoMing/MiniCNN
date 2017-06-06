@@ -19,10 +19,11 @@ class Conv2d:
         output = []
         for i in x:
             imm_result = []
-            for in_ch in xrange(self.weights.shape[0]):
-                for out_ch in xrange(self.weights.shape[1]):
-                    #imm_result.append(self._op_conv2d(i[in_ch], self.weights[in_ch][out_ch]))
-                    imm_result.append(signal.convolve2d(i[in_ch], self.weights[in_ch][out_ch], 'valid'))
+            for out_ch in xrange(self.weights.shape[1]):
+                out_map = np.zeros(np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1)
+                for in_ch in xrange(self.weights.shape[0]):
+                    out_map += signal.convolve2d(i[in_ch], self.weights[in_ch][out_ch], 'valid')
+                imm_result.append(out_map)
             output.append(imm_result)
         return np.array(output)
                 

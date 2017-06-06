@@ -15,8 +15,16 @@ class Softmax:
         self.input = copy.deepcopy(x)
         output = []
         for i in x:
-            imm_result = np.dot(np.transpose(self.weights), i) + self.bias
+            imm_result = np.dot(self.weights.T, i) + self.bias
             calibrate = np.max(imm_result)
             imm_result -= calibrate
             output.append(np.exp(imm_result) / np.sum(np.exp(imm_result)))
-        return output
+        return np.array(output)[:, :, -1]
+
+    def _backward(self, e):
+        self.d_weights = self.input.T.dot(e)
+        self.d_bias = e.sum()
+        e = e.dot(self.weights.T)
+        print e.shape
+        print self.input.shape
+

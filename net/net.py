@@ -13,11 +13,11 @@ class Net:
 
     def input(self, x, y, type):
         if type == 'train':
-            self.train_x = np.array(x)
-            self.train_y = np.array(y)
+            self.train_x = np.array(x, dtype=np.float)
+            self.train_y = np.array(y, dtype=np.float)
         elif type == 'test':
-            self.test_x = np.array(x)
-            self.test_y = np.array(y)
+            self.test_x = np.array(x, dtype=np.float)
+            self.test_y = np.array(y, dtype=np.float)
         else:
             raise TypeError
 
@@ -29,14 +29,12 @@ class Net:
             print str(i), time.time() - now
             now = time.time()
         self.output = imm_result
-
-    def debug(self):
-        try:
-            #print 'Layers:', self.layers
-            #print 'Train_x', self.train_x
-            #print 'Train_y', self.train_y
-            #print 'Test_x', self.test_x
-            #print 'Test_y', self.test_y
-            print 'Output', self.output
-        except:
-            pass
+    
+    def backward(self):
+        E = self.output - self.train_y
+        for i in self.layers[-1:-2:-1]:
+            now = time.time()
+            E = i._backward(E)
+            print E.shape
+            print str(i), time.time() - now
+            now = time.time()

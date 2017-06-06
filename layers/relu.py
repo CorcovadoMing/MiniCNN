@@ -8,3 +8,6 @@ class Relu:
         # Fix the -0.0 issue
         x += 0.
         return x
+    
+    def _backward(self, e):
+        pass
