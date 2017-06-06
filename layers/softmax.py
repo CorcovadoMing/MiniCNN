@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 
 class Softmax:
     def __init__(self, i, c):
@@ -11,7 +12,7 @@ class Softmax:
     
     def _forward(self, x):
         # Cache the input for backward use
-        self.input = x
+        self.input = copy.deepcopy(x)
         output = []
         for i in x:
             imm_result = np.dot(np.transpose(self.weights), i) + self.bias

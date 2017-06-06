@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 from scipy import signal
 
 class Conv2d:
@@ -11,20 +12,10 @@ class Conv2d:
         # Random kernel initialization
         self.weights = np.random.rand(input_channel, output_channel, kw, kh)
         self.bias = np.random.rand()
-    
-    def _op_conv2d(self, in_map, w):
-        result_shape = np.array(in_map.shape) - (np.array(w.shape) - 1)
-        result = np.zeros(result_shape)
-        for i in xrange(result_shape[0]):
-            for j in xrange(result_shape[1]):
-                for kw in xrange(w.shape[0]):
-                    for kh in xrange(w.shape[1]):
-                        result[i][j] += in_map[i+kw][j+kh] * w[kw][kh]
-        return result
 
     def _forward(self, x):
         # Cache the input for backward use
-        self.input = x
+        self.input = copy.deepcopy(x)
         output = []
         for i in x:
             imm_result = []
