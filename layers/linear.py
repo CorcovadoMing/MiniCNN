@@ -7,7 +7,7 @@ class Linear:
         self.classes = c
         
         # Random kernel initialization
-        self.weights = np.random.rand(i, c)
+        self.weights = np.random.normal(0, 1, (i, c))
         self.bias = np.random.rand()
     
     def _forward(self, x):
@@ -15,6 +15,16 @@ class Linear:
         self.input = copy.deepcopy(x)
         output = []
         for i in x:
-            imm_result = np.dot(np.transpose(self.weights), i) + self.bias
+            imm_result = np.dot(self.weights.T, i) + self.bias
             output.append(imm_result)
         return np.array(output)
+
+    def _backward(self, err, res):
+        self.d_weights = np.dot(np.multiply(err, res).T, self.input).T
+        self.d_bias = err.sum()
+        return np.dot(err, self.weights.T), None
+    
+    def _update(self, step):
+        self.weights -= step * self.d_weights
+        self.bias -= step * self.d_bias
+        pass

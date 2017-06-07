@@ -39,16 +39,17 @@ class Net:
     
     def backward(self):
         self.output[range(self.output.shape[0]), self.train_y] -= 1
-        E = self.output
+        err = self.output
+        res = None
 
         for i in self.layers[::-1]:
             now = time.time()
-            E = i._backward(E)
+            err, res = i._backward(err, res)
             #print str(i), time.time() - now
             now = time.time()
         
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(0.5)
+            i._update(0.01)
             #print str(i), time.time() - now
             now = time.time()

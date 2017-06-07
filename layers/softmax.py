@@ -24,9 +24,10 @@ class Softmax:
             output.append(np.exp(imm_result) / np.sum(np.exp(imm_result)))
         return np.array(output)
 
-    def _backward(self, e):
-        self.d_weights = np.dot(e.T, self.input).T
-        self.d_bias = 0
+    def _backward(self, err, res):
+        self.d_weights = np.dot(err.T, self.input).T
+        self.d_bias = err.sum()
+        return np.dot(err, self.weights.T), None
     
     def _update(self, step):
         self.weights -= step * self.d_weights
