@@ -9,5 +9,5 @@ class Reshape:
         self.output_shape = [x.shape[0]] + self.shape
         return np.reshape(x, self.output_shape)
     
-    def _backward(self, e):
-        pass
+    def _backward(self, err, res):
+        return err.reshape(self.input_shape), None

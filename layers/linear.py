@@ -21,7 +21,7 @@ class Linear:
 
     def _backward(self, err, res):
         self.d_weights = np.dot(np.multiply(err, res).T, self.input).T
-        self.d_bias = err.sum()
+        self.d_bias = np.multiply(err, res).sum()
         return np.dot(err, self.weights.T), None
     
     def _update(self, step):
