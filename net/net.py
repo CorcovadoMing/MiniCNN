@@ -30,12 +30,21 @@ class Net:
             now = time.time()
         self.output = imm_result
 
+        # Catrgorical Cross-Entropy
+        loss = 0.
+        for i in xrange(len(self.output)):
+            if self.output[i][self.train_y[i]] == 0:
+                loss -= 0
+            else:
+                loss -= np.log(self.output[i][self.train_y[i]])
+        loss /= len(self.output)
+
         # Evaluation
         count = 0.
         for i in xrange(len(self.output)):
             if self.output[i].argmax() == self.train_y[i]:
                 count += 1.
-        print 'Acc: ' + str(count / len(self.train_y))
+        print 'Acc: ' + str(count / len(self.train_y)), 'Loss: ' + str(loss)
     
     def backward(self):
         self.output[range(self.output.shape[0]), self.train_y] -= 1

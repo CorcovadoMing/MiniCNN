@@ -25,5 +25,11 @@ class Maxpooling:
                         self.masks[b][i][x * self.kernel_width + index / self.kernel_width ][y * self.kernel_height + index % self.kernel_height] = 1
 
         return tmp.max(axis=-1)
+    
+    def _backward(self, err, res):
+        return err, self.masks
+    
+    def _update(self, step):
+        pass
             
 
