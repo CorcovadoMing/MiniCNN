@@ -28,5 +28,8 @@ class Conv2d:
         return np.array(output)
                 
     
-    def _backward(self):
+    def _backward(self, err, res):
+        return err, None
+    
+    def _update(self, step):
         pass
