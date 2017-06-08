@@ -29,6 +29,7 @@ class Conv2d:
                 
     
     def _backward(self, err, res):
+        print err.shape
         return err, None
     
     def _update(self, step):
