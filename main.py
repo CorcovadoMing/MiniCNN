@@ -39,7 +39,7 @@ if __name__ == '__main__':
         print 'Epoch: ', epoch
         n = 32
         now = time.time()
-        for i in xrange(0, 500, n):
+        for i in xrange(0, 1000, n):
             if x[i:i+n].shape[0] != 0:
                 net.input(x[i:i+n], y[i:i+n], 'train')
                 net.forward()
@@ -47,7 +47,7 @@ if __name__ == '__main__':
         t = time.time() - now
         print 'Acc: ', np.array(net.get_record()).mean(), 'Time: ', t
         net.clear_record()
-        net.input(xt[:100], yt[:100], 'train')
+        net.input(xt[:200], yt[:200], 'train')
         net.forward()
         print 'Val: ', net.get_record()[0]
         net.clear_record()
