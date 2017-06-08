@@ -24,9 +24,10 @@ class Linear:
         self.d_bias = np.multiply(err, res).sum() / err.shape[0]
         return np.dot(err, self.weights.T), None
     
-    def _update(self, step, mom):
-        var = (self.pd_weight * mom) - (step * self.d_weights) + (1e-4 * self.weights)
+    def _update(self, step, mom, decay):
+        var = (self.pd_weight * mom) - (step * self.d_weights)
         self.pd_weight = var
         self.weights += var
+        self.weights -= (decay * self.weights)
         #self.weights -= step * self.d_weights
         self.bias -= step * self.d_bias

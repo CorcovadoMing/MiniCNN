@@ -48,7 +48,7 @@ class Net:
         #print 'Acc: ' + str(count / len(self.train_y)), 'Loss: ' + str(loss)
         self.record.append(count / len(self.train_y))
     
-    def backward(self):
+    def backward(self, lr=0.01):
         #print self.output
         self.output[range(self.output.shape[0]), self.train_y] -= 1
         self.output /= self.output.shape[0]
@@ -63,7 +63,7 @@ class Net:
         
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(0.01, 0.95)
+            i._update(lr, 0.95, 1e-3)
             #print str(i), time.time() - now
             now = time.time()
     
