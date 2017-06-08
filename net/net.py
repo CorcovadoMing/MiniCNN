@@ -45,7 +45,7 @@ class Net:
         for i in xrange(len(self.output)):
             if self.output[i].argmax() == self.train_y[i]:
                 count += 1.
-        print 'Acc: ' + str(count / len(self.train_y)), 'Loss: ' + str(loss)
+        #print 'Acc: ' + str(count / len(self.train_y)), 'Loss: ' + str(loss)
         self.record.append(count / len(self.train_y))
     
     def backward(self):
@@ -61,7 +61,7 @@ class Net:
         
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(0.001)
+            i._update(0.00005, 0.99)
             #print str(i), time.time() - now
             now = time.time()
     

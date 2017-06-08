@@ -16,5 +16,5 @@ class Relu:
     def _backward(self, err, res):
         return err, self.mask
     
-    def _update(self, step):
+    def _update(self, step, mom):
         pass

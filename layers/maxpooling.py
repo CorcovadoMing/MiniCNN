@@ -43,7 +43,7 @@ class Maxpooling:
             output.append(imm_result)
         return np.multiply(np.array(output), self.masks), None
     
-    def _update(self, step):
+    def _update(self, step, mom):
         pass
             
 

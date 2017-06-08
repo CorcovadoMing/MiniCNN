@@ -15,5 +15,5 @@ class Reshape:
     def _backward(self, err, res):
         return err.reshape(self.input_shape), None
     
-    def _update(self, step):
+    def _update(self, step, mom):
         pass

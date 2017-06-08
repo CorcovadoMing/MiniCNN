@@ -5,6 +5,7 @@ class Linear:
     def __init__(self, i, c):
         self.input_size = i
         self.classes = c
+        self.v = 0
         
         # Random kernel initialization
         self.weights = np.random.normal(0, 1, (i, c))
@@ -24,7 +25,8 @@ class Linear:
         self.d_bias = np.multiply(err, res).sum()
         return np.dot(err, self.weights.T), None
     
-    def _update(self, step):
-        self.weights -= step * self.d_weights
+    def _update(self, step, mom):
+        #self.d_weights += (0.01 * self.weights)
+        self.v =  mom * self.v - self.d_weights * step
+        self.weights += self.v
         self.bias -= step * self.d_bias
-        pass
