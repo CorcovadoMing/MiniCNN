@@ -10,7 +10,7 @@ class Conv2d:
         self.stride_height = sh
         
         # Random kernel initialization
-        self.weights = np.random.rand(input_channel, output_channel, kw, kh)
+        self.weights = np.random.normal(0, 1, (input_channel, output_channel, kw, kh))
         self.bias = np.random.rand()
 
     def _forward(self, x):
@@ -31,19 +31,14 @@ class Conv2d:
         return np.flipud(np.fliplr(kernel))
 
     def _backward(self, err, res):
-        print 'err', err.shape
-        print 'w', self.weights.shape
-        print 'x', self.input.shape
         self.d_weights = np.zeros((self.weights.shape))
-        '''
         for i in xrange(err.shape[0]):
-            for out_ch in xrange(self.weights.shape[1]):
-                for in_ch in xrange(self.weights.shape[0]):
-                    self.d_weights[in_ch][out_ch] += self._rot180(signal.convolve2d(self.input[i],
-                                                                 self.rot180(gdY),
-                                                                 mode='valid'))
-                                                                 '''
+            for in_ch in xrange(self.weights.shape[0]):
+                for out_ch in xrange(self.weights.shape[1]):
+                    self.d_weights[in_ch][out_ch] += signal.convolve2d(self._rot180(self.input[i][in_ch]),
+                                                                err[i][out_ch],
+                                                                mode='valid')
         return err, None
     
     def _update(self, step):
-        pass
+        self.weights -= step * self.d_weights

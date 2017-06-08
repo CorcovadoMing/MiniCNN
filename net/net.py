@@ -3,6 +3,7 @@ import time
 
 class Net:
     def __init__(self):
+        self.record = []
         self.layers = []
     
     def push(self, layer):
@@ -45,6 +46,7 @@ class Net:
             if self.output[i].argmax() == self.train_y[i]:
                 count += 1.
         print 'Acc: ' + str(count / len(self.train_y)), 'Loss: ' + str(loss)
+        self.record.append(count / len(self.train_y))
     
     def backward(self):
         self.output[range(self.output.shape[0]), self.train_y] -= 1
@@ -59,6 +61,9 @@ class Net:
         
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(0.01)
+            i._update(0.001)
             #print str(i), time.time() - now
             now = time.time()
+    
+    def get_record(self):
+        return self.record
