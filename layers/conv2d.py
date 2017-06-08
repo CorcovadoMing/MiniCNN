@@ -8,9 +8,9 @@ class Conv2d:
         self.padding_height = ph
         self.stride_width = sw
         self.stride_height = sh
-        self.v = 0
+        self.pd_weight = 0
         # Random kernel initialization
-        self.weights = np.random.normal(0, 1, (input_channel, output_channel, kw, kh))
+        self.weights = np.random.normal(0, 0.1, (input_channel, output_channel, kw, kh))
         self.bias = np.random.rand()
 
     def _forward(self, x):
@@ -32,17 +32,20 @@ class Conv2d:
 
     def _backward(self, err, res):
         self.d_weights = np.zeros((self.weights.shape))
+        output = np.zeros_like(self.input)
+        
         for i in xrange(err.shape[0]):
             for in_ch in xrange(self.weights.shape[0]):
                 for out_ch in xrange(self.weights.shape[1]):
-                    self.d_weights[in_ch][out_ch] += signal.convolve2d(
-                                                        self._rot180(self.input[i][in_ch]),
-                                                        err[i][out_ch],
-                                                        mode='valid'
-                                                        )
-        return err, None
+                    self.d_weights[in_ch][out_ch] += signal.convolve2d(self._rot180(self.input[i][in_ch]),
+                                                                    err[i][out_ch],mode='valid')
+                    output[i] += signal.convolve2d(err[i][out_ch],
+                                                self._rot180(self.weights[in_ch][out_ch]))
+        self.d_weights /= err.shape[0]
+        return output, None
     
     def _update(self, step, mom):
-        #self.d_weights += (0.01 * self.weights)
-        self.v =  mom * self.v - self.d_weights * step
-        self.weights += self.v
+        var = (self.pd_weight * mom) - (step * self.d_weights) + (1e-4 * self.weights)
+        self.pd_weight = var
+        self.weights += var
+        #self.weights -= step * self.d_weights
