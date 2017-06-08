@@ -27,9 +27,22 @@ class Conv2d:
             output.append(imm_result)
         return np.array(output)
                 
-    
+    def _rot180(self, kernel):
+        return np.flipud(np.fliplr(kernel))
+
     def _backward(self, err, res):
-        print err.shape
+        print 'err', err.shape
+        print 'w', self.weights.shape
+        print 'x', self.input.shape
+        self.d_weights = np.zeros((self.weights.shape))
+        '''
+        for i in xrange(err.shape[0]):
+            for out_ch in xrange(self.weights.shape[1]):
+                for in_ch in xrange(self.weights.shape[0]):
+                    self.d_weights[in_ch][out_ch] += self._rot180(signal.convolve2d(self.input[i],
+                                                                 self.rot180(gdY),
+                                                                 mode='valid'))
+                                                                 '''
         return err, None
     
     def _update(self, step):

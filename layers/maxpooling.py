@@ -27,7 +27,21 @@ class Maxpooling:
         return tmp.max(axis=-1)
     
     def _backward(self, err, res):
-        return err, self.masks
+        output = []
+        for i in err:
+            imm_result = []
+            for j in i:
+                origin = j.shape[0]
+                j = j.reshape((j.shape[0] * j.shape[1], 1))
+                for _ in xrange(self.kernel_width-1):
+                    j = np.hstack((j, j))
+                j = j.reshape(origin, self.masks.shape[2])
+                for _ in xrange(self.kernel_height-1):
+                    j = np.hstack((j, j))
+                j = j.reshape(self.masks.shape[2:])
+                imm_result.append(j)
+            output.append(imm_result)
+        return np.multiply(np.array(output), self.masks), None
     
     def _update(self, step):
         pass
