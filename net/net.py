@@ -63,7 +63,7 @@ class Net:
         
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(lr, 0.95, 1e-3)
+            i._update(lr, 0.90, 1e-4)
             #print str(i), time.time() - now
             now = time.time()
     

@@ -35,15 +35,17 @@ if __name__ == '__main__':
     net.push(Softmax(84, 10))
     #net.input(x, y, 'train')
 
+    n = 16
+    lr = 0.01
+    gamma = 0.9
     for epoch in xrange(50):
         print 'Epoch: ', epoch
-        n = 32
         now = time.time()
         for i in xrange(0, 1000, n):
             if x[i:i+n].shape[0] != 0:
                 net.input(x[i:i+n], y[i:i+n], 'train')
                 net.forward()
-                net.backward()
+                net.backward(lr)
         t = time.time() - now
         print 'Acc: ', np.array(net.get_record()).mean(), 'Time: ', t
         net.clear_record()
@@ -51,4 +53,6 @@ if __name__ == '__main__':
         net.forward()
         print 'Val: ', net.get_record()[0]
         net.clear_record()
+        lr *= gamma
+
     #print net.get_record()
