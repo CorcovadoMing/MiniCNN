@@ -34,7 +34,7 @@ class Conv2d:
         return np.flipud(np.fliplr(kernel))
 
     def _backward(self, err, res):
-        self.d_weights = np.zeros((self.weights.shape))
+        self.d_weights = np.zeros_like(self.weights)
         output = np.zeros_like(self.input)
         
         for i in xrange(err.shape[0]):
