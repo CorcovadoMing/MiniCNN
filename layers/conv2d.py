@@ -4,10 +4,13 @@ from scipy import signal
 
 class Conv2d:
     def __init__(self, kw, kh, input_channel, output_channel, pw=0, ph=0, sw=1, sh=1):
+        # Not implement so far
         self.padding_width = pw
         self.padding_height = ph
         self.stride_width = sw
         self.stride_height = sh
+
+        # Momentum
         self.pd_weight = 0
         # Random kernel initialization
         self.weights = np.random.normal(0, 0.1, (input_channel, output_channel, kw, kh))
