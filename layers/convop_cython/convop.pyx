@@ -6,8 +6,6 @@ cimport numpy as np
 DTYPE = np.float
 ctypedef np.float_t DTYPE_t
 ctypedef Py_ssize_t uint
-cdef inline int int_max(int a, int b) nogil: return a if a >= b else b
-cdef inline int int_min(int a, int b) nogil: return a if a <= b else b
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

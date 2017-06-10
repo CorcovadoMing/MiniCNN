@@ -886,7 +886,7 @@ typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
  * DTYPE = np.float
  * ctypedef np.float_t DTYPE_t             # <<<<<<<<<<<<<<
  * ctypedef Py_ssize_t uint
- * cdef inline int int_max(int a, int b) nogil: return a if a >= b else b
+ * 
  */
 typedef __pyx_t_5numpy_float_t __pyx_t_6convop_DTYPE_t;
 
@@ -894,8 +894,8 @@ typedef __pyx_t_5numpy_float_t __pyx_t_6convop_DTYPE_t;
  * DTYPE = np.float
  * ctypedef np.float_t DTYPE_t
  * ctypedef Py_ssize_t uint             # <<<<<<<<<<<<<<
- * cdef inline int int_max(int a, int b) nogil: return a if a >= b else b
- * cdef inline int int_min(int a, int b) nogil: return a if a <= b else b
+ * 
+ * @cython.boundscheck(False)
  */
 typedef Py_ssize_t __pyx_t_6convop_uint;
 /* Declarations.proto */
@@ -1523,55 +1523,7 @@ static PyObject *__pyx_tuple__12;
 static PyObject *__pyx_codeobj__11;
 static PyObject *__pyx_codeobj__13;
 
-/* "convop.pyx":9
- * ctypedef np.float_t DTYPE_t
- * ctypedef Py_ssize_t uint
- * cdef inline int int_max(int a, int b) nogil: return a if a >= b else b             # <<<<<<<<<<<<<<
- * cdef inline int int_min(int a, int b) nogil: return a if a <= b else b
- * 
- */
-
-static CYTHON_INLINE int __pyx_f_6convop_int_max(int __pyx_v_a, int __pyx_v_b) {
-  int __pyx_r;
-  int __pyx_t_1;
-  if (((__pyx_v_a >= __pyx_v_b) != 0)) {
-    __pyx_t_1 = __pyx_v_a;
-  } else {
-    __pyx_t_1 = __pyx_v_b;
-  }
-  __pyx_r = __pyx_t_1;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L0:;
-  return __pyx_r;
-}
-
-/* "convop.pyx":10
- * ctypedef Py_ssize_t uint
- * cdef inline int int_max(int a, int b) nogil: return a if a >= b else b
- * cdef inline int int_min(int a, int b) nogil: return a if a <= b else b             # <<<<<<<<<<<<<<
- * 
- * @cython.boundscheck(False)
- */
-
-static CYTHON_INLINE int __pyx_f_6convop_int_min(int __pyx_v_a, int __pyx_v_b) {
-  int __pyx_r;
-  int __pyx_t_1;
-  if (((__pyx_v_a <= __pyx_v_b) != 0)) {
-    __pyx_t_1 = __pyx_v_a;
-  } else {
-    __pyx_t_1 = __pyx_v_b;
-  }
-  __pyx_r = __pyx_t_1;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L0:;
-  return __pyx_r;
-}
-
-/* "convop.pyx":14
+/* "convop.pyx":12
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
@@ -1610,16 +1562,16 @@ static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__p
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, 1); __PYX_ERR(0, 14, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, 1); __PYX_ERR(0, 12, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_out)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, 2); __PYX_ERR(0, 14, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, 2); __PYX_ERR(0, 12, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "conv2d_op") < 0)) __PYX_ERR(0, 14, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "conv2d_op") < 0)) __PYX_ERR(0, 12, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -1634,15 +1586,15 @@ static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__p
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 14, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("convop.conv2d_op", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), __pyx_ptype_5numpy_ndarray, 1, "data", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) __PYX_ERR(0, 15, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_out), __pyx_ptype_5numpy_ndarray, 1, "out", 0))) __PYX_ERR(0, 16, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), __pyx_ptype_5numpy_ndarray, 1, "data", 0))) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_out), __pyx_ptype_5numpy_ndarray, 1, "out", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
   __pyx_r = __pyx_pf_6convop_conv2d_op(__pyx_self, __pyx_v_data, __pyx_v_w, __pyx_v_out);
 
   /* function exit code */
@@ -1719,21 +1671,21 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_v_data, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_v_data, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 12, __pyx_L1_error)
   }
   __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_data.diminfo[2].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_data.diminfo[2].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_data.diminfo[3].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_data.diminfo[3].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_w.rcbuffer->pybuffer, (PyObject*)__pyx_v_w, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_w.rcbuffer->pybuffer, (PyObject*)__pyx_v_w, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 12, __pyx_L1_error)
   }
   __pyx_pybuffernd_w.diminfo[0].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_w.diminfo[0].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_w.diminfo[1].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_w.diminfo[1].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_w.diminfo[2].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_w.diminfo[2].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_w.diminfo[3].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_w.diminfo[3].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_out.rcbuffer->pybuffer, (PyObject*)__pyx_v_out, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_out.rcbuffer->pybuffer, (PyObject*)__pyx_v_out, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 12, __pyx_L1_error)
   }
   __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_out.diminfo[1].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_out.diminfo[1].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_out.diminfo[2].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_out.diminfo[2].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_out.diminfo[3].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_out.diminfo[3].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[3];
 
-  /* "convop.pyx":18
+  /* "convop.pyx":16
  *             np.ndarray[DTYPE_t, ndim=4] out):
  * 
  *     cdef uint batch_size = data.shape[0]             # <<<<<<<<<<<<<<
@@ -1742,7 +1694,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_batch_size = (__pyx_v_data->dimensions[0]);
 
-  /* "convop.pyx":19
+  /* "convop.pyx":17
  * 
  *     cdef uint batch_size = data.shape[0]
  *     cdef uint out_h = out.shape[2]             # <<<<<<<<<<<<<<
@@ -1751,7 +1703,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_out_h = (__pyx_v_out->dimensions[2]);
 
-  /* "convop.pyx":20
+  /* "convop.pyx":18
  *     cdef uint batch_size = data.shape[0]
  *     cdef uint out_h = out.shape[2]
  *     cdef uint out_w = out.shape[3]             # <<<<<<<<<<<<<<
@@ -1760,7 +1712,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_out_w = (__pyx_v_out->dimensions[3]);
 
-  /* "convop.pyx":21
+  /* "convop.pyx":19
  *     cdef uint out_h = out.shape[2]
  *     cdef uint out_w = out.shape[3]
  *     cdef uint input_channel = w.shape[0]             # <<<<<<<<<<<<<<
@@ -1769,7 +1721,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_input_channel = (__pyx_v_w->dimensions[0]);
 
-  /* "convop.pyx":22
+  /* "convop.pyx":20
  *     cdef uint out_w = out.shape[3]
  *     cdef uint input_channel = w.shape[0]
  *     cdef uint output_channel = w.shape[1]             # <<<<<<<<<<<<<<
@@ -1778,7 +1730,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_output_channel = (__pyx_v_w->dimensions[1]);
 
-  /* "convop.pyx":23
+  /* "convop.pyx":21
  *     cdef uint input_channel = w.shape[0]
  *     cdef uint output_channel = w.shape[1]
  *     cdef uint w_h = w.shape[2]             # <<<<<<<<<<<<<<
@@ -1787,7 +1739,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_w_h = (__pyx_v_w->dimensions[2]);
 
-  /* "convop.pyx":24
+  /* "convop.pyx":22
  *     cdef uint output_channel = w.shape[1]
  *     cdef uint w_h = w.shape[2]
  *     cdef uint w_w = w.shape[3]             # <<<<<<<<<<<<<<
@@ -1796,7 +1748,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
   __pyx_v_w_w = (__pyx_v_w->dimensions[3]);
 
-  /* "convop.pyx":30
+  /* "convop.pyx":28
  *     cdef DTYPE_t value
  * 
  *     for batch_size_ in range(batch_size):             # <<<<<<<<<<<<<<
@@ -1807,7 +1759,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_batch_size_ = __pyx_t_2;
 
-    /* "convop.pyx":31
+    /* "convop.pyx":29
  * 
  *     for batch_size_ in range(batch_size):
  *         for output_ch in range(output_channel):             # <<<<<<<<<<<<<<
@@ -1818,7 +1770,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
     for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
       __pyx_v_output_ch = __pyx_t_4;
 
-      /* "convop.pyx":32
+      /* "convop.pyx":30
  *     for batch_size_ in range(batch_size):
  *         for output_ch in range(output_channel):
  *             for y in range(out_h):             # <<<<<<<<<<<<<<
@@ -1829,7 +1781,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
       for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
         __pyx_v_y = __pyx_t_6;
 
-        /* "convop.pyx":33
+        /* "convop.pyx":31
  *         for output_ch in range(output_channel):
  *             for y in range(out_h):
  *                 for x in range(out_w):             # <<<<<<<<<<<<<<
@@ -1840,7 +1792,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
         for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
 
-          /* "convop.pyx":34
+          /* "convop.pyx":32
  *             for y in range(out_h):
  *                 for x in range(out_w):
  *                     value = 0.0             # <<<<<<<<<<<<<<
@@ -1849,7 +1801,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
           __pyx_v_value = 0.0;
 
-          /* "convop.pyx":35
+          /* "convop.pyx":33
  *                 for x in range(out_w):
  *                     value = 0.0
  *                     for y_offset in range(w_h):             # <<<<<<<<<<<<<<
@@ -1860,7 +1812,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
           for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
             __pyx_v_y_offset = __pyx_t_10;
 
-            /* "convop.pyx":36
+            /* "convop.pyx":34
  *                     value = 0.0
  *                     for y_offset in range(w_h):
  *                         for x_offset in range(w_w):             # <<<<<<<<<<<<<<
@@ -1871,7 +1823,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
             for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
               __pyx_v_x_offset = __pyx_t_12;
 
-              /* "convop.pyx":37
+              /* "convop.pyx":35
  *                     for y_offset in range(w_h):
  *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)             # <<<<<<<<<<<<<<
@@ -1880,7 +1832,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
 
-              /* "convop.pyx":38
+              /* "convop.pyx":36
  *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)             # <<<<<<<<<<<<<<
@@ -1889,7 +1841,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
 
-              /* "convop.pyx":39
+              /* "convop.pyx":37
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)
  *                             kernel_y = <uint>(y_offset)             # <<<<<<<<<<<<<<
@@ -1898,7 +1850,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_kernel_y = ((__pyx_t_6convop_uint)__pyx_v_y_offset);
 
-              /* "convop.pyx":40
+              /* "convop.pyx":38
  *                             input_x = <uint>(x + x_offset)
  *                             kernel_y = <uint>(y_offset)
  *                             kernel_x = <uint>(x_offset)             # <<<<<<<<<<<<<<
@@ -1907,7 +1859,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
  */
               __pyx_v_kernel_x = ((__pyx_t_6convop_uint)__pyx_v_x_offset);
 
-              /* "convop.pyx":41
+              /* "convop.pyx":39
  *                             kernel_y = <uint>(y_offset)
  *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):             # <<<<<<<<<<<<<<
@@ -1918,7 +1870,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
               for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
                 __pyx_v_input_ch = __pyx_t_14;
 
-                /* "convop.pyx":42
+                /* "convop.pyx":40
  *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):
  *                                 value += data[batch_size_, input_ch, input_y, input_x] * \             # <<<<<<<<<<<<<<
@@ -1930,7 +1882,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
                 __pyx_t_17 = __pyx_v_input_y;
                 __pyx_t_18 = __pyx_v_input_x;
 
-                /* "convop.pyx":43
+                /* "convop.pyx":41
  *                             for input_ch in range(input_channel):
  *                                 value += data[batch_size_, input_ch, input_y, input_x] * \
  *                                         w[input_ch, output_ch, kernel_y, kernel_x]             # <<<<<<<<<<<<<<
@@ -1942,7 +1894,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
                 __pyx_t_21 = __pyx_v_kernel_y;
                 __pyx_t_22 = __pyx_v_kernel_x;
 
-                /* "convop.pyx":42
+                /* "convop.pyx":40
  *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):
  *                                 value += data[batch_size_, input_ch, input_y, input_x] * \             # <<<<<<<<<<<<<<
@@ -1954,7 +1906,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
             }
           }
 
-          /* "convop.pyx":44
+          /* "convop.pyx":42
  *                                 value += data[batch_size_, input_ch, input_y, input_x] * \
  *                                         w[input_ch, output_ch, kernel_y, kernel_x]
  *                     out[batch_size_, output_ch, y, x] = value             # <<<<<<<<<<<<<<
@@ -1971,7 +1923,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
     }
   }
 
-  /* "convop.pyx":14
+  /* "convop.pyx":12
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
@@ -2004,7 +1956,7 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
   return __pyx_r;
 }
 
-/* "convop.pyx":48
+/* "convop.pyx":46
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
@@ -2047,26 +1999,26 @@ static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_err)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 1); __PYX_ERR(0, 48, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 1); __PYX_ERR(0, 46, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 2); __PYX_ERR(0, 48, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 2); __PYX_ERR(0, 46, __pyx_L3_error)
         }
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_dx)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 3); __PYX_ERR(0, 48, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 3); __PYX_ERR(0, 46, __pyx_L3_error)
         }
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_dw)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 4); __PYX_ERR(0, 48, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 4); __PYX_ERR(0, 46, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "deconv2d_op") < 0)) __PYX_ERR(0, 48, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "deconv2d_op") < 0)) __PYX_ERR(0, 46, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -2085,17 +2037,17 @@ static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 48, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 46, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("convop.deconv2d_op", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), __pyx_ptype_5numpy_ndarray, 1, "data", 0))) __PYX_ERR(0, 48, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_err), __pyx_ptype_5numpy_ndarray, 1, "err", 0))) __PYX_ERR(0, 49, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) __PYX_ERR(0, 50, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dx), __pyx_ptype_5numpy_ndarray, 1, "dx", 0))) __PYX_ERR(0, 51, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dw), __pyx_ptype_5numpy_ndarray, 1, "dw", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), __pyx_ptype_5numpy_ndarray, 1, "data", 0))) __PYX_ERR(0, 46, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_err), __pyx_ptype_5numpy_ndarray, 1, "err", 0))) __PYX_ERR(0, 47, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dx), __pyx_ptype_5numpy_ndarray, 1, "dx", 0))) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dw), __pyx_ptype_5numpy_ndarray, 1, "dw", 0))) __PYX_ERR(0, 50, __pyx_L1_error)
   __pyx_r = __pyx_pf_6convop_2deconv2d_op(__pyx_self, __pyx_v_data, __pyx_v_err, __pyx_v_w, __pyx_v_dx, __pyx_v_dw);
 
   /* function exit code */
@@ -2202,31 +2154,31 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_pybuffernd_dw.rcbuffer = &__pyx_pybuffer_dw;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_v_data, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_v_data, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 46, __pyx_L1_error)
   }
   __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_data.diminfo[2].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_data.diminfo[2].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_data.diminfo[3].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_data.diminfo[3].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_err.rcbuffer->pybuffer, (PyObject*)__pyx_v_err, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_err.rcbuffer->pybuffer, (PyObject*)__pyx_v_err, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 46, __pyx_L1_error)
   }
   __pyx_pybuffernd_err.diminfo[0].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_err.diminfo[0].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_err.diminfo[1].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_err.diminfo[1].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_err.diminfo[2].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_err.diminfo[2].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_err.diminfo[3].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_err.diminfo[3].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_w.rcbuffer->pybuffer, (PyObject*)__pyx_v_w, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_w.rcbuffer->pybuffer, (PyObject*)__pyx_v_w, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 46, __pyx_L1_error)
   }
   __pyx_pybuffernd_w.diminfo[0].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_w.diminfo[0].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_w.diminfo[1].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_w.diminfo[1].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_w.diminfo[2].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_w.diminfo[2].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_w.diminfo[3].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_w.diminfo[3].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dx.rcbuffer->pybuffer, (PyObject*)__pyx_v_dx, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dx.rcbuffer->pybuffer, (PyObject*)__pyx_v_dx, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 46, __pyx_L1_error)
   }
   __pyx_pybuffernd_dx.diminfo[0].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dx.diminfo[0].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_dx.diminfo[1].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_dx.diminfo[1].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_dx.diminfo[2].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_dx.diminfo[2].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_dx.diminfo[3].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_dx.diminfo[3].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dw.rcbuffer->pybuffer, (PyObject*)__pyx_v_dw, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dw.rcbuffer->pybuffer, (PyObject*)__pyx_v_dw, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 46, __pyx_L1_error)
   }
   __pyx_pybuffernd_dw.diminfo[0].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dw.diminfo[0].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_dw.diminfo[1].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_dw.diminfo[1].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_dw.diminfo[2].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_dw.diminfo[2].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_dw.diminfo[3].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_dw.diminfo[3].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[3];
 
-  /* "convop.pyx":54
+  /* "convop.pyx":52
  *                     np.ndarray[DTYPE_t, ndim=4] dw):
  * 
  *     cdef uint batch_size = err.shape[0]             # <<<<<<<<<<<<<<
@@ -2235,7 +2187,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_batch_size = (__pyx_v_err->dimensions[0]);
 
-  /* "convop.pyx":55
+  /* "convop.pyx":53
  * 
  *     cdef uint batch_size = err.shape[0]
  *     cdef uint out_h = err.shape[2]             # <<<<<<<<<<<<<<
@@ -2244,7 +2196,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_out_h = (__pyx_v_err->dimensions[2]);
 
-  /* "convop.pyx":56
+  /* "convop.pyx":54
  *     cdef uint batch_size = err.shape[0]
  *     cdef uint out_h = err.shape[2]
  *     cdef uint out_w = err.shape[3]             # <<<<<<<<<<<<<<
@@ -2253,7 +2205,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_out_w = (__pyx_v_err->dimensions[3]);
 
-  /* "convop.pyx":57
+  /* "convop.pyx":55
  *     cdef uint out_h = err.shape[2]
  *     cdef uint out_w = err.shape[3]
  *     cdef uint input_channel = w.shape[0]             # <<<<<<<<<<<<<<
@@ -2262,7 +2214,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_input_channel = (__pyx_v_w->dimensions[0]);
 
-  /* "convop.pyx":58
+  /* "convop.pyx":56
  *     cdef uint out_w = err.shape[3]
  *     cdef uint input_channel = w.shape[0]
  *     cdef uint output_channel = w.shape[1]             # <<<<<<<<<<<<<<
@@ -2271,7 +2223,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_output_channel = (__pyx_v_w->dimensions[1]);
 
-  /* "convop.pyx":59
+  /* "convop.pyx":57
  *     cdef uint input_channel = w.shape[0]
  *     cdef uint output_channel = w.shape[1]
  *     cdef uint w_h = w.shape[2]             # <<<<<<<<<<<<<<
@@ -2280,7 +2232,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_w_h = (__pyx_v_w->dimensions[2]);
 
-  /* "convop.pyx":60
+  /* "convop.pyx":58
  *     cdef uint output_channel = w.shape[1]
  *     cdef uint w_h = w.shape[2]
  *     cdef uint w_w = w.shape[3]             # <<<<<<<<<<<<<<
@@ -2289,7 +2241,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_w_w = (__pyx_v_w->dimensions[3]);
 
-  /* "convop.pyx":61
+  /* "convop.pyx":59
  *     cdef uint w_h = w.shape[2]
  *     cdef uint w_w = w.shape[3]
  *     cdef int fil_mid_h = w_h // 2             # <<<<<<<<<<<<<<
@@ -2298,7 +2250,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_fil_mid_h = __Pyx_div___pyx_t_6convop_uint(__pyx_v_w_h, 2);
 
-  /* "convop.pyx":62
+  /* "convop.pyx":60
  *     cdef uint w_w = w.shape[3]
  *     cdef int fil_mid_h = w_h // 2
  *     cdef int fil_mid_w = w_w // 2             # <<<<<<<<<<<<<<
@@ -2307,7 +2259,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
   __pyx_v_fil_mid_w = __Pyx_div___pyx_t_6convop_uint(__pyx_v_w_w, 2);
 
-  /* "convop.pyx":69
+  /* "convop.pyx":67
  *     cdef int y, x, y_offset_min, y_offset_max, y_offset, x_offset_min, x_offset_max, x_offset
  * 
  *     for batch_size_ in range(batch_size):             # <<<<<<<<<<<<<<
@@ -2318,7 +2270,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_batch_size_ = __pyx_t_2;
 
-    /* "convop.pyx":70
+    /* "convop.pyx":68
  * 
  *     for batch_size_ in range(batch_size):
  *         for output_ch in range(output_channel):             # <<<<<<<<<<<<<<
@@ -2329,7 +2281,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
     for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
       __pyx_v_output_ch = __pyx_t_4;
 
-      /* "convop.pyx":71
+      /* "convop.pyx":69
  *     for batch_size_ in range(batch_size):
  *         for output_ch in range(output_channel):
  *             for y in range(out_h):             # <<<<<<<<<<<<<<
@@ -2340,7 +2292,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
       for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
         __pyx_v_y = __pyx_t_6;
 
-        /* "convop.pyx":72
+        /* "convop.pyx":70
  *         for output_ch in range(output_channel):
  *             for y in range(out_h):
  *                 for x in range(out_w):             # <<<<<<<<<<<<<<
@@ -2351,7 +2303,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
         for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
 
-          /* "convop.pyx":73
+          /* "convop.pyx":71
  *             for y in range(out_h):
  *                 for x in range(out_w):
  *                     err_value = err[batch_size_, output_ch, y, x]             # <<<<<<<<<<<<<<
@@ -2364,7 +2316,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
           __pyx_t_12 = __pyx_v_x;
           __pyx_v_err_value = (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_err.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_err.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_err.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_err.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_err.diminfo[3].strides));
 
-          /* "convop.pyx":74
+          /* "convop.pyx":72
  *                 for x in range(out_w):
  *                     err_value = err[batch_size_, output_ch, y, x]
  *                     for y_offset in range(w_h):             # <<<<<<<<<<<<<<
@@ -2375,7 +2327,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_y_offset = __pyx_t_14;
 
-            /* "convop.pyx":75
+            /* "convop.pyx":73
  *                     err_value = err[batch_size_, output_ch, y, x]
  *                     for y_offset in range(w_h):
  *                         for x_offset in range(w_w):             # <<<<<<<<<<<<<<
@@ -2386,7 +2338,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
             for (__pyx_t_16 = 0; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
               __pyx_v_x_offset = __pyx_t_16;
 
-              /* "convop.pyx":76
+              /* "convop.pyx":74
  *                     for y_offset in range(w_h):
  *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)             # <<<<<<<<<<<<<<
@@ -2395,7 +2347,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
               __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
 
-              /* "convop.pyx":77
+              /* "convop.pyx":75
  *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)             # <<<<<<<<<<<<<<
@@ -2404,7 +2356,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
               __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
 
-              /* "convop.pyx":78
+              /* "convop.pyx":76
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)
  *                             kernel_y = <uint>(y_offset)             # <<<<<<<<<<<<<<
@@ -2413,7 +2365,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
               __pyx_v_kernel_y = ((__pyx_t_6convop_uint)__pyx_v_y_offset);
 
-              /* "convop.pyx":79
+              /* "convop.pyx":77
  *                             input_x = <uint>(x + x_offset)
  *                             kernel_y = <uint>(y_offset)
  *                             kernel_x = <uint>(x_offset)             # <<<<<<<<<<<<<<
@@ -2422,7 +2374,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  */
               __pyx_v_kernel_x = ((__pyx_t_6convop_uint)__pyx_v_x_offset);
 
-              /* "convop.pyx":80
+              /* "convop.pyx":78
  *                             kernel_y = <uint>(y_offset)
  *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):             # <<<<<<<<<<<<<<
@@ -2433,7 +2385,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
               for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
                 __pyx_v_input_ch = __pyx_t_18;
 
-                /* "convop.pyx":82
+                /* "convop.pyx":80
  *                             for input_ch in range(input_channel):
  *                                 dx[batch_size_, input_ch, input_y, input_x] += \
  *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value             # <<<<<<<<<<<<<<
@@ -2445,7 +2397,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
                 __pyx_t_21 = __pyx_v_kernel_y;
                 __pyx_t_22 = __pyx_v_kernel_x;
 
-                /* "convop.pyx":81
+                /* "convop.pyx":79
  *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):
  *                                 dx[batch_size_, input_ch, input_y, input_x] += \             # <<<<<<<<<<<<<<
@@ -2458,7 +2410,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
                 __pyx_t_26 = __pyx_v_input_x;
                 *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_dx.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_dx.diminfo[0].strides, __pyx_t_24, __pyx_pybuffernd_dx.diminfo[1].strides, __pyx_t_25, __pyx_pybuffernd_dx.diminfo[2].strides, __pyx_t_26, __pyx_pybuffernd_dx.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_w.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_w.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_w.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_w.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_w.diminfo[3].strides)) * __pyx_v_err_value);
 
-                /* "convop.pyx":85
+                /* "convop.pyx":83
  * 
  *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \
  *                                 data[batch_size_, input_ch, input_y, input_x] * err_value             # <<<<<<<<<<<<<<
@@ -2470,7 +2422,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
                 __pyx_t_29 = __pyx_v_input_y;
                 __pyx_t_30 = __pyx_v_input_x;
 
-                /* "convop.pyx":84
+                /* "convop.pyx":82
  *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
  * 
  *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \             # <<<<<<<<<<<<<<
@@ -2490,26 +2442,26 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
     }
   }
 
-  /* "convop.pyx":87
+  /* "convop.pyx":85
  *                                 data[batch_size_, input_ch, input_y, input_x] * err_value
  * 
  *     dw[...] /= batch_size             # <<<<<<<<<<<<<<
  */
   __Pyx_INCREF(Py_Ellipsis);
   __pyx_t_35 = Py_Ellipsis;
-  __pyx_t_36 = PyObject_GetItem(((PyObject *)__pyx_v_dw), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_36 = PyObject_GetItem(((PyObject *)__pyx_v_dw), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_36);
-  __pyx_t_37 = PyInt_FromSsize_t(__pyx_v_batch_size); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_37 = PyInt_FromSsize_t(__pyx_v_batch_size); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_37);
-  __pyx_t_38 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_36, __pyx_t_37); if (unlikely(!__pyx_t_38)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_38 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_36, __pyx_t_37); if (unlikely(!__pyx_t_38)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_38);
   __Pyx_DECREF(__pyx_t_36); __pyx_t_36 = 0;
   __Pyx_DECREF(__pyx_t_37); __pyx_t_37 = 0;
-  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_dw), __pyx_t_35, __pyx_t_38) < 0)) __PYX_ERR(0, 87, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_dw), __pyx_t_35, __pyx_t_38) < 0)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_38); __pyx_t_38 = 0;
   __Pyx_DECREF(__pyx_t_35); __pyx_t_35 = 0;
 
-  /* "convop.pyx":48
+  /* "convop.pyx":46
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
@@ -5145,7 +5097,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 28, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 218, __pyx_L1_error)
   __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(1, 799, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 989, __pyx_L1_error)
@@ -5255,29 +5207,29 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "convop.pyx":14
+  /* "convop.pyx":12
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
  *             np.ndarray[DTYPE_t, ndim=4] w,
  *             np.ndarray[DTYPE_t, ndim=4] out):
  */
-  __pyx_tuple__10 = PyTuple_Pack(22, __pyx_n_s_data, __pyx_n_s_w, __pyx_n_s_out, __pyx_n_s_batch_size, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_input_channel, __pyx_n_s_output_channel, __pyx_n_s_w_h, __pyx_n_s_w_w, __pyx_n_s_batch_size_2, __pyx_n_s_input_ch, __pyx_n_s_output_ch, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_offset, __pyx_n_s_x_offset, __pyx_n_s_input_y, __pyx_n_s_input_x, __pyx_n_s_kernel_y, __pyx_n_s_kernel_x, __pyx_n_s_value); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(22, __pyx_n_s_data, __pyx_n_s_w, __pyx_n_s_out, __pyx_n_s_batch_size, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_input_channel, __pyx_n_s_output_channel, __pyx_n_s_w_h, __pyx_n_s_w_w, __pyx_n_s_batch_size_2, __pyx_n_s_input_ch, __pyx_n_s_output_ch, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_offset, __pyx_n_s_x_offset, __pyx_n_s_input_y, __pyx_n_s_input_x, __pyx_n_s_kernel_y, __pyx_n_s_kernel_x, __pyx_n_s_value); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(3, 0, 22, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_conv2d_op, 14, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(3, 0, 22, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_conv2d_op, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 12, __pyx_L1_error)
 
-  /* "convop.pyx":48
+  /* "convop.pyx":46
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
  *                     np.ndarray[DTYPE_t, ndim=4] err,
  *                     np.ndarray[DTYPE_t, ndim=4] w,
  */
-  __pyx_tuple__12 = PyTuple_Pack(30, __pyx_n_s_data, __pyx_n_s_err, __pyx_n_s_w, __pyx_n_s_dx, __pyx_n_s_dw, __pyx_n_s_batch_size, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_input_channel, __pyx_n_s_output_channel, __pyx_n_s_w_h, __pyx_n_s_w_w, __pyx_n_s_fil_mid_h, __pyx_n_s_fil_mid_w, __pyx_n_s_batch_size_2, __pyx_n_s_output_ch, __pyx_n_s_input_ch, __pyx_n_s_input_y, __pyx_n_s_input_x, __pyx_n_s_kernel_y, __pyx_n_s_kernel_x, __pyx_n_s_err_value, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_offset_min, __pyx_n_s_y_offset_max, __pyx_n_s_y_offset, __pyx_n_s_x_offset_min, __pyx_n_s_x_offset_max, __pyx_n_s_x_offset); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(30, __pyx_n_s_data, __pyx_n_s_err, __pyx_n_s_w, __pyx_n_s_dx, __pyx_n_s_dw, __pyx_n_s_batch_size, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_input_channel, __pyx_n_s_output_channel, __pyx_n_s_w_h, __pyx_n_s_w_w, __pyx_n_s_fil_mid_h, __pyx_n_s_fil_mid_w, __pyx_n_s_batch_size_2, __pyx_n_s_output_ch, __pyx_n_s_input_ch, __pyx_n_s_input_y, __pyx_n_s_input_x, __pyx_n_s_kernel_y, __pyx_n_s_kernel_x, __pyx_n_s_err_value, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_offset_min, __pyx_n_s_y_offset_max, __pyx_n_s_y_offset, __pyx_n_s_x_offset_min, __pyx_n_s_x_offset_max, __pyx_n_s_x_offset); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(5, 0, 30, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_deconv2d_op, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(5, 0, 30, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_deconv2d_op, 46, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5423,28 +5375,28 @@ PyMODINIT_FUNC PyInit_convop(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_DTYPE, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "convop.pyx":14
+  /* "convop.pyx":12
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
  *             np.ndarray[DTYPE_t, ndim=4] w,
  *             np.ndarray[DTYPE_t, ndim=4] out):
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_1conv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_1conv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_conv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_conv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "convop.pyx":48
+  /* "convop.pyx":46
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
  *                     np.ndarray[DTYPE_t, ndim=4] err,
  *                     np.ndarray[DTYPE_t, ndim=4] w,
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_3deconv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_3deconv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deconv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deconv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "convop.pyx":1
