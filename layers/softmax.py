@@ -6,7 +6,7 @@ class Softmax:
         self.pd_weight = 0
         # Random kernel initialization
         self.weights = np.random.normal(0, 0.1, (i, c))
-        self.bias = np.random.rand()
+        self.bias = np.random.normal(0, 0.001, (1))
 
     def softmax_derivative(self, probs):
         return np.diag(probs) - np.dot(np.expand_dims(probs, 1), np.expand_dims(probs, 0))
