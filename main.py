@@ -46,11 +46,13 @@ if __name__ == '__main__':
         print 'Epoch: ', epoch
 
         # Training (Mini-batch)
+        now = time.time()
         for _ in xrange(data.batch_run()):
             net.input(data.next_batch())
             net.forward()
             net.backward(lr)
-        print 'Acc: ', np.array(net.get_record()).mean()
+        t = time.time() - now
+        print 'Acc: ', np.array(net.get_record()).mean(), t
         f, b = net.get_profile()
         net.clear_record()
 
