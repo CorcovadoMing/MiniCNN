@@ -7,8 +7,10 @@ DTYPE = np.float
 ctypedef np.float_t DTYPE_t
 ctypedef Py_ssize_t uint
 
+
 @cython.boundscheck(False)
 @cython.wraparound(False)
+@cython.nonecheck(False)
 def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
             np.ndarray[DTYPE_t, ndim=4] w,
             np.ndarray[DTYPE_t, ndim=4] out):
@@ -38,11 +40,12 @@ def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
                             kernel_x = <uint>(x_offset)
                             for input_ch in range(input_channel):
                                 value += data[batch_size_, input_ch, input_y, input_x] * \
-                                        w[input_ch, output_ch, kernel_y, kernel_x]
+                                                w[input_ch, output_ch, kernel_y, kernel_x]
                     out[batch_size_, output_ch, y, x] = value
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
+@cython.nonecheck(False)
 def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
                     np.ndarray[DTYPE_t, ndim=4] err,
                     np.ndarray[DTYPE_t, ndim=4] w,
@@ -56,13 +59,11 @@ def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
     cdef uint output_channel = w.shape[1]
     cdef uint w_h = w.shape[2]
     cdef uint w_w = w.shape[3]
-    cdef int fil_mid_h = w_h // 2
-    cdef int fil_mid_w = w_w // 2
 
     cdef uint batch_size_, output_ch, input_ch
     cdef uint input_y, input_x, kernel_y, kernel_x
     cdef DTYPE_t err_value
-    cdef int y, x, y_offset_min, y_offset_max, y_offset, x_offset_min, x_offset_max, x_offset
+    cdef int y, x, y_offset, x_offset
 
     for batch_size_ in range(batch_size):
         for output_ch in range(output_channel):
