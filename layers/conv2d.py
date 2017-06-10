@@ -19,16 +19,15 @@ class Conv2d:
     def _forward(self, x):
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
-        output = []
-        for i in x:
-            imm_result = []
+
+        out_map_size = np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1
+        out_map_size = list(x.shape[:1]) + list(self.weights.shape[1:2]) + list(out_map_size)
+        output = np.zeros(out_map_size)
+        for i in xrange(output.shape[0]):
             for out_ch in xrange(self.weights.shape[1]):
-                out_map = np.zeros(np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1)
                 for in_ch in xrange(self.weights.shape[0]):
-                    out_map += signal.convolve2d(i[in_ch], self.weights[in_ch][out_ch], 'valid')
-                imm_result.append(out_map)
-            output.append(imm_result)
-        return np.array(output)
+                    output[i][out_ch] += signal.convolve2d(x[i][in_ch], self.weights[in_ch][out_ch], 'valid')
+        return output
                 
     def _rot180(self, kernel):
         return np.flipud(np.fliplr(kernel))
@@ -40,10 +39,8 @@ class Conv2d:
         for i in xrange(err.shape[0]):
             for in_ch in xrange(self.weights.shape[0]):
                 for out_ch in xrange(self.weights.shape[1]):
-                    self.d_weights[in_ch][out_ch] += signal.convolve2d(self._rot180(self.input[i][in_ch]),
-                                                                    err[i][out_ch],mode='valid')
-                    output[i] += signal.convolve2d(err[i][out_ch],
-                                                self._rot180(self.weights[in_ch][out_ch]))
+                    self.d_weights[in_ch][out_ch] += signal.convolve2d(self._rot180(self.input[i][in_ch]), err[i][out_ch], mode='valid')
+                    output[i] += signal.convolve2d(err[i][out_ch], self._rot180(self.weights[in_ch][out_ch]))
         self.d_weights /= err.shape[0]
         return output, None
     

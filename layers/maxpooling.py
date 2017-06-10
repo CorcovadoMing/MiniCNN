@@ -1,43 +1,25 @@
 import copy
 import numpy as np
+from poolop import pool_bc01, bprop_pool_bc01
 
 class Maxpooling:
     def __init__(self, kw, kh):
         self.kernel_width = kw
         self.kernel_height = kh
-        self.mask = []
 
     def _forward(self, x):
-        # Cache the input for backward use
-        self.input = copy.deepcopy(x)
-        
         B, N, h, w = x.shape
-        
-        tmp = x.reshape(B, N, h/self.kernel_width, self.kernel_width, w/self.kernel_height, self.kernel_height).swapaxes(3, 4).reshape(B, N, h/self.kernel_width, w/self.kernel_height, self.kernel_width * self.kernel_height)
-        
-        self.masks = np.zeros(x.shape)
-        indexes = tmp.argmax(axis=-1)
-        for b in xrange(indexes.shape[0]):
-            for i in xrange(indexes.shape[1]):
-                for x in xrange(indexes.shape[2]):
-                    for y in xrange(indexes.shape[3]):
-                        index = indexes[b][i][x][y]
-                        self.masks[b][i][x * self.kernel_width + index / self.kernel_width ][y * self.kernel_height + index % self.kernel_height] = 1
-
-        return tmp.max(axis=-1)
+        output = np.empty((B, N, h/self.kernel_width, w/self.kernel_height))
+        switch = np.empty(output.shape + (2,), dtype=np.int)
+        pool_bc01(x, output, switch, self.kernel_width, self.kernel_height, 2, 2)
+        self.masks = switch
+        self.input_shape = x.shape
+        return output
     
     def _backward(self, err, res):
-        output = []
-        for i in err:
-            imm_result = []
-            for j in i:
-                origin = j.shape[0]
-                j = j.reshape((j.shape[0] * j.shape[1], 1))
-                j = np.hstack([j]*(self.kernel_width)).reshape(origin, self.masks.shape[2])
-                j = np.hstack([j]*(self.kernel_height)).reshape(self.masks.shape[2:])
-                imm_result.append(j)
-            output.append(imm_result)
-        return np.multiply(np.array(output), self.masks), None
+        output = np.empty(self.input_shape)
+        bprop_pool_bc01(err, self.masks, output)
+        return output, None
     
     def _update(self, *args):
         pass
