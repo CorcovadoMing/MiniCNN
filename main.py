@@ -1,12 +1,11 @@
 from layers import Conv2d, Linear, Maxpooling, Relu, Softmax, Reshape
+from data import DataProvider
 from net import Net
 import numpy as np
 import time
 from keras.datasets import mnist
 
 if __name__ == '__main__':
-
-
     (x, y), (xt, yt) = mnist.load_data()
 
     def preprocessing(x):
@@ -22,6 +21,7 @@ if __name__ == '__main__':
     #x = np.random.random((n, 1, 28, 28))
     #y = np.random.randint(2, size=(n))
 
+    # Model
     net = Net()
     net.push(Conv2d(5, 5, 1, 6)) # 1x28x28 -> 6x24x24
     net.push(Relu())
@@ -33,26 +33,35 @@ if __name__ == '__main__':
     net.push(Linear(256, 84))
     net.push(Relu())
     net.push(Softmax(84, 10))
-    #net.input(x, y, 'train')
+
+    # Data
+    data = DataProvider()
+    data.train_input(x[:1000], y[:1000])
+    data.test_input(xt[:200], yt[:200])
+    data.batch_size(32)
 
     n = 16
     lr = 0.01
     gamma = 0.9
     for epoch in xrange(50):
         print 'Epoch: ', epoch
+
+        # Training (Mini-batch)
         now = time.time()
-        for i in xrange(0, 1000, n):
-            if x[i:i+n].shape[0] != 0:
-                net.input(x[i:i+n], y[i:i+n], 'train')
-                net.forward()
-                net.backward(lr)
+        for _ in xrange(data.batch_run()):
+            net.input(data.next_batch())
+            net.forward()
+            net.backward(lr)
         t = time.time() - now
+        now = time.time()
         print 'Acc: ', np.array(net.get_record()).mean(), 'Time: ', t
         net.clear_record()
-        net.input(xt[:200], yt[:200], 'train')
+
+        # Testing
+        net.input(data.test())
         net.forward()
         print 'Val: ', net.get_record()[0]
         net.clear_record()
-        lr *= gamma
 
-    #print net.get_record()
+        # Learning rate decay
+        lr *= gamma

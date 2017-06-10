@@ -12,18 +12,12 @@ class Net:
     def pop(self):
         self.layers.pop()
 
-    def input(self, x, y, type):
-        if type == 'train':
-            self.train_x = np.array(x, dtype=np.float)
-            self.train_y = np.array(y, dtype=np.int)
-        elif type == 'test':
-            self.test_x = np.array(x, dtype=np.float)
-            self.test_y = np.array(y, dtype=np.int)
-        else:
-            raise TypeError
+    def input(self, (x, y)):
+        self.x = np.array(x, dtype=np.float)
+        self.y = np.array(y, dtype=np.int)
 
     def forward(self):
-        imm_result = self.train_x
+        imm_result = self.x
         for i in self.layers:
             now = time.time()
             imm_result = i._forward(imm_result)
@@ -34,23 +28,23 @@ class Net:
         # Catrgorical Cross-Entropy
         loss = 0.
         for i in xrange(len(self.output)):
-            if self.output[i][self.train_y[i]] == 0:
+            if self.output[i][self.y[i]] == 0:
                 loss -= 0
             else:
-                loss -= np.log(self.output[i][self.train_y[i]])
+                loss -= np.log(self.output[i][self.y[i]])
         loss /= len(self.output)
 
         # Evaluation
         count = 0.
         for i in xrange(len(self.output)):
-            if self.output[i].argmax() == self.train_y[i]:
+            if self.output[i].argmax() == self.y[i]:
                 count += 1.
-        #print 'Acc: ' + str(count / len(self.train_y)), 'Loss: ' + str(loss)
-        self.record.append(count / len(self.train_y))
+        #print 'Acc: ' + str(count / len(self.y)), 'Loss: ' + str(loss)
+        self.record.append(count / len(self.y))
     
     def backward(self, lr=0.01):
         #print self.output
-        self.output[range(self.output.shape[0]), self.train_y] -= 1
+        self.output[range(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]
         err = self.output
         res = None

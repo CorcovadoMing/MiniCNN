@@ -1,0 +1,35 @@
+import numpy as np
+
+class DataProvider:
+    def __init__(self):
+        self.current = 0
+        self.bs = 0
+    
+    def train_input(self, x, y):
+        # TODO: Need to check the data dimension first
+        self.train_x = np.array(x, dtype=np.float)
+        self.train_y = np.array(y, dtype=np.int)
+    
+    def test_input(self, x, y):
+        # TODO: Need to check the data dimension first
+        self.test_x = np.array(x, dtype=np.float)
+        self.test_y = np.array(y, dtype=np.int)
+    
+    def test(self):
+        return self.test_x, self.test_y
+
+    def batch_size(self, bs):
+        self.bs = bs
+    
+    def batch_run(self):
+        return (int(len(self.train_x)) / int(self.bs)) + 1
+
+    def next_batch(self):
+        start, end = self.current, None
+        if self.current + self.bs > len(self.train_x):
+            end = len(self.train_x)
+            self.current = 0
+        else:
+            end = self.current + self.bs
+            self.current += self.bs
+        return self.train_x[start:end], self.train_y[start:end]
