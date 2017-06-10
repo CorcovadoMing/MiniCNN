@@ -11,76 +11,81 @@ cdef inline int int_min(int a, int b) nogil: return a if a <= b else b
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
-def conv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,
-            np.ndarray[DTYPE_t, ndim=4] filters,
-            np.ndarray[DTYPE_t, ndim=4] convout):
+def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
+            np.ndarray[DTYPE_t, ndim=4] w,
+            np.ndarray[DTYPE_t, ndim=4] out):
 
-    cdef uint n_imgs = imgs.shape[0]
-    cdef uint img_h = convout.shape[2]
-    cdef uint img_w = convout.shape[3]
-    cdef uint n_channels_in = filters.shape[0]
-    cdef uint n_channels_out = filters.shape[1]
-    cdef uint fil_h = filters.shape[2]
-    cdef uint fil_w = filters.shape[3]
+    cdef uint batch_size = data.shape[0]
+    cdef uint out_h = out.shape[2]
+    cdef uint out_w = out.shape[3]
+    cdef uint input_channel = w.shape[0]
+    cdef uint output_channel = w.shape[1]
+    cdef uint w_h = w.shape[2]
+    cdef uint w_w = w.shape[3]
 
-    cdef uint i, c_in, c_out, y, x, y_off, x_off
-    cdef uint img_y, img_x, fil_y, fil_x
+    cdef uint batch_size_, input_ch, output_ch, y, x, y_offset, x_offset
+    cdef uint input_y, input_x, kernel_y, kernel_x
     cdef DTYPE_t value
 
-    for i in range(n_imgs):
-        for c_out in range(n_channels_out):
-            for y in range(img_h):
-                for x in range(img_w):
+    for batch_size_ in range(batch_size):
+        for output_ch in range(output_channel):
+            for y in range(out_h):
+                for x in range(out_w):
                     value = 0.0
-                    for y_off in range(fil_h):
-                        for x_off in range(fil_w):
-                            img_y = <uint>(y + y_off)
-                            img_x = <uint>(x + x_off)
-                            fil_y = <uint>(y_off)
-                            fil_x = <uint>(x_off)
-                            for c_in in range(n_channels_in):
-                                value += imgs[i, c_in, img_y, img_x] * filters[c_in, c_out, fil_y, fil_x]
-                    convout[i, c_out, y, x] = value
+                    for y_offset in range(w_h):
+                        for x_offset in range(w_w):
+                            input_y = <uint>(y + y_offset)
+                            input_x = <uint>(x + x_offset)
+                            kernel_y = <uint>(y_offset)
+                            kernel_x = <uint>(x_offset)
+                            for input_ch in range(input_channel):
+                                value += data[batch_size_, input_ch, input_y, input_x] * \
+                                        w[input_ch, output_ch, kernel_y, kernel_x]
+                    out[batch_size_, output_ch, y, x] = value
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
-def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,
-                    np.ndarray[DTYPE_t, ndim=4] convout_grad,
-                    np.ndarray[DTYPE_t, ndim=4] filters,
-                    np.ndarray[DTYPE_t, ndim=4] imgs_grad,
-                    np.ndarray[DTYPE_t, ndim=4] filters_grad):
+def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
+                    np.ndarray[DTYPE_t, ndim=4] err,
+                    np.ndarray[DTYPE_t, ndim=4] w,
+                    np.ndarray[DTYPE_t, ndim=4] dx,
+                    np.ndarray[DTYPE_t, ndim=4] dw):
 
-    cdef uint n_imgs = convout_grad.shape[0]
-    cdef uint img_h = convout_grad.shape[2]
-    cdef uint img_w = convout_grad.shape[3]
-    cdef uint n_channels_convout = filters.shape[1]
-    cdef uint n_channels_imgs = filters.shape[0]
-    cdef uint fil_h = filters.shape[2]
-    cdef uint fil_w = filters.shape[3]
-    cdef int fil_mid_h = fil_h // 2
-    cdef int fil_mid_w = fil_w // 2
+    cdef uint batch_size = err.shape[0]
+    cdef uint out_h = err.shape[2]
+    cdef uint out_w = err.shape[3]
+    cdef uint input_channel = w.shape[0]
+    cdef uint output_channel = w.shape[1]
+    cdef uint w_h = w.shape[2]
+    cdef uint w_w = w.shape[3]
+    cdef int fil_mid_h = w_h // 2
+    cdef int fil_mid_w = w_w // 2
 
-    cdef uint i, c_convout, c_imgs
-    cdef uint img_y, img_x, fil_y, fil_x
-    cdef DTYPE_t convout_grad_value
-    cdef int y, x, y_off_min, y_off_max, y_off, x_off_min, x_off_max, x_off
+    cdef uint batch_size_, output_ch, input_ch
+    cdef uint input_y, input_x, kernel_y, kernel_x
+    cdef DTYPE_t err_value
+    cdef int y, x, y_offset_min, y_offset_max, y_offset, x_offset_min, x_offset_max, x_offset
 
-    for i in range(n_imgs):
-        for c_convout in range(n_channels_convout):
-            for y in range(img_h):
-                y_off_min = int_max(-y, -fil_mid_h)
-                y_off_max = int_min(img_h-y, fil_mid_h+1)
-                for x in range(img_w):
-                    convout_grad_value = convout_grad[i, c_convout, y, x]
-                    x_off_min = int_max(-x, -fil_mid_w)
-                    x_off_max = int_min(img_w-x, fil_mid_w+1)
-                    for y_off in range(y_off_min, y_off_max):
-                        for x_off in range(x_off_min, x_off_max):
-                            img_y = <uint>(y + y_off)
-                            img_x = <uint>(x + x_off)
-                            fil_y = <uint>(fil_mid_w + y_off)
-                            fil_x = <uint>(fil_mid_h + x_off)
-                            for c_imgs in range(n_channels_imgs):
-                                imgs_grad[i, c_imgs, img_y, img_x] += filters[c_imgs, c_convout, fil_y, fil_x] * convout_grad_value
-                                filters_grad[c_imgs, c_convout, fil_y, fil_x] += imgs[i, c_imgs, img_y, img_x] * convout_grad_value
-    filters_grad[...] /= n_imgs
+    for batch_size_ in range(batch_size):
+        for output_ch in range(output_channel):
+            for y in range(out_h):
+                y_offset_min = int_max(-y, -fil_mid_h)
+                y_offset_max = int_min(out_h-y, fil_mid_h+1)
+                for x in range(out_w):
+                    err_value = err[batch_size_, output_ch, y, x]
+                    x_offset_min = int_max(-x, -fil_mid_w)
+                    x_offset_max = int_min(out_w-x, fil_mid_w+1)
+                    for y_offset in range(y_offset_min, y_offset_max):
+                        for x_offset in range(x_offset_min, x_offset_max):
+                            input_y = <uint>(y + y_offset)
+                            input_x = <uint>(x + x_offset)
+                            kernel_y = <uint>(fil_mid_w + y_offset)
+                            kernel_x = <uint>(fil_mid_h + x_offset)
+                            for input_ch in range(input_channel):
+                                dx[batch_size_, input_ch, input_y, input_x] += \
+                                w[input_ch, output_ch, kernel_y, kernel_x] * err_value
+
+                                dw[input_ch, output_ch, kernel_y, kernel_x] += \
+                                data[batch_size_, input_ch, input_y, input_x] * err_value
+
+    dw[...] /= batch_size

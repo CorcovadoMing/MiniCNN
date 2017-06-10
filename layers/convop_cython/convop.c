@@ -1397,56 +1397,52 @@ static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_RuntimeError;
 static PyObject *__pyx_builtin_ImportError;
-static const char __pyx_k_i[] = "i";
+static const char __pyx_k_w[] = "w";
 static const char __pyx_k_x[] = "x";
 static const char __pyx_k_y[] = "y";
+static const char __pyx_k_dw[] = "dw";
+static const char __pyx_k_dx[] = "dx";
 static const char __pyx_k_np[] = "np";
-static const char __pyx_k_c_in[] = "c_in";
-static const char __pyx_k_imgs[] = "imgs";
+static const char __pyx_k_err[] = "err";
+static const char __pyx_k_out[] = "out";
+static const char __pyx_k_w_h[] = "w_h";
+static const char __pyx_k_w_w[] = "w_w";
+static const char __pyx_k_data[] = "data";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_DTYPE[] = "DTYPE";
-static const char __pyx_k_c_out[] = "c_out";
-static const char __pyx_k_fil_h[] = "fil_h";
-static const char __pyx_k_fil_w[] = "fil_w";
-static const char __pyx_k_fil_x[] = "fil_x";
-static const char __pyx_k_fil_y[] = "fil_y";
 static const char __pyx_k_float[] = "float";
-static const char __pyx_k_img_h[] = "img_h";
-static const char __pyx_k_img_w[] = "img_w";
-static const char __pyx_k_img_x[] = "img_x";
-static const char __pyx_k_img_y[] = "img_y";
 static const char __pyx_k_numpy[] = "numpy";
+static const char __pyx_k_out_h[] = "out_h";
+static const char __pyx_k_out_w[] = "out_w";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_value[] = "value";
-static const char __pyx_k_x_off[] = "x_off";
-static const char __pyx_k_y_off[] = "y_off";
-static const char __pyx_k_c_imgs[] = "c_imgs";
 static const char __pyx_k_convop[] = "convop";
 static const char __pyx_k_import[] = "__import__";
-static const char __pyx_k_n_imgs[] = "n_imgs";
-static const char __pyx_k_convout[] = "convout";
-static const char __pyx_k_filters[] = "filters";
-static const char __pyx_k_c_convout[] = "c_convout";
+static const char __pyx_k_input_x[] = "input_x";
+static const char __pyx_k_input_y[] = "input_y";
+static const char __pyx_k_input_ch[] = "input_ch";
+static const char __pyx_k_kernel_x[] = "kernel_x";
+static const char __pyx_k_kernel_y[] = "kernel_y";
+static const char __pyx_k_x_offset[] = "x_offset";
+static const char __pyx_k_y_offset[] = "y_offset";
 static const char __pyx_k_conv2d_op[] = "conv2d_op";
+static const char __pyx_k_err_value[] = "err_value";
 static const char __pyx_k_fil_mid_h[] = "fil_mid_h";
 static const char __pyx_k_fil_mid_w[] = "fil_mid_w";
-static const char __pyx_k_imgs_grad[] = "imgs_grad";
-static const char __pyx_k_x_off_max[] = "x_off_max";
-static const char __pyx_k_x_off_min[] = "x_off_min";
-static const char __pyx_k_y_off_max[] = "y_off_max";
-static const char __pyx_k_y_off_min[] = "y_off_min";
+static const char __pyx_k_output_ch[] = "output_ch";
 static const char __pyx_k_ValueError[] = "ValueError";
+static const char __pyx_k_batch_size[] = "batch_size";
 static const char __pyx_k_ImportError[] = "ImportError";
 static const char __pyx_k_deconv2d_op[] = "deconv2d_op";
 static const char __pyx_k_RuntimeError[] = "RuntimeError";
-static const char __pyx_k_convout_grad[] = "convout_grad";
-static const char __pyx_k_filters_grad[] = "filters_grad";
-static const char __pyx_k_n_channels_in[] = "n_channels_in";
-static const char __pyx_k_n_channels_out[] = "n_channels_out";
-static const char __pyx_k_n_channels_imgs[] = "n_channels_imgs";
-static const char __pyx_k_convout_grad_value[] = "convout_grad_value";
-static const char __pyx_k_n_channels_convout[] = "n_channels_convout";
+static const char __pyx_k_batch_size_2[] = "batch_size_";
+static const char __pyx_k_x_offset_max[] = "x_offset_max";
+static const char __pyx_k_x_offset_min[] = "x_offset_min";
+static const char __pyx_k_y_offset_max[] = "y_offset_max";
+static const char __pyx_k_y_offset_min[] = "y_offset_min";
+static const char __pyx_k_input_channel[] = "input_channel";
+static const char __pyx_k_output_channel[] = "output_channel";
 static const char __pyx_k_ndarray_is_not_C_contiguous[] = "ndarray is not C contiguous";
 static const char __pyx_k_Users_Ming_Dropbox_Workspace_Pr[] = "/Users/Ming/Dropbox/Workspace/Project/ntnu/minicnn/layers/convop_cython/convop.pyx";
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
@@ -1464,59 +1460,55 @@ static PyObject *__pyx_kp_u_Non_native_byte_order_not_suppor;
 static PyObject *__pyx_n_s_RuntimeError;
 static PyObject *__pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr;
 static PyObject *__pyx_n_s_ValueError;
-static PyObject *__pyx_n_s_c_convout;
-static PyObject *__pyx_n_s_c_imgs;
-static PyObject *__pyx_n_s_c_in;
-static PyObject *__pyx_n_s_c_out;
+static PyObject *__pyx_n_s_batch_size;
+static PyObject *__pyx_n_s_batch_size_2;
 static PyObject *__pyx_n_s_conv2d_op;
 static PyObject *__pyx_n_s_convop;
-static PyObject *__pyx_n_s_convout;
-static PyObject *__pyx_n_s_convout_grad;
-static PyObject *__pyx_n_s_convout_grad_value;
+static PyObject *__pyx_n_s_data;
 static PyObject *__pyx_n_s_deconv2d_op;
-static PyObject *__pyx_n_s_fil_h;
+static PyObject *__pyx_n_s_dw;
+static PyObject *__pyx_n_s_dx;
+static PyObject *__pyx_n_s_err;
+static PyObject *__pyx_n_s_err_value;
 static PyObject *__pyx_n_s_fil_mid_h;
 static PyObject *__pyx_n_s_fil_mid_w;
-static PyObject *__pyx_n_s_fil_w;
-static PyObject *__pyx_n_s_fil_x;
-static PyObject *__pyx_n_s_fil_y;
-static PyObject *__pyx_n_s_filters;
-static PyObject *__pyx_n_s_filters_grad;
 static PyObject *__pyx_n_s_float;
-static PyObject *__pyx_n_s_i;
-static PyObject *__pyx_n_s_img_h;
-static PyObject *__pyx_n_s_img_w;
-static PyObject *__pyx_n_s_img_x;
-static PyObject *__pyx_n_s_img_y;
-static PyObject *__pyx_n_s_imgs;
-static PyObject *__pyx_n_s_imgs_grad;
 static PyObject *__pyx_n_s_import;
+static PyObject *__pyx_n_s_input_ch;
+static PyObject *__pyx_n_s_input_channel;
+static PyObject *__pyx_n_s_input_x;
+static PyObject *__pyx_n_s_input_y;
+static PyObject *__pyx_n_s_kernel_x;
+static PyObject *__pyx_n_s_kernel_y;
 static PyObject *__pyx_n_s_main;
-static PyObject *__pyx_n_s_n_channels_convout;
-static PyObject *__pyx_n_s_n_channels_imgs;
-static PyObject *__pyx_n_s_n_channels_in;
-static PyObject *__pyx_n_s_n_channels_out;
-static PyObject *__pyx_n_s_n_imgs;
 static PyObject *__pyx_kp_u_ndarray_is_not_C_contiguous;
 static PyObject *__pyx_kp_u_ndarray_is_not_Fortran_contiguou;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_kp_s_numpy_core_multiarray_failed_to;
 static PyObject *__pyx_kp_s_numpy_core_umath_failed_to_impor;
+static PyObject *__pyx_n_s_out;
+static PyObject *__pyx_n_s_out_h;
+static PyObject *__pyx_n_s_out_w;
+static PyObject *__pyx_n_s_output_ch;
+static PyObject *__pyx_n_s_output_channel;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
 static PyObject *__pyx_n_s_value;
+static PyObject *__pyx_n_s_w;
+static PyObject *__pyx_n_s_w_h;
+static PyObject *__pyx_n_s_w_w;
 static PyObject *__pyx_n_s_x;
-static PyObject *__pyx_n_s_x_off;
-static PyObject *__pyx_n_s_x_off_max;
-static PyObject *__pyx_n_s_x_off_min;
+static PyObject *__pyx_n_s_x_offset;
+static PyObject *__pyx_n_s_x_offset_max;
+static PyObject *__pyx_n_s_x_offset_min;
 static PyObject *__pyx_n_s_y;
-static PyObject *__pyx_n_s_y_off;
-static PyObject *__pyx_n_s_y_off_max;
-static PyObject *__pyx_n_s_y_off_min;
-static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_imgs, PyArrayObject *__pyx_v_filters, PyArrayObject *__pyx_v_convout); /* proto */
-static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_imgs, PyArrayObject *__pyx_v_convout_grad, PyArrayObject *__pyx_v_filters, PyArrayObject *__pyx_v_imgs_grad, PyArrayObject *__pyx_v_filters_grad); /* proto */
+static PyObject *__pyx_n_s_y_offset;
+static PyObject *__pyx_n_s_y_offset_max;
+static PyObject *__pyx_n_s_y_offset_min;
+static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_data, PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_out); /* proto */
+static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_data, PyArrayObject *__pyx_v_err, PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_dx, PyArrayObject *__pyx_v_dw); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static PyObject *__pyx_tuple_;
@@ -1584,23 +1576,23 @@ static CYTHON_INLINE int __pyx_f_6convop_int_min(int __pyx_v_a, int __pyx_v_b) {
 /* "convop.pyx":14
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *             np.ndarray[DTYPE_t, ndim=4] filters,
- *             np.ndarray[DTYPE_t, ndim=4] convout):
+ * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *             np.ndarray[DTYPE_t, ndim=4] w,
+ *             np.ndarray[DTYPE_t, ndim=4] out):
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyMethodDef __pyx_mdef_6convop_1conv2d_op = {"conv2d_op", (PyCFunction)__pyx_pw_6convop_1conv2d_op, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyArrayObject *__pyx_v_imgs = 0;
-  PyArrayObject *__pyx_v_filters = 0;
-  PyArrayObject *__pyx_v_convout = 0;
+  PyArrayObject *__pyx_v_data = 0;
+  PyArrayObject *__pyx_v_w = 0;
+  PyArrayObject *__pyx_v_out = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("conv2d_op (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_imgs,&__pyx_n_s_filters,&__pyx_n_s_convout,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_data,&__pyx_n_s_w,&__pyx_n_s_out,0};
     PyObject* values[3] = {0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -1615,15 +1607,15 @@ static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__p
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_imgs)) != 0)) kw_args--;
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_data)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         case  1:
-        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_filters)) != 0)) kw_args--;
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
           __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, 1); __PYX_ERR(0, 14, __pyx_L3_error)
         }
         case  2:
-        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_convout)) != 0)) kw_args--;
+        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_out)) != 0)) kw_args--;
         else {
           __Pyx_RaiseArgtupleInvalid("conv2d_op", 1, 3, 3, 2); __PYX_ERR(0, 14, __pyx_L3_error)
         }
@@ -1638,9 +1630,9 @@ static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__p
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_imgs = ((PyArrayObject *)values[0]);
-    __pyx_v_filters = ((PyArrayObject *)values[1]);
-    __pyx_v_convout = ((PyArrayObject *)values[2]);
+    __pyx_v_data = ((PyArrayObject *)values[0]);
+    __pyx_v_w = ((PyArrayObject *)values[1]);
+    __pyx_v_out = ((PyArrayObject *)values[2]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1650,10 +1642,10 @@ static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__p
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_imgs), __pyx_ptype_5numpy_ndarray, 1, "imgs", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_filters), __pyx_ptype_5numpy_ndarray, 1, "filters", 0))) __PYX_ERR(0, 15, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_convout), __pyx_ptype_5numpy_ndarray, 1, "convout", 0))) __PYX_ERR(0, 16, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6convop_conv2d_op(__pyx_self, __pyx_v_imgs, __pyx_v_filters, __pyx_v_convout);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), __pyx_ptype_5numpy_ndarray, 1, "data", 0))) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_out), __pyx_ptype_5numpy_ndarray, 1, "out", 0))) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6convop_conv2d_op(__pyx_self, __pyx_v_data, __pyx_v_w, __pyx_v_out);
 
   /* function exit code */
   goto __pyx_L0;
@@ -1664,32 +1656,32 @@ static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__p
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_imgs, PyArrayObject *__pyx_v_filters, PyArrayObject *__pyx_v_convout) {
-  __pyx_t_6convop_uint __pyx_v_n_imgs;
-  __pyx_t_6convop_uint __pyx_v_img_h;
-  __pyx_t_6convop_uint __pyx_v_img_w;
-  __pyx_t_6convop_uint __pyx_v_n_channels_in;
-  __pyx_t_6convop_uint __pyx_v_n_channels_out;
-  __pyx_t_6convop_uint __pyx_v_fil_h;
-  __pyx_t_6convop_uint __pyx_v_fil_w;
-  __pyx_t_6convop_uint __pyx_v_i;
-  __pyx_t_6convop_uint __pyx_v_c_in;
-  __pyx_t_6convop_uint __pyx_v_c_out;
+static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_data, PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_out) {
+  __pyx_t_6convop_uint __pyx_v_batch_size;
+  __pyx_t_6convop_uint __pyx_v_out_h;
+  __pyx_t_6convop_uint __pyx_v_out_w;
+  __pyx_t_6convop_uint __pyx_v_input_channel;
+  __pyx_t_6convop_uint __pyx_v_output_channel;
+  __pyx_t_6convop_uint __pyx_v_w_h;
+  __pyx_t_6convop_uint __pyx_v_w_w;
+  __pyx_t_6convop_uint __pyx_v_batch_size_;
+  __pyx_t_6convop_uint __pyx_v_input_ch;
+  __pyx_t_6convop_uint __pyx_v_output_ch;
   __pyx_t_6convop_uint __pyx_v_y;
   __pyx_t_6convop_uint __pyx_v_x;
-  __pyx_t_6convop_uint __pyx_v_y_off;
-  __pyx_t_6convop_uint __pyx_v_x_off;
-  __pyx_t_6convop_uint __pyx_v_img_y;
-  __pyx_t_6convop_uint __pyx_v_img_x;
-  __pyx_t_6convop_uint __pyx_v_fil_y;
-  __pyx_t_6convop_uint __pyx_v_fil_x;
+  __pyx_t_6convop_uint __pyx_v_y_offset;
+  __pyx_t_6convop_uint __pyx_v_x_offset;
+  __pyx_t_6convop_uint __pyx_v_input_y;
+  __pyx_t_6convop_uint __pyx_v_input_x;
+  __pyx_t_6convop_uint __pyx_v_kernel_y;
+  __pyx_t_6convop_uint __pyx_v_kernel_x;
   __pyx_t_6convop_DTYPE_t __pyx_v_value;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_convout;
-  __Pyx_Buffer __pyx_pybuffer_convout;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_filters;
-  __Pyx_Buffer __pyx_pybuffer_filters;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_imgs;
-  __Pyx_Buffer __pyx_pybuffer_imgs;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_data;
+  __Pyx_Buffer __pyx_pybuffer_data;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_out;
+  __Pyx_Buffer __pyx_pybuffer_out;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_w;
+  __Pyx_Buffer __pyx_pybuffer_w;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __pyx_t_6convop_uint __pyx_t_1;
@@ -1715,251 +1707,267 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
   __pyx_t_6convop_uint __pyx_t_21;
   __pyx_t_6convop_uint __pyx_t_22;
   __Pyx_RefNannySetupContext("conv2d_op", 0);
-  __pyx_pybuffer_imgs.pybuffer.buf = NULL;
-  __pyx_pybuffer_imgs.refcount = 0;
-  __pyx_pybuffernd_imgs.data = NULL;
-  __pyx_pybuffernd_imgs.rcbuffer = &__pyx_pybuffer_imgs;
-  __pyx_pybuffer_filters.pybuffer.buf = NULL;
-  __pyx_pybuffer_filters.refcount = 0;
-  __pyx_pybuffernd_filters.data = NULL;
-  __pyx_pybuffernd_filters.rcbuffer = &__pyx_pybuffer_filters;
-  __pyx_pybuffer_convout.pybuffer.buf = NULL;
-  __pyx_pybuffer_convout.refcount = 0;
-  __pyx_pybuffernd_convout.data = NULL;
-  __pyx_pybuffernd_convout.rcbuffer = &__pyx_pybuffer_convout;
+  __pyx_pybuffer_data.pybuffer.buf = NULL;
+  __pyx_pybuffer_data.refcount = 0;
+  __pyx_pybuffernd_data.data = NULL;
+  __pyx_pybuffernd_data.rcbuffer = &__pyx_pybuffer_data;
+  __pyx_pybuffer_w.pybuffer.buf = NULL;
+  __pyx_pybuffer_w.refcount = 0;
+  __pyx_pybuffernd_w.data = NULL;
+  __pyx_pybuffernd_w.rcbuffer = &__pyx_pybuffer_w;
+  __pyx_pybuffer_out.pybuffer.buf = NULL;
+  __pyx_pybuffer_out.refcount = 0;
+  __pyx_pybuffernd_out.data = NULL;
+  __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_imgs.rcbuffer->pybuffer, (PyObject*)__pyx_v_imgs, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_v_data, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
   }
-  __pyx_pybuffernd_imgs.diminfo[0].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_imgs.diminfo[0].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_imgs.diminfo[1].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_imgs.diminfo[1].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_imgs.diminfo[2].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_imgs.diminfo[2].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_imgs.diminfo[3].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_imgs.diminfo[3].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_data.diminfo[2].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_data.diminfo[2].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_data.diminfo[3].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_data.diminfo[3].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_filters.rcbuffer->pybuffer, (PyObject*)__pyx_v_filters, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_w.rcbuffer->pybuffer, (PyObject*)__pyx_v_w, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
   }
-  __pyx_pybuffernd_filters.diminfo[0].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_filters.diminfo[0].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_filters.diminfo[1].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_filters.diminfo[1].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_filters.diminfo[2].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_filters.diminfo[2].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_filters.diminfo[3].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_filters.diminfo[3].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_w.diminfo[0].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_w.diminfo[0].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_w.diminfo[1].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_w.diminfo[1].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_w.diminfo[2].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_w.diminfo[2].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_w.diminfo[3].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_w.diminfo[3].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_convout.rcbuffer->pybuffer, (PyObject*)__pyx_v_convout, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_out.rcbuffer->pybuffer, (PyObject*)__pyx_v_out, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 14, __pyx_L1_error)
   }
-  __pyx_pybuffernd_convout.diminfo[0].strides = __pyx_pybuffernd_convout.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_convout.diminfo[0].shape = __pyx_pybuffernd_convout.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_convout.diminfo[1].strides = __pyx_pybuffernd_convout.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_convout.diminfo[1].shape = __pyx_pybuffernd_convout.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_convout.diminfo[2].strides = __pyx_pybuffernd_convout.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_convout.diminfo[2].shape = __pyx_pybuffernd_convout.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_convout.diminfo[3].strides = __pyx_pybuffernd_convout.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_convout.diminfo[3].shape = __pyx_pybuffernd_convout.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_out.diminfo[1].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_out.diminfo[1].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_out.diminfo[2].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_out.diminfo[2].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_out.diminfo[3].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_out.diminfo[3].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[3];
 
   /* "convop.pyx":18
- *             np.ndarray[DTYPE_t, ndim=4] convout):
+ *             np.ndarray[DTYPE_t, ndim=4] out):
  * 
- *     cdef uint n_imgs = imgs.shape[0]             # <<<<<<<<<<<<<<
- *     cdef uint img_h = convout.shape[2]
- *     cdef uint img_w = convout.shape[3]
+ *     cdef uint batch_size = data.shape[0]             # <<<<<<<<<<<<<<
+ *     cdef uint out_h = out.shape[2]
+ *     cdef uint out_w = out.shape[3]
  */
-  __pyx_v_n_imgs = (__pyx_v_imgs->dimensions[0]);
+  __pyx_v_batch_size = (__pyx_v_data->dimensions[0]);
 
   /* "convop.pyx":19
  * 
- *     cdef uint n_imgs = imgs.shape[0]
- *     cdef uint img_h = convout.shape[2]             # <<<<<<<<<<<<<<
- *     cdef uint img_w = convout.shape[3]
- *     cdef uint n_channels_in = filters.shape[0]
+ *     cdef uint batch_size = data.shape[0]
+ *     cdef uint out_h = out.shape[2]             # <<<<<<<<<<<<<<
+ *     cdef uint out_w = out.shape[3]
+ *     cdef uint input_channel = w.shape[0]
  */
-  __pyx_v_img_h = (__pyx_v_convout->dimensions[2]);
+  __pyx_v_out_h = (__pyx_v_out->dimensions[2]);
 
   /* "convop.pyx":20
- *     cdef uint n_imgs = imgs.shape[0]
- *     cdef uint img_h = convout.shape[2]
- *     cdef uint img_w = convout.shape[3]             # <<<<<<<<<<<<<<
- *     cdef uint n_channels_in = filters.shape[0]
- *     cdef uint n_channels_out = filters.shape[1]
+ *     cdef uint batch_size = data.shape[0]
+ *     cdef uint out_h = out.shape[2]
+ *     cdef uint out_w = out.shape[3]             # <<<<<<<<<<<<<<
+ *     cdef uint input_channel = w.shape[0]
+ *     cdef uint output_channel = w.shape[1]
  */
-  __pyx_v_img_w = (__pyx_v_convout->dimensions[3]);
+  __pyx_v_out_w = (__pyx_v_out->dimensions[3]);
 
   /* "convop.pyx":21
- *     cdef uint img_h = convout.shape[2]
- *     cdef uint img_w = convout.shape[3]
- *     cdef uint n_channels_in = filters.shape[0]             # <<<<<<<<<<<<<<
- *     cdef uint n_channels_out = filters.shape[1]
- *     cdef uint fil_h = filters.shape[2]
+ *     cdef uint out_h = out.shape[2]
+ *     cdef uint out_w = out.shape[3]
+ *     cdef uint input_channel = w.shape[0]             # <<<<<<<<<<<<<<
+ *     cdef uint output_channel = w.shape[1]
+ *     cdef uint w_h = w.shape[2]
  */
-  __pyx_v_n_channels_in = (__pyx_v_filters->dimensions[0]);
+  __pyx_v_input_channel = (__pyx_v_w->dimensions[0]);
 
   /* "convop.pyx":22
- *     cdef uint img_w = convout.shape[3]
- *     cdef uint n_channels_in = filters.shape[0]
- *     cdef uint n_channels_out = filters.shape[1]             # <<<<<<<<<<<<<<
- *     cdef uint fil_h = filters.shape[2]
- *     cdef uint fil_w = filters.shape[3]
+ *     cdef uint out_w = out.shape[3]
+ *     cdef uint input_channel = w.shape[0]
+ *     cdef uint output_channel = w.shape[1]             # <<<<<<<<<<<<<<
+ *     cdef uint w_h = w.shape[2]
+ *     cdef uint w_w = w.shape[3]
  */
-  __pyx_v_n_channels_out = (__pyx_v_filters->dimensions[1]);
+  __pyx_v_output_channel = (__pyx_v_w->dimensions[1]);
 
   /* "convop.pyx":23
- *     cdef uint n_channels_in = filters.shape[0]
- *     cdef uint n_channels_out = filters.shape[1]
- *     cdef uint fil_h = filters.shape[2]             # <<<<<<<<<<<<<<
- *     cdef uint fil_w = filters.shape[3]
+ *     cdef uint input_channel = w.shape[0]
+ *     cdef uint output_channel = w.shape[1]
+ *     cdef uint w_h = w.shape[2]             # <<<<<<<<<<<<<<
+ *     cdef uint w_w = w.shape[3]
  * 
  */
-  __pyx_v_fil_h = (__pyx_v_filters->dimensions[2]);
+  __pyx_v_w_h = (__pyx_v_w->dimensions[2]);
 
   /* "convop.pyx":24
- *     cdef uint n_channels_out = filters.shape[1]
- *     cdef uint fil_h = filters.shape[2]
- *     cdef uint fil_w = filters.shape[3]             # <<<<<<<<<<<<<<
+ *     cdef uint output_channel = w.shape[1]
+ *     cdef uint w_h = w.shape[2]
+ *     cdef uint w_w = w.shape[3]             # <<<<<<<<<<<<<<
  * 
- *     cdef uint i, c_in, c_out, y, x, y_off, x_off
+ *     cdef uint batch_size_, input_ch, output_ch, y, x, y_offset, x_offset
  */
-  __pyx_v_fil_w = (__pyx_v_filters->dimensions[3]);
+  __pyx_v_w_w = (__pyx_v_w->dimensions[3]);
 
   /* "convop.pyx":30
  *     cdef DTYPE_t value
  * 
- *     for i in range(n_imgs):             # <<<<<<<<<<<<<<
- *         for c_out in range(n_channels_out):
- *             for y in range(img_h):
+ *     for batch_size_ in range(batch_size):             # <<<<<<<<<<<<<<
+ *         for output_ch in range(output_channel):
+ *             for y in range(out_h):
  */
-  __pyx_t_1 = __pyx_v_n_imgs;
+  __pyx_t_1 = __pyx_v_batch_size;
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
-    __pyx_v_i = __pyx_t_2;
+    __pyx_v_batch_size_ = __pyx_t_2;
 
     /* "convop.pyx":31
  * 
- *     for i in range(n_imgs):
- *         for c_out in range(n_channels_out):             # <<<<<<<<<<<<<<
- *             for y in range(img_h):
- *                 for x in range(img_w):
+ *     for batch_size_ in range(batch_size):
+ *         for output_ch in range(output_channel):             # <<<<<<<<<<<<<<
+ *             for y in range(out_h):
+ *                 for x in range(out_w):
  */
-    __pyx_t_3 = __pyx_v_n_channels_out;
+    __pyx_t_3 = __pyx_v_output_channel;
     for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-      __pyx_v_c_out = __pyx_t_4;
+      __pyx_v_output_ch = __pyx_t_4;
 
       /* "convop.pyx":32
- *     for i in range(n_imgs):
- *         for c_out in range(n_channels_out):
- *             for y in range(img_h):             # <<<<<<<<<<<<<<
- *                 for x in range(img_w):
+ *     for batch_size_ in range(batch_size):
+ *         for output_ch in range(output_channel):
+ *             for y in range(out_h):             # <<<<<<<<<<<<<<
+ *                 for x in range(out_w):
  *                     value = 0.0
  */
-      __pyx_t_5 = __pyx_v_img_h;
+      __pyx_t_5 = __pyx_v_out_h;
       for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
         __pyx_v_y = __pyx_t_6;
 
         /* "convop.pyx":33
- *         for c_out in range(n_channels_out):
- *             for y in range(img_h):
- *                 for x in range(img_w):             # <<<<<<<<<<<<<<
+ *         for output_ch in range(output_channel):
+ *             for y in range(out_h):
+ *                 for x in range(out_w):             # <<<<<<<<<<<<<<
  *                     value = 0.0
- *                     for y_off in range(fil_h):
+ *                     for y_offset in range(w_h):
  */
-        __pyx_t_7 = __pyx_v_img_w;
+        __pyx_t_7 = __pyx_v_out_w;
         for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
 
           /* "convop.pyx":34
- *             for y in range(img_h):
- *                 for x in range(img_w):
+ *             for y in range(out_h):
+ *                 for x in range(out_w):
  *                     value = 0.0             # <<<<<<<<<<<<<<
- *                     for y_off in range(fil_h):
- *                         for x_off in range(fil_w):
+ *                     for y_offset in range(w_h):
+ *                         for x_offset in range(w_w):
  */
           __pyx_v_value = 0.0;
 
           /* "convop.pyx":35
- *                 for x in range(img_w):
+ *                 for x in range(out_w):
  *                     value = 0.0
- *                     for y_off in range(fil_h):             # <<<<<<<<<<<<<<
- *                         for x_off in range(fil_w):
- *                             img_y = <uint>(y + y_off)
+ *                     for y_offset in range(w_h):             # <<<<<<<<<<<<<<
+ *                         for x_offset in range(w_w):
+ *                             input_y = <uint>(y + y_offset)
  */
-          __pyx_t_9 = __pyx_v_fil_h;
+          __pyx_t_9 = __pyx_v_w_h;
           for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
-            __pyx_v_y_off = __pyx_t_10;
+            __pyx_v_y_offset = __pyx_t_10;
 
             /* "convop.pyx":36
  *                     value = 0.0
- *                     for y_off in range(fil_h):
- *                         for x_off in range(fil_w):             # <<<<<<<<<<<<<<
- *                             img_y = <uint>(y + y_off)
- *                             img_x = <uint>(x + x_off)
+ *                     for y_offset in range(w_h):
+ *                         for x_offset in range(w_w):             # <<<<<<<<<<<<<<
+ *                             input_y = <uint>(y + y_offset)
+ *                             input_x = <uint>(x + x_offset)
  */
-            __pyx_t_11 = __pyx_v_fil_w;
+            __pyx_t_11 = __pyx_v_w_w;
             for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
-              __pyx_v_x_off = __pyx_t_12;
+              __pyx_v_x_offset = __pyx_t_12;
 
               /* "convop.pyx":37
- *                     for y_off in range(fil_h):
- *                         for x_off in range(fil_w):
- *                             img_y = <uint>(y + y_off)             # <<<<<<<<<<<<<<
- *                             img_x = <uint>(x + x_off)
- *                             fil_y = <uint>(y_off)
+ *                     for y_offset in range(w_h):
+ *                         for x_offset in range(w_w):
+ *                             input_y = <uint>(y + y_offset)             # <<<<<<<<<<<<<<
+ *                             input_x = <uint>(x + x_offset)
+ *                             kernel_y = <uint>(y_offset)
  */
-              __pyx_v_img_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_off));
+              __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
 
               /* "convop.pyx":38
- *                         for x_off in range(fil_w):
- *                             img_y = <uint>(y + y_off)
- *                             img_x = <uint>(x + x_off)             # <<<<<<<<<<<<<<
- *                             fil_y = <uint>(y_off)
- *                             fil_x = <uint>(x_off)
+ *                         for x_offset in range(w_w):
+ *                             input_y = <uint>(y + y_offset)
+ *                             input_x = <uint>(x + x_offset)             # <<<<<<<<<<<<<<
+ *                             kernel_y = <uint>(y_offset)
+ *                             kernel_x = <uint>(x_offset)
  */
-              __pyx_v_img_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_off));
+              __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
 
               /* "convop.pyx":39
- *                             img_y = <uint>(y + y_off)
- *                             img_x = <uint>(x + x_off)
- *                             fil_y = <uint>(y_off)             # <<<<<<<<<<<<<<
- *                             fil_x = <uint>(x_off)
- *                             for c_in in range(n_channels_in):
+ *                             input_y = <uint>(y + y_offset)
+ *                             input_x = <uint>(x + x_offset)
+ *                             kernel_y = <uint>(y_offset)             # <<<<<<<<<<<<<<
+ *                             kernel_x = <uint>(x_offset)
+ *                             for input_ch in range(input_channel):
  */
-              __pyx_v_fil_y = ((__pyx_t_6convop_uint)__pyx_v_y_off);
+              __pyx_v_kernel_y = ((__pyx_t_6convop_uint)__pyx_v_y_offset);
 
               /* "convop.pyx":40
- *                             img_x = <uint>(x + x_off)
- *                             fil_y = <uint>(y_off)
- *                             fil_x = <uint>(x_off)             # <<<<<<<<<<<<<<
- *                             for c_in in range(n_channels_in):
- *                                 value += imgs[i, c_in, img_y, img_x] * filters[c_in, c_out, fil_y, fil_x]
+ *                             input_x = <uint>(x + x_offset)
+ *                             kernel_y = <uint>(y_offset)
+ *                             kernel_x = <uint>(x_offset)             # <<<<<<<<<<<<<<
+ *                             for input_ch in range(input_channel):
+ *                                 value += data[batch_size_, input_ch, input_y, input_x] * \
  */
-              __pyx_v_fil_x = ((__pyx_t_6convop_uint)__pyx_v_x_off);
+              __pyx_v_kernel_x = ((__pyx_t_6convop_uint)__pyx_v_x_offset);
 
               /* "convop.pyx":41
- *                             fil_y = <uint>(y_off)
- *                             fil_x = <uint>(x_off)
- *                             for c_in in range(n_channels_in):             # <<<<<<<<<<<<<<
- *                                 value += imgs[i, c_in, img_y, img_x] * filters[c_in, c_out, fil_y, fil_x]
- *                     convout[i, c_out, y, x] = value
+ *                             kernel_y = <uint>(y_offset)
+ *                             kernel_x = <uint>(x_offset)
+ *                             for input_ch in range(input_channel):             # <<<<<<<<<<<<<<
+ *                                 value += data[batch_size_, input_ch, input_y, input_x] * \
+ *                                         w[input_ch, output_ch, kernel_y, kernel_x]
  */
-              __pyx_t_13 = __pyx_v_n_channels_in;
+              __pyx_t_13 = __pyx_v_input_channel;
               for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
-                __pyx_v_c_in = __pyx_t_14;
+                __pyx_v_input_ch = __pyx_t_14;
 
                 /* "convop.pyx":42
- *                             fil_x = <uint>(x_off)
- *                             for c_in in range(n_channels_in):
- *                                 value += imgs[i, c_in, img_y, img_x] * filters[c_in, c_out, fil_y, fil_x]             # <<<<<<<<<<<<<<
- *                     convout[i, c_out, y, x] = value
+ *                             kernel_x = <uint>(x_offset)
+ *                             for input_ch in range(input_channel):
+ *                                 value += data[batch_size_, input_ch, input_y, input_x] * \             # <<<<<<<<<<<<<<
+ *                                         w[input_ch, output_ch, kernel_y, kernel_x]
+ *                     out[batch_size_, output_ch, y, x] = value
+ */
+                __pyx_t_15 = __pyx_v_batch_size_;
+                __pyx_t_16 = __pyx_v_input_ch;
+                __pyx_t_17 = __pyx_v_input_y;
+                __pyx_t_18 = __pyx_v_input_x;
+
+                /* "convop.pyx":43
+ *                             for input_ch in range(input_channel):
+ *                                 value += data[batch_size_, input_ch, input_y, input_x] * \
+ *                                         w[input_ch, output_ch, kernel_y, kernel_x]             # <<<<<<<<<<<<<<
+ *                     out[batch_size_, output_ch, y, x] = value
  * 
  */
-                __pyx_t_15 = __pyx_v_i;
-                __pyx_t_16 = __pyx_v_c_in;
-                __pyx_t_17 = __pyx_v_img_y;
-                __pyx_t_18 = __pyx_v_img_x;
-                __pyx_t_19 = __pyx_v_c_in;
-                __pyx_t_20 = __pyx_v_c_out;
-                __pyx_t_21 = __pyx_v_fil_y;
-                __pyx_t_22 = __pyx_v_fil_x;
-                __pyx_v_value = (__pyx_v_value + ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_imgs.rcbuffer->pybuffer.buf, __pyx_t_15, __pyx_pybuffernd_imgs.diminfo[0].strides, __pyx_t_16, __pyx_pybuffernd_imgs.diminfo[1].strides, __pyx_t_17, __pyx_pybuffernd_imgs.diminfo[2].strides, __pyx_t_18, __pyx_pybuffernd_imgs.diminfo[3].strides)) * (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_filters.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_filters.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_filters.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_filters.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_filters.diminfo[3].strides))));
+                __pyx_t_19 = __pyx_v_input_ch;
+                __pyx_t_20 = __pyx_v_output_ch;
+                __pyx_t_21 = __pyx_v_kernel_y;
+                __pyx_t_22 = __pyx_v_kernel_x;
+
+                /* "convop.pyx":42
+ *                             kernel_x = <uint>(x_offset)
+ *                             for input_ch in range(input_channel):
+ *                                 value += data[batch_size_, input_ch, input_y, input_x] * \             # <<<<<<<<<<<<<<
+ *                                         w[input_ch, output_ch, kernel_y, kernel_x]
+ *                     out[batch_size_, output_ch, y, x] = value
+ */
+                __pyx_v_value = (__pyx_v_value + ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_data.rcbuffer->pybuffer.buf, __pyx_t_15, __pyx_pybuffernd_data.diminfo[0].strides, __pyx_t_16, __pyx_pybuffernd_data.diminfo[1].strides, __pyx_t_17, __pyx_pybuffernd_data.diminfo[2].strides, __pyx_t_18, __pyx_pybuffernd_data.diminfo[3].strides)) * (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_w.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_w.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_w.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_w.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_w.diminfo[3].strides))));
               }
             }
           }
 
-          /* "convop.pyx":43
- *                             for c_in in range(n_channels_in):
- *                                 value += imgs[i, c_in, img_y, img_x] * filters[c_in, c_out, fil_y, fil_x]
- *                     convout[i, c_out, y, x] = value             # <<<<<<<<<<<<<<
+          /* "convop.pyx":44
+ *                                 value += data[batch_size_, input_ch, input_y, input_x] * \
+ *                                         w[input_ch, output_ch, kernel_y, kernel_x]
+ *                     out[batch_size_, output_ch, y, x] = value             # <<<<<<<<<<<<<<
  * 
  * @cython.boundscheck(False)
  */
-          __pyx_t_9 = __pyx_v_i;
-          __pyx_t_10 = __pyx_v_c_out;
+          __pyx_t_9 = __pyx_v_batch_size_;
+          __pyx_t_10 = __pyx_v_output_ch;
           __pyx_t_11 = __pyx_v_y;
           __pyx_t_12 = __pyx_v_x;
-          *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_convout.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_convout.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_convout.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_convout.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_convout.diminfo[3].strides) = __pyx_v_value;
+          *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_out.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_out.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_out.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_out.diminfo[3].strides) = __pyx_v_value;
         }
       }
     }
@@ -1968,9 +1976,9 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
   /* "convop.pyx":14
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *             np.ndarray[DTYPE_t, ndim=4] filters,
- *             np.ndarray[DTYPE_t, ndim=4] convout):
+ * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *             np.ndarray[DTYPE_t, ndim=4] w,
+ *             np.ndarray[DTYPE_t, ndim=4] out):
  */
 
   /* function exit code */
@@ -1981,45 +1989,45 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
     __Pyx_PyThreadState_declare
     __Pyx_PyThreadState_assign
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_convout.rcbuffer->pybuffer);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_filters.rcbuffer->pybuffer);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_imgs.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_data.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_out.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_w.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
   __Pyx_AddTraceback("convop.conv2d_op", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_convout.rcbuffer->pybuffer);
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_filters.rcbuffer->pybuffer);
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_imgs.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_data.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_out.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_w.rcbuffer->pybuffer);
   __pyx_L2:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "convop.pyx":47
+/* "convop.pyx":48
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *                     np.ndarray[DTYPE_t, ndim=4] convout_grad,
- *                     np.ndarray[DTYPE_t, ndim=4] filters,
+ * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[DTYPE_t, ndim=4] err,
+ *                     np.ndarray[DTYPE_t, ndim=4] w,
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyMethodDef __pyx_mdef_6convop_3deconv2d_op = {"deconv2d_op", (PyCFunction)__pyx_pw_6convop_3deconv2d_op, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyArrayObject *__pyx_v_imgs = 0;
-  PyArrayObject *__pyx_v_convout_grad = 0;
-  PyArrayObject *__pyx_v_filters = 0;
-  PyArrayObject *__pyx_v_imgs_grad = 0;
-  PyArrayObject *__pyx_v_filters_grad = 0;
+  PyArrayObject *__pyx_v_data = 0;
+  PyArrayObject *__pyx_v_err = 0;
+  PyArrayObject *__pyx_v_w = 0;
+  PyArrayObject *__pyx_v_dx = 0;
+  PyArrayObject *__pyx_v_dw = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("deconv2d_op (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_imgs,&__pyx_n_s_convout_grad,&__pyx_n_s_filters,&__pyx_n_s_imgs_grad,&__pyx_n_s_filters_grad,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_data,&__pyx_n_s_err,&__pyx_n_s_w,&__pyx_n_s_dx,&__pyx_n_s_dw,0};
     PyObject* values[5] = {0,0,0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -2036,31 +2044,31 @@ static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *_
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_imgs)) != 0)) kw_args--;
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_data)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         case  1:
-        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_convout_grad)) != 0)) kw_args--;
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_err)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 1); __PYX_ERR(0, 47, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 1); __PYX_ERR(0, 48, __pyx_L3_error)
         }
         case  2:
-        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_filters)) != 0)) kw_args--;
+        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_w)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 2); __PYX_ERR(0, 47, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 2); __PYX_ERR(0, 48, __pyx_L3_error)
         }
         case  3:
-        if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_imgs_grad)) != 0)) kw_args--;
+        if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_dx)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 3); __PYX_ERR(0, 47, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 3); __PYX_ERR(0, 48, __pyx_L3_error)
         }
         case  4:
-        if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_filters_grad)) != 0)) kw_args--;
+        if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_dw)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 4); __PYX_ERR(0, 47, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, 4); __PYX_ERR(0, 48, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "deconv2d_op") < 0)) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "deconv2d_op") < 0)) __PYX_ERR(0, 48, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -2071,26 +2079,26 @@ static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *_
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_imgs = ((PyArrayObject *)values[0]);
-    __pyx_v_convout_grad = ((PyArrayObject *)values[1]);
-    __pyx_v_filters = ((PyArrayObject *)values[2]);
-    __pyx_v_imgs_grad = ((PyArrayObject *)values[3]);
-    __pyx_v_filters_grad = ((PyArrayObject *)values[4]);
+    __pyx_v_data = ((PyArrayObject *)values[0]);
+    __pyx_v_err = ((PyArrayObject *)values[1]);
+    __pyx_v_w = ((PyArrayObject *)values[2]);
+    __pyx_v_dx = ((PyArrayObject *)values[3]);
+    __pyx_v_dw = ((PyArrayObject *)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 47, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("deconv2d_op", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 48, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("convop.deconv2d_op", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_imgs), __pyx_ptype_5numpy_ndarray, 1, "imgs", 0))) __PYX_ERR(0, 47, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_convout_grad), __pyx_ptype_5numpy_ndarray, 1, "convout_grad", 0))) __PYX_ERR(0, 48, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_filters), __pyx_ptype_5numpy_ndarray, 1, "filters", 0))) __PYX_ERR(0, 49, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_imgs_grad), __pyx_ptype_5numpy_ndarray, 1, "imgs_grad", 0))) __PYX_ERR(0, 50, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_filters_grad), __pyx_ptype_5numpy_ndarray, 1, "filters_grad", 0))) __PYX_ERR(0, 51, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6convop_2deconv2d_op(__pyx_self, __pyx_v_imgs, __pyx_v_convout_grad, __pyx_v_filters, __pyx_v_imgs_grad, __pyx_v_filters_grad);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), __pyx_ptype_5numpy_ndarray, 1, "data", 0))) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_err), __pyx_ptype_5numpy_ndarray, 1, "err", 0))) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) __PYX_ERR(0, 50, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dx), __pyx_ptype_5numpy_ndarray, 1, "dx", 0))) __PYX_ERR(0, 51, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dw), __pyx_ptype_5numpy_ndarray, 1, "dw", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6convop_2deconv2d_op(__pyx_self, __pyx_v_data, __pyx_v_err, __pyx_v_w, __pyx_v_dx, __pyx_v_dw);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2101,42 +2109,42 @@ static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_imgs, PyArrayObject *__pyx_v_convout_grad, PyArrayObject *__pyx_v_filters, PyArrayObject *__pyx_v_imgs_grad, PyArrayObject *__pyx_v_filters_grad) {
-  __pyx_t_6convop_uint __pyx_v_n_imgs;
-  __pyx_t_6convop_uint __pyx_v_img_h;
-  __pyx_t_6convop_uint __pyx_v_img_w;
-  __pyx_t_6convop_uint __pyx_v_n_channels_convout;
-  __pyx_t_6convop_uint __pyx_v_n_channels_imgs;
-  __pyx_t_6convop_uint __pyx_v_fil_h;
-  __pyx_t_6convop_uint __pyx_v_fil_w;
+static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_data, PyArrayObject *__pyx_v_err, PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_dx, PyArrayObject *__pyx_v_dw) {
+  __pyx_t_6convop_uint __pyx_v_batch_size;
+  __pyx_t_6convop_uint __pyx_v_out_h;
+  __pyx_t_6convop_uint __pyx_v_out_w;
+  __pyx_t_6convop_uint __pyx_v_input_channel;
+  __pyx_t_6convop_uint __pyx_v_output_channel;
+  __pyx_t_6convop_uint __pyx_v_w_h;
+  __pyx_t_6convop_uint __pyx_v_w_w;
   int __pyx_v_fil_mid_h;
   int __pyx_v_fil_mid_w;
-  __pyx_t_6convop_uint __pyx_v_i;
-  __pyx_t_6convop_uint __pyx_v_c_convout;
-  __pyx_t_6convop_uint __pyx_v_c_imgs;
-  __pyx_t_6convop_uint __pyx_v_img_y;
-  __pyx_t_6convop_uint __pyx_v_img_x;
-  __pyx_t_6convop_uint __pyx_v_fil_y;
-  __pyx_t_6convop_uint __pyx_v_fil_x;
-  __pyx_t_6convop_DTYPE_t __pyx_v_convout_grad_value;
+  __pyx_t_6convop_uint __pyx_v_batch_size_;
+  __pyx_t_6convop_uint __pyx_v_output_ch;
+  __pyx_t_6convop_uint __pyx_v_input_ch;
+  __pyx_t_6convop_uint __pyx_v_input_y;
+  __pyx_t_6convop_uint __pyx_v_input_x;
+  __pyx_t_6convop_uint __pyx_v_kernel_y;
+  __pyx_t_6convop_uint __pyx_v_kernel_x;
+  __pyx_t_6convop_DTYPE_t __pyx_v_err_value;
   int __pyx_v_y;
   int __pyx_v_x;
-  int __pyx_v_y_off_min;
-  int __pyx_v_y_off_max;
-  int __pyx_v_y_off;
-  int __pyx_v_x_off_min;
-  int __pyx_v_x_off_max;
-  int __pyx_v_x_off;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_convout_grad;
-  __Pyx_Buffer __pyx_pybuffer_convout_grad;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_filters;
-  __Pyx_Buffer __pyx_pybuffer_filters;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_filters_grad;
-  __Pyx_Buffer __pyx_pybuffer_filters_grad;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_imgs;
-  __Pyx_Buffer __pyx_pybuffer_imgs;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_imgs_grad;
-  __Pyx_Buffer __pyx_pybuffer_imgs_grad;
+  int __pyx_v_y_offset_min;
+  int __pyx_v_y_offset_max;
+  int __pyx_v_y_offset;
+  int __pyx_v_x_offset_min;
+  int __pyx_v_x_offset_max;
+  int __pyx_v_x_offset;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_data;
+  __Pyx_Buffer __pyx_pybuffer_data;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_dw;
+  __Pyx_Buffer __pyx_pybuffer_dw;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_dx;
+  __Pyx_Buffer __pyx_pybuffer_dx;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_err;
+  __Pyx_Buffer __pyx_pybuffer_err;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_w;
+  __Pyx_Buffer __pyx_pybuffer_w;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __pyx_t_6convop_uint __pyx_t_1;
@@ -2178,327 +2186,344 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   PyObject *__pyx_t_37 = NULL;
   PyObject *__pyx_t_38 = NULL;
   __Pyx_RefNannySetupContext("deconv2d_op", 0);
-  __pyx_pybuffer_imgs.pybuffer.buf = NULL;
-  __pyx_pybuffer_imgs.refcount = 0;
-  __pyx_pybuffernd_imgs.data = NULL;
-  __pyx_pybuffernd_imgs.rcbuffer = &__pyx_pybuffer_imgs;
-  __pyx_pybuffer_convout_grad.pybuffer.buf = NULL;
-  __pyx_pybuffer_convout_grad.refcount = 0;
-  __pyx_pybuffernd_convout_grad.data = NULL;
-  __pyx_pybuffernd_convout_grad.rcbuffer = &__pyx_pybuffer_convout_grad;
-  __pyx_pybuffer_filters.pybuffer.buf = NULL;
-  __pyx_pybuffer_filters.refcount = 0;
-  __pyx_pybuffernd_filters.data = NULL;
-  __pyx_pybuffernd_filters.rcbuffer = &__pyx_pybuffer_filters;
-  __pyx_pybuffer_imgs_grad.pybuffer.buf = NULL;
-  __pyx_pybuffer_imgs_grad.refcount = 0;
-  __pyx_pybuffernd_imgs_grad.data = NULL;
-  __pyx_pybuffernd_imgs_grad.rcbuffer = &__pyx_pybuffer_imgs_grad;
-  __pyx_pybuffer_filters_grad.pybuffer.buf = NULL;
-  __pyx_pybuffer_filters_grad.refcount = 0;
-  __pyx_pybuffernd_filters_grad.data = NULL;
-  __pyx_pybuffernd_filters_grad.rcbuffer = &__pyx_pybuffer_filters_grad;
+  __pyx_pybuffer_data.pybuffer.buf = NULL;
+  __pyx_pybuffer_data.refcount = 0;
+  __pyx_pybuffernd_data.data = NULL;
+  __pyx_pybuffernd_data.rcbuffer = &__pyx_pybuffer_data;
+  __pyx_pybuffer_err.pybuffer.buf = NULL;
+  __pyx_pybuffer_err.refcount = 0;
+  __pyx_pybuffernd_err.data = NULL;
+  __pyx_pybuffernd_err.rcbuffer = &__pyx_pybuffer_err;
+  __pyx_pybuffer_w.pybuffer.buf = NULL;
+  __pyx_pybuffer_w.refcount = 0;
+  __pyx_pybuffernd_w.data = NULL;
+  __pyx_pybuffernd_w.rcbuffer = &__pyx_pybuffer_w;
+  __pyx_pybuffer_dx.pybuffer.buf = NULL;
+  __pyx_pybuffer_dx.refcount = 0;
+  __pyx_pybuffernd_dx.data = NULL;
+  __pyx_pybuffernd_dx.rcbuffer = &__pyx_pybuffer_dx;
+  __pyx_pybuffer_dw.pybuffer.buf = NULL;
+  __pyx_pybuffer_dw.refcount = 0;
+  __pyx_pybuffernd_dw.data = NULL;
+  __pyx_pybuffernd_dw.rcbuffer = &__pyx_pybuffer_dw;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_imgs.rcbuffer->pybuffer, (PyObject*)__pyx_v_imgs, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_v_data, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
   }
-  __pyx_pybuffernd_imgs.diminfo[0].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_imgs.diminfo[0].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_imgs.diminfo[1].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_imgs.diminfo[1].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_imgs.diminfo[2].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_imgs.diminfo[2].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_imgs.diminfo[3].strides = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_imgs.diminfo[3].shape = __pyx_pybuffernd_imgs.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_data.diminfo[2].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_data.diminfo[2].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_data.diminfo[3].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_data.diminfo[3].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_convout_grad.rcbuffer->pybuffer, (PyObject*)__pyx_v_convout_grad, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_err.rcbuffer->pybuffer, (PyObject*)__pyx_v_err, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
   }
-  __pyx_pybuffernd_convout_grad.diminfo[0].strides = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_convout_grad.diminfo[0].shape = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_convout_grad.diminfo[1].strides = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_convout_grad.diminfo[1].shape = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_convout_grad.diminfo[2].strides = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_convout_grad.diminfo[2].shape = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_convout_grad.diminfo[3].strides = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_convout_grad.diminfo[3].shape = __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_err.diminfo[0].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_err.diminfo[0].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_err.diminfo[1].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_err.diminfo[1].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_err.diminfo[2].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_err.diminfo[2].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_err.diminfo[3].strides = __pyx_pybuffernd_err.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_err.diminfo[3].shape = __pyx_pybuffernd_err.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_filters.rcbuffer->pybuffer, (PyObject*)__pyx_v_filters, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_w.rcbuffer->pybuffer, (PyObject*)__pyx_v_w, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
   }
-  __pyx_pybuffernd_filters.diminfo[0].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_filters.diminfo[0].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_filters.diminfo[1].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_filters.diminfo[1].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_filters.diminfo[2].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_filters.diminfo[2].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_filters.diminfo[3].strides = __pyx_pybuffernd_filters.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_filters.diminfo[3].shape = __pyx_pybuffernd_filters.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_w.diminfo[0].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_w.diminfo[0].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_w.diminfo[1].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_w.diminfo[1].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_w.diminfo[2].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_w.diminfo[2].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_w.diminfo[3].strides = __pyx_pybuffernd_w.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_w.diminfo[3].shape = __pyx_pybuffernd_w.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer, (PyObject*)__pyx_v_imgs_grad, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dx.rcbuffer->pybuffer, (PyObject*)__pyx_v_dx, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
   }
-  __pyx_pybuffernd_imgs_grad.diminfo[0].strides = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_imgs_grad.diminfo[0].shape = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_imgs_grad.diminfo[1].strides = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_imgs_grad.diminfo[1].shape = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_imgs_grad.diminfo[2].strides = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_imgs_grad.diminfo[2].shape = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_imgs_grad.diminfo[3].strides = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_imgs_grad.diminfo[3].shape = __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.shape[3];
+  __pyx_pybuffernd_dx.diminfo[0].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dx.diminfo[0].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_dx.diminfo[1].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_dx.diminfo[1].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_dx.diminfo[2].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_dx.diminfo[2].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_dx.diminfo[3].strides = __pyx_pybuffernd_dx.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_dx.diminfo[3].shape = __pyx_pybuffernd_dx.rcbuffer->pybuffer.shape[3];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_filters_grad.rcbuffer->pybuffer, (PyObject*)__pyx_v_filters_grad, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dw.rcbuffer->pybuffer, (PyObject*)__pyx_v_dw, &__Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 4, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
   }
-  __pyx_pybuffernd_filters_grad.diminfo[0].strides = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_filters_grad.diminfo[0].shape = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_filters_grad.diminfo[1].strides = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_filters_grad.diminfo[1].shape = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_filters_grad.diminfo[2].strides = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_filters_grad.diminfo[2].shape = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_filters_grad.diminfo[3].strides = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_filters_grad.diminfo[3].shape = __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.shape[3];
-
-  /* "convop.pyx":53
- *                     np.ndarray[DTYPE_t, ndim=4] filters_grad):
- * 
- *     cdef uint n_imgs = convout_grad.shape[0]             # <<<<<<<<<<<<<<
- *     cdef uint img_h = convout_grad.shape[2]
- *     cdef uint img_w = convout_grad.shape[3]
- */
-  __pyx_v_n_imgs = (__pyx_v_convout_grad->dimensions[0]);
+  __pyx_pybuffernd_dw.diminfo[0].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dw.diminfo[0].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_dw.diminfo[1].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_dw.diminfo[1].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_dw.diminfo[2].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_dw.diminfo[2].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_dw.diminfo[3].strides = __pyx_pybuffernd_dw.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_dw.diminfo[3].shape = __pyx_pybuffernd_dw.rcbuffer->pybuffer.shape[3];
 
   /* "convop.pyx":54
+ *                     np.ndarray[DTYPE_t, ndim=4] dw):
  * 
- *     cdef uint n_imgs = convout_grad.shape[0]
- *     cdef uint img_h = convout_grad.shape[2]             # <<<<<<<<<<<<<<
- *     cdef uint img_w = convout_grad.shape[3]
- *     cdef uint n_channels_convout = filters.shape[1]
+ *     cdef uint batch_size = err.shape[0]             # <<<<<<<<<<<<<<
+ *     cdef uint out_h = err.shape[2]
+ *     cdef uint out_w = err.shape[3]
  */
-  __pyx_v_img_h = (__pyx_v_convout_grad->dimensions[2]);
+  __pyx_v_batch_size = (__pyx_v_err->dimensions[0]);
 
   /* "convop.pyx":55
- *     cdef uint n_imgs = convout_grad.shape[0]
- *     cdef uint img_h = convout_grad.shape[2]
- *     cdef uint img_w = convout_grad.shape[3]             # <<<<<<<<<<<<<<
- *     cdef uint n_channels_convout = filters.shape[1]
- *     cdef uint n_channels_imgs = filters.shape[0]
+ * 
+ *     cdef uint batch_size = err.shape[0]
+ *     cdef uint out_h = err.shape[2]             # <<<<<<<<<<<<<<
+ *     cdef uint out_w = err.shape[3]
+ *     cdef uint input_channel = w.shape[0]
  */
-  __pyx_v_img_w = (__pyx_v_convout_grad->dimensions[3]);
+  __pyx_v_out_h = (__pyx_v_err->dimensions[2]);
 
   /* "convop.pyx":56
- *     cdef uint img_h = convout_grad.shape[2]
- *     cdef uint img_w = convout_grad.shape[3]
- *     cdef uint n_channels_convout = filters.shape[1]             # <<<<<<<<<<<<<<
- *     cdef uint n_channels_imgs = filters.shape[0]
- *     cdef uint fil_h = filters.shape[2]
+ *     cdef uint batch_size = err.shape[0]
+ *     cdef uint out_h = err.shape[2]
+ *     cdef uint out_w = err.shape[3]             # <<<<<<<<<<<<<<
+ *     cdef uint input_channel = w.shape[0]
+ *     cdef uint output_channel = w.shape[1]
  */
-  __pyx_v_n_channels_convout = (__pyx_v_filters->dimensions[1]);
+  __pyx_v_out_w = (__pyx_v_err->dimensions[3]);
 
   /* "convop.pyx":57
- *     cdef uint img_w = convout_grad.shape[3]
- *     cdef uint n_channels_convout = filters.shape[1]
- *     cdef uint n_channels_imgs = filters.shape[0]             # <<<<<<<<<<<<<<
- *     cdef uint fil_h = filters.shape[2]
- *     cdef uint fil_w = filters.shape[3]
+ *     cdef uint out_h = err.shape[2]
+ *     cdef uint out_w = err.shape[3]
+ *     cdef uint input_channel = w.shape[0]             # <<<<<<<<<<<<<<
+ *     cdef uint output_channel = w.shape[1]
+ *     cdef uint w_h = w.shape[2]
  */
-  __pyx_v_n_channels_imgs = (__pyx_v_filters->dimensions[0]);
+  __pyx_v_input_channel = (__pyx_v_w->dimensions[0]);
 
   /* "convop.pyx":58
- *     cdef uint n_channels_convout = filters.shape[1]
- *     cdef uint n_channels_imgs = filters.shape[0]
- *     cdef uint fil_h = filters.shape[2]             # <<<<<<<<<<<<<<
- *     cdef uint fil_w = filters.shape[3]
- *     cdef int fil_mid_h = fil_h // 2
+ *     cdef uint out_w = err.shape[3]
+ *     cdef uint input_channel = w.shape[0]
+ *     cdef uint output_channel = w.shape[1]             # <<<<<<<<<<<<<<
+ *     cdef uint w_h = w.shape[2]
+ *     cdef uint w_w = w.shape[3]
  */
-  __pyx_v_fil_h = (__pyx_v_filters->dimensions[2]);
+  __pyx_v_output_channel = (__pyx_v_w->dimensions[1]);
 
   /* "convop.pyx":59
- *     cdef uint n_channels_imgs = filters.shape[0]
- *     cdef uint fil_h = filters.shape[2]
- *     cdef uint fil_w = filters.shape[3]             # <<<<<<<<<<<<<<
- *     cdef int fil_mid_h = fil_h // 2
- *     cdef int fil_mid_w = fil_w // 2
+ *     cdef uint input_channel = w.shape[0]
+ *     cdef uint output_channel = w.shape[1]
+ *     cdef uint w_h = w.shape[2]             # <<<<<<<<<<<<<<
+ *     cdef uint w_w = w.shape[3]
+ *     cdef int fil_mid_h = w_h // 2
  */
-  __pyx_v_fil_w = (__pyx_v_filters->dimensions[3]);
+  __pyx_v_w_h = (__pyx_v_w->dimensions[2]);
 
   /* "convop.pyx":60
- *     cdef uint fil_h = filters.shape[2]
- *     cdef uint fil_w = filters.shape[3]
- *     cdef int fil_mid_h = fil_h // 2             # <<<<<<<<<<<<<<
- *     cdef int fil_mid_w = fil_w // 2
- * 
+ *     cdef uint output_channel = w.shape[1]
+ *     cdef uint w_h = w.shape[2]
+ *     cdef uint w_w = w.shape[3]             # <<<<<<<<<<<<<<
+ *     cdef int fil_mid_h = w_h // 2
+ *     cdef int fil_mid_w = w_w // 2
  */
-  __pyx_v_fil_mid_h = __Pyx_div___pyx_t_6convop_uint(__pyx_v_fil_h, 2);
+  __pyx_v_w_w = (__pyx_v_w->dimensions[3]);
 
   /* "convop.pyx":61
- *     cdef uint fil_w = filters.shape[3]
- *     cdef int fil_mid_h = fil_h // 2
- *     cdef int fil_mid_w = fil_w // 2             # <<<<<<<<<<<<<<
+ *     cdef uint w_h = w.shape[2]
+ *     cdef uint w_w = w.shape[3]
+ *     cdef int fil_mid_h = w_h // 2             # <<<<<<<<<<<<<<
+ *     cdef int fil_mid_w = w_w // 2
  * 
- *     cdef uint i, c_convout, c_imgs
  */
-  __pyx_v_fil_mid_w = __Pyx_div___pyx_t_6convop_uint(__pyx_v_fil_w, 2);
+  __pyx_v_fil_mid_h = __Pyx_div___pyx_t_6convop_uint(__pyx_v_w_h, 2);
 
-  /* "convop.pyx":68
- *     cdef int y, x, y_off_min, y_off_max, y_off, x_off_min, x_off_max, x_off
+  /* "convop.pyx":62
+ *     cdef uint w_w = w.shape[3]
+ *     cdef int fil_mid_h = w_h // 2
+ *     cdef int fil_mid_w = w_w // 2             # <<<<<<<<<<<<<<
  * 
- *     for i in range(n_imgs):             # <<<<<<<<<<<<<<
- *         for c_convout in range(n_channels_convout):
- *             for y in range(img_h):
+ *     cdef uint batch_size_, output_ch, input_ch
  */
-  __pyx_t_1 = __pyx_v_n_imgs;
+  __pyx_v_fil_mid_w = __Pyx_div___pyx_t_6convop_uint(__pyx_v_w_w, 2);
+
+  /* "convop.pyx":69
+ *     cdef int y, x, y_offset_min, y_offset_max, y_offset, x_offset_min, x_offset_max, x_offset
+ * 
+ *     for batch_size_ in range(batch_size):             # <<<<<<<<<<<<<<
+ *         for output_ch in range(output_channel):
+ *             for y in range(out_h):
+ */
+  __pyx_t_1 = __pyx_v_batch_size;
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
-    __pyx_v_i = __pyx_t_2;
+    __pyx_v_batch_size_ = __pyx_t_2;
 
-    /* "convop.pyx":69
+    /* "convop.pyx":70
  * 
- *     for i in range(n_imgs):
- *         for c_convout in range(n_channels_convout):             # <<<<<<<<<<<<<<
- *             for y in range(img_h):
- *                 y_off_min = int_max(-y, -fil_mid_h)
+ *     for batch_size_ in range(batch_size):
+ *         for output_ch in range(output_channel):             # <<<<<<<<<<<<<<
+ *             for y in range(out_h):
+ *                 y_offset_min = int_max(-y, -fil_mid_h)
  */
-    __pyx_t_3 = __pyx_v_n_channels_convout;
+    __pyx_t_3 = __pyx_v_output_channel;
     for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
-      __pyx_v_c_convout = __pyx_t_4;
+      __pyx_v_output_ch = __pyx_t_4;
 
-      /* "convop.pyx":70
- *     for i in range(n_imgs):
- *         for c_convout in range(n_channels_convout):
- *             for y in range(img_h):             # <<<<<<<<<<<<<<
- *                 y_off_min = int_max(-y, -fil_mid_h)
- *                 y_off_max = int_min(img_h-y, fil_mid_h+1)
+      /* "convop.pyx":71
+ *     for batch_size_ in range(batch_size):
+ *         for output_ch in range(output_channel):
+ *             for y in range(out_h):             # <<<<<<<<<<<<<<
+ *                 y_offset_min = int_max(-y, -fil_mid_h)
+ *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
  */
-      __pyx_t_5 = __pyx_v_img_h;
+      __pyx_t_5 = __pyx_v_out_h;
       for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
         __pyx_v_y = __pyx_t_6;
 
-        /* "convop.pyx":71
- *         for c_convout in range(n_channels_convout):
- *             for y in range(img_h):
- *                 y_off_min = int_max(-y, -fil_mid_h)             # <<<<<<<<<<<<<<
- *                 y_off_max = int_min(img_h-y, fil_mid_h+1)
- *                 for x in range(img_w):
- */
-        __pyx_v_y_off_min = __pyx_f_6convop_int_max((-__pyx_v_y), (-__pyx_v_fil_mid_h));
-
         /* "convop.pyx":72
- *             for y in range(img_h):
- *                 y_off_min = int_max(-y, -fil_mid_h)
- *                 y_off_max = int_min(img_h-y, fil_mid_h+1)             # <<<<<<<<<<<<<<
- *                 for x in range(img_w):
- *                     convout_grad_value = convout_grad[i, c_convout, y, x]
+ *         for output_ch in range(output_channel):
+ *             for y in range(out_h):
+ *                 y_offset_min = int_max(-y, -fil_mid_h)             # <<<<<<<<<<<<<<
+ *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
+ *                 for x in range(out_w):
  */
-        __pyx_v_y_off_max = __pyx_f_6convop_int_min((__pyx_v_img_h - __pyx_v_y), (__pyx_v_fil_mid_h + 1));
+        __pyx_v_y_offset_min = __pyx_f_6convop_int_max((-__pyx_v_y), (-__pyx_v_fil_mid_h));
 
         /* "convop.pyx":73
- *                 y_off_min = int_max(-y, -fil_mid_h)
- *                 y_off_max = int_min(img_h-y, fil_mid_h+1)
- *                 for x in range(img_w):             # <<<<<<<<<<<<<<
- *                     convout_grad_value = convout_grad[i, c_convout, y, x]
- *                     x_off_min = int_max(-x, -fil_mid_w)
+ *             for y in range(out_h):
+ *                 y_offset_min = int_max(-y, -fil_mid_h)
+ *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)             # <<<<<<<<<<<<<<
+ *                 for x in range(out_w):
+ *                     err_value = err[batch_size_, output_ch, y, x]
  */
-        __pyx_t_7 = __pyx_v_img_w;
+        __pyx_v_y_offset_max = __pyx_f_6convop_int_min((__pyx_v_out_h - __pyx_v_y), (__pyx_v_fil_mid_h + 1));
+
+        /* "convop.pyx":74
+ *                 y_offset_min = int_max(-y, -fil_mid_h)
+ *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
+ *                 for x in range(out_w):             # <<<<<<<<<<<<<<
+ *                     err_value = err[batch_size_, output_ch, y, x]
+ *                     x_offset_min = int_max(-x, -fil_mid_w)
+ */
+        __pyx_t_7 = __pyx_v_out_w;
         for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
 
-          /* "convop.pyx":74
- *                 y_off_max = int_min(img_h-y, fil_mid_h+1)
- *                 for x in range(img_w):
- *                     convout_grad_value = convout_grad[i, c_convout, y, x]             # <<<<<<<<<<<<<<
- *                     x_off_min = int_max(-x, -fil_mid_w)
- *                     x_off_max = int_min(img_w-x, fil_mid_w+1)
+          /* "convop.pyx":75
+ *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
+ *                 for x in range(out_w):
+ *                     err_value = err[batch_size_, output_ch, y, x]             # <<<<<<<<<<<<<<
+ *                     x_offset_min = int_max(-x, -fil_mid_w)
+ *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
  */
-          __pyx_t_9 = __pyx_v_i;
-          __pyx_t_10 = __pyx_v_c_convout;
+          __pyx_t_9 = __pyx_v_batch_size_;
+          __pyx_t_10 = __pyx_v_output_ch;
           __pyx_t_11 = __pyx_v_y;
           __pyx_t_12 = __pyx_v_x;
-          __pyx_v_convout_grad_value = (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_convout_grad.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_convout_grad.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_convout_grad.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_convout_grad.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_convout_grad.diminfo[3].strides));
-
-          /* "convop.pyx":75
- *                 for x in range(img_w):
- *                     convout_grad_value = convout_grad[i, c_convout, y, x]
- *                     x_off_min = int_max(-x, -fil_mid_w)             # <<<<<<<<<<<<<<
- *                     x_off_max = int_min(img_w-x, fil_mid_w+1)
- *                     for y_off in range(y_off_min, y_off_max):
- */
-          __pyx_v_x_off_min = __pyx_f_6convop_int_max((-__pyx_v_x), (-__pyx_v_fil_mid_w));
+          __pyx_v_err_value = (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_err.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_err.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_err.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_err.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_err.diminfo[3].strides));
 
           /* "convop.pyx":76
- *                     convout_grad_value = convout_grad[i, c_convout, y, x]
- *                     x_off_min = int_max(-x, -fil_mid_w)
- *                     x_off_max = int_min(img_w-x, fil_mid_w+1)             # <<<<<<<<<<<<<<
- *                     for y_off in range(y_off_min, y_off_max):
- *                         for x_off in range(x_off_min, x_off_max):
+ *                 for x in range(out_w):
+ *                     err_value = err[batch_size_, output_ch, y, x]
+ *                     x_offset_min = int_max(-x, -fil_mid_w)             # <<<<<<<<<<<<<<
+ *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
+ *                     for y_offset in range(y_offset_min, y_offset_max):
  */
-          __pyx_v_x_off_max = __pyx_f_6convop_int_min((__pyx_v_img_w - __pyx_v_x), (__pyx_v_fil_mid_w + 1));
+          __pyx_v_x_offset_min = __pyx_f_6convop_int_max((-__pyx_v_x), (-__pyx_v_fil_mid_w));
 
           /* "convop.pyx":77
- *                     x_off_min = int_max(-x, -fil_mid_w)
- *                     x_off_max = int_min(img_w-x, fil_mid_w+1)
- *                     for y_off in range(y_off_min, y_off_max):             # <<<<<<<<<<<<<<
- *                         for x_off in range(x_off_min, x_off_max):
- *                             img_y = <uint>(y + y_off)
+ *                     err_value = err[batch_size_, output_ch, y, x]
+ *                     x_offset_min = int_max(-x, -fil_mid_w)
+ *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)             # <<<<<<<<<<<<<<
+ *                     for y_offset in range(y_offset_min, y_offset_max):
+ *                         for x_offset in range(x_offset_min, x_offset_max):
  */
-          __pyx_t_13 = __pyx_v_y_off_max;
-          for (__pyx_t_14 = __pyx_v_y_off_min; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
-            __pyx_v_y_off = __pyx_t_14;
+          __pyx_v_x_offset_max = __pyx_f_6convop_int_min((__pyx_v_out_w - __pyx_v_x), (__pyx_v_fil_mid_w + 1));
 
-            /* "convop.pyx":78
- *                     x_off_max = int_min(img_w-x, fil_mid_w+1)
- *                     for y_off in range(y_off_min, y_off_max):
- *                         for x_off in range(x_off_min, x_off_max):             # <<<<<<<<<<<<<<
- *                             img_y = <uint>(y + y_off)
- *                             img_x = <uint>(x + x_off)
+          /* "convop.pyx":78
+ *                     x_offset_min = int_max(-x, -fil_mid_w)
+ *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
+ *                     for y_offset in range(y_offset_min, y_offset_max):             # <<<<<<<<<<<<<<
+ *                         for x_offset in range(x_offset_min, x_offset_max):
+ *                             input_y = <uint>(y + y_offset)
  */
-            __pyx_t_15 = __pyx_v_x_off_max;
-            for (__pyx_t_16 = __pyx_v_x_off_min; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
-              __pyx_v_x_off = __pyx_t_16;
+          __pyx_t_13 = __pyx_v_y_offset_max;
+          for (__pyx_t_14 = __pyx_v_y_offset_min; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+            __pyx_v_y_offset = __pyx_t_14;
 
-              /* "convop.pyx":79
- *                     for y_off in range(y_off_min, y_off_max):
- *                         for x_off in range(x_off_min, x_off_max):
- *                             img_y = <uint>(y + y_off)             # <<<<<<<<<<<<<<
- *                             img_x = <uint>(x + x_off)
- *                             fil_y = <uint>(fil_mid_w + y_off)
+            /* "convop.pyx":79
+ *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
+ *                     for y_offset in range(y_offset_min, y_offset_max):
+ *                         for x_offset in range(x_offset_min, x_offset_max):             # <<<<<<<<<<<<<<
+ *                             input_y = <uint>(y + y_offset)
+ *                             input_x = <uint>(x + x_offset)
  */
-              __pyx_v_img_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_off));
+            __pyx_t_15 = __pyx_v_x_offset_max;
+            for (__pyx_t_16 = __pyx_v_x_offset_min; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
+              __pyx_v_x_offset = __pyx_t_16;
 
               /* "convop.pyx":80
- *                         for x_off in range(x_off_min, x_off_max):
- *                             img_y = <uint>(y + y_off)
- *                             img_x = <uint>(x + x_off)             # <<<<<<<<<<<<<<
- *                             fil_y = <uint>(fil_mid_w + y_off)
- *                             fil_x = <uint>(fil_mid_h + x_off)
+ *                     for y_offset in range(y_offset_min, y_offset_max):
+ *                         for x_offset in range(x_offset_min, x_offset_max):
+ *                             input_y = <uint>(y + y_offset)             # <<<<<<<<<<<<<<
+ *                             input_x = <uint>(x + x_offset)
+ *                             kernel_y = <uint>(fil_mid_w + y_offset)
  */
-              __pyx_v_img_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_off));
+              __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
 
               /* "convop.pyx":81
- *                             img_y = <uint>(y + y_off)
- *                             img_x = <uint>(x + x_off)
- *                             fil_y = <uint>(fil_mid_w + y_off)             # <<<<<<<<<<<<<<
- *                             fil_x = <uint>(fil_mid_h + x_off)
- *                             for c_imgs in range(n_channels_imgs):
+ *                         for x_offset in range(x_offset_min, x_offset_max):
+ *                             input_y = <uint>(y + y_offset)
+ *                             input_x = <uint>(x + x_offset)             # <<<<<<<<<<<<<<
+ *                             kernel_y = <uint>(fil_mid_w + y_offset)
+ *                             kernel_x = <uint>(fil_mid_h + x_offset)
  */
-              __pyx_v_fil_y = ((__pyx_t_6convop_uint)(__pyx_v_fil_mid_w + __pyx_v_y_off));
+              __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
 
               /* "convop.pyx":82
- *                             img_x = <uint>(x + x_off)
- *                             fil_y = <uint>(fil_mid_w + y_off)
- *                             fil_x = <uint>(fil_mid_h + x_off)             # <<<<<<<<<<<<<<
- *                             for c_imgs in range(n_channels_imgs):
- *                                 imgs_grad[i, c_imgs, img_y, img_x] += filters[c_imgs, c_convout, fil_y, fil_x] * convout_grad_value
+ *                             input_y = <uint>(y + y_offset)
+ *                             input_x = <uint>(x + x_offset)
+ *                             kernel_y = <uint>(fil_mid_w + y_offset)             # <<<<<<<<<<<<<<
+ *                             kernel_x = <uint>(fil_mid_h + x_offset)
+ *                             for input_ch in range(input_channel):
  */
-              __pyx_v_fil_x = ((__pyx_t_6convop_uint)(__pyx_v_fil_mid_h + __pyx_v_x_off));
+              __pyx_v_kernel_y = ((__pyx_t_6convop_uint)(__pyx_v_fil_mid_w + __pyx_v_y_offset));
 
               /* "convop.pyx":83
- *                             fil_y = <uint>(fil_mid_w + y_off)
- *                             fil_x = <uint>(fil_mid_h + x_off)
- *                             for c_imgs in range(n_channels_imgs):             # <<<<<<<<<<<<<<
- *                                 imgs_grad[i, c_imgs, img_y, img_x] += filters[c_imgs, c_convout, fil_y, fil_x] * convout_grad_value
- *                                 filters_grad[c_imgs, c_convout, fil_y, fil_x] += imgs[i, c_imgs, img_y, img_x] * convout_grad_value
+ *                             input_x = <uint>(x + x_offset)
+ *                             kernel_y = <uint>(fil_mid_w + y_offset)
+ *                             kernel_x = <uint>(fil_mid_h + x_offset)             # <<<<<<<<<<<<<<
+ *                             for input_ch in range(input_channel):
+ *                                 dx[batch_size_, input_ch, input_y, input_x] += \
  */
-              __pyx_t_17 = __pyx_v_n_channels_imgs;
-              for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
-                __pyx_v_c_imgs = __pyx_t_18;
+              __pyx_v_kernel_x = ((__pyx_t_6convop_uint)(__pyx_v_fil_mid_h + __pyx_v_x_offset));
 
-                /* "convop.pyx":84
- *                             fil_x = <uint>(fil_mid_h + x_off)
- *                             for c_imgs in range(n_channels_imgs):
- *                                 imgs_grad[i, c_imgs, img_y, img_x] += filters[c_imgs, c_convout, fil_y, fil_x] * convout_grad_value             # <<<<<<<<<<<<<<
- *                                 filters_grad[c_imgs, c_convout, fil_y, fil_x] += imgs[i, c_imgs, img_y, img_x] * convout_grad_value
- *     filters_grad[...] /= n_imgs
+              /* "convop.pyx":84
+ *                             kernel_y = <uint>(fil_mid_w + y_offset)
+ *                             kernel_x = <uint>(fil_mid_h + x_offset)
+ *                             for input_ch in range(input_channel):             # <<<<<<<<<<<<<<
+ *                                 dx[batch_size_, input_ch, input_y, input_x] += \
+ *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
  */
-                __pyx_t_19 = __pyx_v_c_imgs;
-                __pyx_t_20 = __pyx_v_c_convout;
-                __pyx_t_21 = __pyx_v_fil_y;
-                __pyx_t_22 = __pyx_v_fil_x;
-                __pyx_t_23 = __pyx_v_i;
-                __pyx_t_24 = __pyx_v_c_imgs;
-                __pyx_t_25 = __pyx_v_img_y;
-                __pyx_t_26 = __pyx_v_img_x;
-                *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_imgs_grad.diminfo[0].strides, __pyx_t_24, __pyx_pybuffernd_imgs_grad.diminfo[1].strides, __pyx_t_25, __pyx_pybuffernd_imgs_grad.diminfo[2].strides, __pyx_t_26, __pyx_pybuffernd_imgs_grad.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_filters.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_filters.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_filters.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_filters.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_filters.diminfo[3].strides)) * __pyx_v_convout_grad_value);
+              __pyx_t_17 = __pyx_v_input_channel;
+              for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
+                __pyx_v_input_ch = __pyx_t_18;
+
+                /* "convop.pyx":86
+ *                             for input_ch in range(input_channel):
+ *                                 dx[batch_size_, input_ch, input_y, input_x] += \
+ *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value             # <<<<<<<<<<<<<<
+ * 
+ *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \
+ */
+                __pyx_t_19 = __pyx_v_input_ch;
+                __pyx_t_20 = __pyx_v_output_ch;
+                __pyx_t_21 = __pyx_v_kernel_y;
+                __pyx_t_22 = __pyx_v_kernel_x;
 
                 /* "convop.pyx":85
- *                             for c_imgs in range(n_channels_imgs):
- *                                 imgs_grad[i, c_imgs, img_y, img_x] += filters[c_imgs, c_convout, fil_y, fil_x] * convout_grad_value
- *                                 filters_grad[c_imgs, c_convout, fil_y, fil_x] += imgs[i, c_imgs, img_y, img_x] * convout_grad_value             # <<<<<<<<<<<<<<
- *     filters_grad[...] /= n_imgs
+ *                             kernel_x = <uint>(fil_mid_h + x_offset)
+ *                             for input_ch in range(input_channel):
+ *                                 dx[batch_size_, input_ch, input_y, input_x] += \             # <<<<<<<<<<<<<<
+ *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
+ * 
  */
-                __pyx_t_27 = __pyx_v_i;
-                __pyx_t_28 = __pyx_v_c_imgs;
-                __pyx_t_29 = __pyx_v_img_y;
-                __pyx_t_30 = __pyx_v_img_x;
-                __pyx_t_31 = __pyx_v_c_imgs;
-                __pyx_t_32 = __pyx_v_c_convout;
-                __pyx_t_33 = __pyx_v_fil_y;
-                __pyx_t_34 = __pyx_v_fil_x;
-                *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_filters_grad.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_filters_grad.diminfo[0].strides, __pyx_t_32, __pyx_pybuffernd_filters_grad.diminfo[1].strides, __pyx_t_33, __pyx_pybuffernd_filters_grad.diminfo[2].strides, __pyx_t_34, __pyx_pybuffernd_filters_grad.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_imgs.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_imgs.diminfo[0].strides, __pyx_t_28, __pyx_pybuffernd_imgs.diminfo[1].strides, __pyx_t_29, __pyx_pybuffernd_imgs.diminfo[2].strides, __pyx_t_30, __pyx_pybuffernd_imgs.diminfo[3].strides)) * __pyx_v_convout_grad_value);
+                __pyx_t_23 = __pyx_v_batch_size_;
+                __pyx_t_24 = __pyx_v_input_ch;
+                __pyx_t_25 = __pyx_v_input_y;
+                __pyx_t_26 = __pyx_v_input_x;
+                *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_dx.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_dx.diminfo[0].strides, __pyx_t_24, __pyx_pybuffernd_dx.diminfo[1].strides, __pyx_t_25, __pyx_pybuffernd_dx.diminfo[2].strides, __pyx_t_26, __pyx_pybuffernd_dx.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_w.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_w.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_w.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_w.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_w.diminfo[3].strides)) * __pyx_v_err_value);
+
+                /* "convop.pyx":89
+ * 
+ *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \
+ *                                 data[batch_size_, input_ch, input_y, input_x] * err_value             # <<<<<<<<<<<<<<
+ * 
+ *     dw[...] /= batch_size
+ */
+                __pyx_t_27 = __pyx_v_batch_size_;
+                __pyx_t_28 = __pyx_v_input_ch;
+                __pyx_t_29 = __pyx_v_input_y;
+                __pyx_t_30 = __pyx_v_input_x;
+
+                /* "convop.pyx":88
+ *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
+ * 
+ *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \             # <<<<<<<<<<<<<<
+ *                                 data[batch_size_, input_ch, input_y, input_x] * err_value
+ * 
+ */
+                __pyx_t_31 = __pyx_v_input_ch;
+                __pyx_t_32 = __pyx_v_output_ch;
+                __pyx_t_33 = __pyx_v_kernel_y;
+                __pyx_t_34 = __pyx_v_kernel_x;
+                *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_dw.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_dw.diminfo[0].strides, __pyx_t_32, __pyx_pybuffernd_dw.diminfo[1].strides, __pyx_t_33, __pyx_pybuffernd_dw.diminfo[2].strides, __pyx_t_34, __pyx_pybuffernd_dw.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_data.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_data.diminfo[0].strides, __pyx_t_28, __pyx_pybuffernd_data.diminfo[1].strides, __pyx_t_29, __pyx_pybuffernd_data.diminfo[2].strides, __pyx_t_30, __pyx_pybuffernd_data.diminfo[3].strides)) * __pyx_v_err_value);
               }
             }
           }
@@ -2507,31 +2532,31 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
     }
   }
 
-  /* "convop.pyx":86
- *                                 imgs_grad[i, c_imgs, img_y, img_x] += filters[c_imgs, c_convout, fil_y, fil_x] * convout_grad_value
- *                                 filters_grad[c_imgs, c_convout, fil_y, fil_x] += imgs[i, c_imgs, img_y, img_x] * convout_grad_value
- *     filters_grad[...] /= n_imgs             # <<<<<<<<<<<<<<
+  /* "convop.pyx":91
+ *                                 data[batch_size_, input_ch, input_y, input_x] * err_value
+ * 
+ *     dw[...] /= batch_size             # <<<<<<<<<<<<<<
  */
   __Pyx_INCREF(Py_Ellipsis);
   __pyx_t_35 = Py_Ellipsis;
-  __pyx_t_36 = PyObject_GetItem(((PyObject *)__pyx_v_filters_grad), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_36 = PyObject_GetItem(((PyObject *)__pyx_v_dw), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_36);
-  __pyx_t_37 = PyInt_FromSsize_t(__pyx_v_n_imgs); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_37 = PyInt_FromSsize_t(__pyx_v_batch_size); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_37);
-  __pyx_t_38 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_36, __pyx_t_37); if (unlikely(!__pyx_t_38)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_38 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_36, __pyx_t_37); if (unlikely(!__pyx_t_38)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_38);
   __Pyx_DECREF(__pyx_t_36); __pyx_t_36 = 0;
   __Pyx_DECREF(__pyx_t_37); __pyx_t_37 = 0;
-  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_filters_grad), __pyx_t_35, __pyx_t_38) < 0)) __PYX_ERR(0, 86, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_dw), __pyx_t_35, __pyx_t_38) < 0)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_38); __pyx_t_38 = 0;
   __Pyx_DECREF(__pyx_t_35); __pyx_t_35 = 0;
 
-  /* "convop.pyx":47
+  /* "convop.pyx":48
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *                     np.ndarray[DTYPE_t, ndim=4] convout_grad,
- *                     np.ndarray[DTYPE_t, ndim=4] filters,
+ * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[DTYPE_t, ndim=4] err,
+ *                     np.ndarray[DTYPE_t, ndim=4] w,
  */
 
   /* function exit code */
@@ -2546,21 +2571,21 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
     __Pyx_PyThreadState_declare
     __Pyx_PyThreadState_assign
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_convout_grad.rcbuffer->pybuffer);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_filters.rcbuffer->pybuffer);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_filters_grad.rcbuffer->pybuffer);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_imgs.rcbuffer->pybuffer);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_data.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dw.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dx.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_err.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_w.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
   __Pyx_AddTraceback("convop.deconv2d_op", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_convout_grad.rcbuffer->pybuffer);
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_filters.rcbuffer->pybuffer);
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_filters_grad.rcbuffer->pybuffer);
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_imgs.rcbuffer->pybuffer);
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_imgs_grad.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_data.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dw.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dx.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_err.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_w.rcbuffer->pybuffer);
   __pyx_L2:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -5112,57 +5137,53 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_RuntimeError, __pyx_k_RuntimeError, sizeof(__pyx_k_RuntimeError), 0, 0, 1, 1},
   {&__pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_k_Users_Ming_Dropbox_Workspace_Pr, sizeof(__pyx_k_Users_Ming_Dropbox_Workspace_Pr), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
-  {&__pyx_n_s_c_convout, __pyx_k_c_convout, sizeof(__pyx_k_c_convout), 0, 0, 1, 1},
-  {&__pyx_n_s_c_imgs, __pyx_k_c_imgs, sizeof(__pyx_k_c_imgs), 0, 0, 1, 1},
-  {&__pyx_n_s_c_in, __pyx_k_c_in, sizeof(__pyx_k_c_in), 0, 0, 1, 1},
-  {&__pyx_n_s_c_out, __pyx_k_c_out, sizeof(__pyx_k_c_out), 0, 0, 1, 1},
+  {&__pyx_n_s_batch_size, __pyx_k_batch_size, sizeof(__pyx_k_batch_size), 0, 0, 1, 1},
+  {&__pyx_n_s_batch_size_2, __pyx_k_batch_size_2, sizeof(__pyx_k_batch_size_2), 0, 0, 1, 1},
   {&__pyx_n_s_conv2d_op, __pyx_k_conv2d_op, sizeof(__pyx_k_conv2d_op), 0, 0, 1, 1},
   {&__pyx_n_s_convop, __pyx_k_convop, sizeof(__pyx_k_convop), 0, 0, 1, 1},
-  {&__pyx_n_s_convout, __pyx_k_convout, sizeof(__pyx_k_convout), 0, 0, 1, 1},
-  {&__pyx_n_s_convout_grad, __pyx_k_convout_grad, sizeof(__pyx_k_convout_grad), 0, 0, 1, 1},
-  {&__pyx_n_s_convout_grad_value, __pyx_k_convout_grad_value, sizeof(__pyx_k_convout_grad_value), 0, 0, 1, 1},
+  {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
   {&__pyx_n_s_deconv2d_op, __pyx_k_deconv2d_op, sizeof(__pyx_k_deconv2d_op), 0, 0, 1, 1},
-  {&__pyx_n_s_fil_h, __pyx_k_fil_h, sizeof(__pyx_k_fil_h), 0, 0, 1, 1},
+  {&__pyx_n_s_dw, __pyx_k_dw, sizeof(__pyx_k_dw), 0, 0, 1, 1},
+  {&__pyx_n_s_dx, __pyx_k_dx, sizeof(__pyx_k_dx), 0, 0, 1, 1},
+  {&__pyx_n_s_err, __pyx_k_err, sizeof(__pyx_k_err), 0, 0, 1, 1},
+  {&__pyx_n_s_err_value, __pyx_k_err_value, sizeof(__pyx_k_err_value), 0, 0, 1, 1},
   {&__pyx_n_s_fil_mid_h, __pyx_k_fil_mid_h, sizeof(__pyx_k_fil_mid_h), 0, 0, 1, 1},
   {&__pyx_n_s_fil_mid_w, __pyx_k_fil_mid_w, sizeof(__pyx_k_fil_mid_w), 0, 0, 1, 1},
-  {&__pyx_n_s_fil_w, __pyx_k_fil_w, sizeof(__pyx_k_fil_w), 0, 0, 1, 1},
-  {&__pyx_n_s_fil_x, __pyx_k_fil_x, sizeof(__pyx_k_fil_x), 0, 0, 1, 1},
-  {&__pyx_n_s_fil_y, __pyx_k_fil_y, sizeof(__pyx_k_fil_y), 0, 0, 1, 1},
-  {&__pyx_n_s_filters, __pyx_k_filters, sizeof(__pyx_k_filters), 0, 0, 1, 1},
-  {&__pyx_n_s_filters_grad, __pyx_k_filters_grad, sizeof(__pyx_k_filters_grad), 0, 0, 1, 1},
   {&__pyx_n_s_float, __pyx_k_float, sizeof(__pyx_k_float), 0, 0, 1, 1},
-  {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
-  {&__pyx_n_s_img_h, __pyx_k_img_h, sizeof(__pyx_k_img_h), 0, 0, 1, 1},
-  {&__pyx_n_s_img_w, __pyx_k_img_w, sizeof(__pyx_k_img_w), 0, 0, 1, 1},
-  {&__pyx_n_s_img_x, __pyx_k_img_x, sizeof(__pyx_k_img_x), 0, 0, 1, 1},
-  {&__pyx_n_s_img_y, __pyx_k_img_y, sizeof(__pyx_k_img_y), 0, 0, 1, 1},
-  {&__pyx_n_s_imgs, __pyx_k_imgs, sizeof(__pyx_k_imgs), 0, 0, 1, 1},
-  {&__pyx_n_s_imgs_grad, __pyx_k_imgs_grad, sizeof(__pyx_k_imgs_grad), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
+  {&__pyx_n_s_input_ch, __pyx_k_input_ch, sizeof(__pyx_k_input_ch), 0, 0, 1, 1},
+  {&__pyx_n_s_input_channel, __pyx_k_input_channel, sizeof(__pyx_k_input_channel), 0, 0, 1, 1},
+  {&__pyx_n_s_input_x, __pyx_k_input_x, sizeof(__pyx_k_input_x), 0, 0, 1, 1},
+  {&__pyx_n_s_input_y, __pyx_k_input_y, sizeof(__pyx_k_input_y), 0, 0, 1, 1},
+  {&__pyx_n_s_kernel_x, __pyx_k_kernel_x, sizeof(__pyx_k_kernel_x), 0, 0, 1, 1},
+  {&__pyx_n_s_kernel_y, __pyx_k_kernel_y, sizeof(__pyx_k_kernel_y), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
-  {&__pyx_n_s_n_channels_convout, __pyx_k_n_channels_convout, sizeof(__pyx_k_n_channels_convout), 0, 0, 1, 1},
-  {&__pyx_n_s_n_channels_imgs, __pyx_k_n_channels_imgs, sizeof(__pyx_k_n_channels_imgs), 0, 0, 1, 1},
-  {&__pyx_n_s_n_channels_in, __pyx_k_n_channels_in, sizeof(__pyx_k_n_channels_in), 0, 0, 1, 1},
-  {&__pyx_n_s_n_channels_out, __pyx_k_n_channels_out, sizeof(__pyx_k_n_channels_out), 0, 0, 1, 1},
-  {&__pyx_n_s_n_imgs, __pyx_k_n_imgs, sizeof(__pyx_k_n_imgs), 0, 0, 1, 1},
   {&__pyx_kp_u_ndarray_is_not_C_contiguous, __pyx_k_ndarray_is_not_C_contiguous, sizeof(__pyx_k_ndarray_is_not_C_contiguous), 0, 1, 0, 0},
   {&__pyx_kp_u_ndarray_is_not_Fortran_contiguou, __pyx_k_ndarray_is_not_Fortran_contiguou, sizeof(__pyx_k_ndarray_is_not_Fortran_contiguou), 0, 1, 0, 0},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_kp_s_numpy_core_multiarray_failed_to, __pyx_k_numpy_core_multiarray_failed_to, sizeof(__pyx_k_numpy_core_multiarray_failed_to), 0, 0, 1, 0},
   {&__pyx_kp_s_numpy_core_umath_failed_to_impor, __pyx_k_numpy_core_umath_failed_to_impor, sizeof(__pyx_k_numpy_core_umath_failed_to_impor), 0, 0, 1, 0},
+  {&__pyx_n_s_out, __pyx_k_out, sizeof(__pyx_k_out), 0, 0, 1, 1},
+  {&__pyx_n_s_out_h, __pyx_k_out_h, sizeof(__pyx_k_out_h), 0, 0, 1, 1},
+  {&__pyx_n_s_out_w, __pyx_k_out_w, sizeof(__pyx_k_out_w), 0, 0, 1, 1},
+  {&__pyx_n_s_output_ch, __pyx_k_output_ch, sizeof(__pyx_k_output_ch), 0, 0, 1, 1},
+  {&__pyx_n_s_output_channel, __pyx_k_output_channel, sizeof(__pyx_k_output_channel), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_k_unknown_dtype_code_in_numpy_pxd, sizeof(__pyx_k_unknown_dtype_code_in_numpy_pxd), 0, 1, 0, 0},
   {&__pyx_n_s_value, __pyx_k_value, sizeof(__pyx_k_value), 0, 0, 1, 1},
+  {&__pyx_n_s_w, __pyx_k_w, sizeof(__pyx_k_w), 0, 0, 1, 1},
+  {&__pyx_n_s_w_h, __pyx_k_w_h, sizeof(__pyx_k_w_h), 0, 0, 1, 1},
+  {&__pyx_n_s_w_w, __pyx_k_w_w, sizeof(__pyx_k_w_w), 0, 0, 1, 1},
   {&__pyx_n_s_x, __pyx_k_x, sizeof(__pyx_k_x), 0, 0, 1, 1},
-  {&__pyx_n_s_x_off, __pyx_k_x_off, sizeof(__pyx_k_x_off), 0, 0, 1, 1},
-  {&__pyx_n_s_x_off_max, __pyx_k_x_off_max, sizeof(__pyx_k_x_off_max), 0, 0, 1, 1},
-  {&__pyx_n_s_x_off_min, __pyx_k_x_off_min, sizeof(__pyx_k_x_off_min), 0, 0, 1, 1},
+  {&__pyx_n_s_x_offset, __pyx_k_x_offset, sizeof(__pyx_k_x_offset), 0, 0, 1, 1},
+  {&__pyx_n_s_x_offset_max, __pyx_k_x_offset_max, sizeof(__pyx_k_x_offset_max), 0, 0, 1, 1},
+  {&__pyx_n_s_x_offset_min, __pyx_k_x_offset_min, sizeof(__pyx_k_x_offset_min), 0, 0, 1, 1},
   {&__pyx_n_s_y, __pyx_k_y, sizeof(__pyx_k_y), 0, 0, 1, 1},
-  {&__pyx_n_s_y_off, __pyx_k_y_off, sizeof(__pyx_k_y_off), 0, 0, 1, 1},
-  {&__pyx_n_s_y_off_max, __pyx_k_y_off_max, sizeof(__pyx_k_y_off_max), 0, 0, 1, 1},
-  {&__pyx_n_s_y_off_min, __pyx_k_y_off_min, sizeof(__pyx_k_y_off_min), 0, 0, 1, 1},
+  {&__pyx_n_s_y_offset, __pyx_k_y_offset, sizeof(__pyx_k_y_offset), 0, 0, 1, 1},
+  {&__pyx_n_s_y_offset_max, __pyx_k_y_offset_max, sizeof(__pyx_k_y_offset_max), 0, 0, 1, 1},
+  {&__pyx_n_s_y_offset_min, __pyx_k_y_offset_min, sizeof(__pyx_k_y_offset_min), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
@@ -5279,26 +5300,26 @@ static int __Pyx_InitCachedConstants(void) {
   /* "convop.pyx":14
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *             np.ndarray[DTYPE_t, ndim=4] filters,
- *             np.ndarray[DTYPE_t, ndim=4] convout):
+ * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *             np.ndarray[DTYPE_t, ndim=4] w,
+ *             np.ndarray[DTYPE_t, ndim=4] out):
  */
-  __pyx_tuple__10 = PyTuple_Pack(22, __pyx_n_s_imgs, __pyx_n_s_filters, __pyx_n_s_convout, __pyx_n_s_n_imgs, __pyx_n_s_img_h, __pyx_n_s_img_w, __pyx_n_s_n_channels_in, __pyx_n_s_n_channels_out, __pyx_n_s_fil_h, __pyx_n_s_fil_w, __pyx_n_s_i, __pyx_n_s_c_in, __pyx_n_s_c_out, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_off, __pyx_n_s_x_off, __pyx_n_s_img_y, __pyx_n_s_img_x, __pyx_n_s_fil_y, __pyx_n_s_fil_x, __pyx_n_s_value); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(22, __pyx_n_s_data, __pyx_n_s_w, __pyx_n_s_out, __pyx_n_s_batch_size, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_input_channel, __pyx_n_s_output_channel, __pyx_n_s_w_h, __pyx_n_s_w_w, __pyx_n_s_batch_size_2, __pyx_n_s_input_ch, __pyx_n_s_output_ch, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_offset, __pyx_n_s_x_offset, __pyx_n_s_input_y, __pyx_n_s_input_x, __pyx_n_s_kernel_y, __pyx_n_s_kernel_x, __pyx_n_s_value); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
   __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(3, 0, 22, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_conv2d_op, 14, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 14, __pyx_L1_error)
 
-  /* "convop.pyx":47
+  /* "convop.pyx":48
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *                     np.ndarray[DTYPE_t, ndim=4] convout_grad,
- *                     np.ndarray[DTYPE_t, ndim=4] filters,
+ * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[DTYPE_t, ndim=4] err,
+ *                     np.ndarray[DTYPE_t, ndim=4] w,
  */
-  __pyx_tuple__12 = PyTuple_Pack(30, __pyx_n_s_imgs, __pyx_n_s_convout_grad, __pyx_n_s_filters, __pyx_n_s_imgs_grad, __pyx_n_s_filters_grad, __pyx_n_s_n_imgs, __pyx_n_s_img_h, __pyx_n_s_img_w, __pyx_n_s_n_channels_convout, __pyx_n_s_n_channels_imgs, __pyx_n_s_fil_h, __pyx_n_s_fil_w, __pyx_n_s_fil_mid_h, __pyx_n_s_fil_mid_w, __pyx_n_s_i, __pyx_n_s_c_convout, __pyx_n_s_c_imgs, __pyx_n_s_img_y, __pyx_n_s_img_x, __pyx_n_s_fil_y, __pyx_n_s_fil_x, __pyx_n_s_convout_grad_value, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_off_min, __pyx_n_s_y_off_max, __pyx_n_s_y_off, __pyx_n_s_x_off_min, __pyx_n_s_x_off_max, __pyx_n_s_x_off); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(30, __pyx_n_s_data, __pyx_n_s_err, __pyx_n_s_w, __pyx_n_s_dx, __pyx_n_s_dw, __pyx_n_s_batch_size, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_input_channel, __pyx_n_s_output_channel, __pyx_n_s_w_h, __pyx_n_s_w_w, __pyx_n_s_fil_mid_h, __pyx_n_s_fil_mid_w, __pyx_n_s_batch_size_2, __pyx_n_s_output_ch, __pyx_n_s_input_ch, __pyx_n_s_input_y, __pyx_n_s_input_x, __pyx_n_s_kernel_y, __pyx_n_s_kernel_x, __pyx_n_s_err_value, __pyx_n_s_y, __pyx_n_s_x, __pyx_n_s_y_offset_min, __pyx_n_s_y_offset_max, __pyx_n_s_y_offset, __pyx_n_s_x_offset_min, __pyx_n_s_x_offset_max, __pyx_n_s_x_offset); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(5, 0, 30, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_deconv2d_op, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(5, 0, 30, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_deconv2d_op, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5447,25 +5468,25 @@ PyMODINIT_FUNC PyInit_convop(void)
   /* "convop.pyx":14
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *             np.ndarray[DTYPE_t, ndim=4] filters,
- *             np.ndarray[DTYPE_t, ndim=4] convout):
+ * def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *             np.ndarray[DTYPE_t, ndim=4] w,
+ *             np.ndarray[DTYPE_t, ndim=4] out):
  */
   __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_1conv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_conv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "convop.pyx":47
+  /* "convop.pyx":48
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
- * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] imgs,             # <<<<<<<<<<<<<<
- *                     np.ndarray[DTYPE_t, ndim=4] convout_grad,
- *                     np.ndarray[DTYPE_t, ndim=4] filters,
+ * def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,             # <<<<<<<<<<<<<<
+ *                     np.ndarray[DTYPE_t, ndim=4] err,
+ *                     np.ndarray[DTYPE_t, ndim=4] w,
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_3deconv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6convop_3deconv2d_op, NULL, __pyx_n_s_convop); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deconv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_deconv2d_op, __pyx_t_2) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "convop.pyx":1
