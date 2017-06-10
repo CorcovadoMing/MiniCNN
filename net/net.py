@@ -5,6 +5,8 @@ class Net:
     def __init__(self):
         self.record = []
         self.layers = []
+        self.profile_forward = []
+        self.profile_backward = []
     
     def push(self, layer):
         self.layers.append(layer)
@@ -17,13 +19,15 @@ class Net:
         self.y = np.array(y, dtype=np.int)
 
     def forward(self):
+        pf = []
         imm_result = self.x
         for i in self.layers:
             now = time.time()
             imm_result = i._forward(imm_result)
-            #print str(i), time.time() - now
+            pf.append(time.time() - now)
             now = time.time()
         self.output = imm_result
+        self.profile_forward.append(pf)
 
         # Catrgorical Cross-Entropy
         loss = 0.
@@ -43,7 +47,7 @@ class Net:
         self.record.append(count / len(self.y))
     
     def backward(self, lr=0.01):
-        #print self.output
+        pb = []
         self.output[range(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]
         err = self.output
@@ -52,17 +56,23 @@ class Net:
         for i in self.layers[::-1]:
             now = time.time()
             err, res = i._backward(err, res)
-            #print str(i), time.time() - now
+            pb.append(time.time() - now)
             now = time.time()
+        self.profile_backward.append(pb)
         
         for i in self.layers[::-1]:
             now = time.time()
             i._update(lr, 0.90, 1e-6)
-            #print str(i), time.time() - now
             now = time.time()
     
     def get_record(self):
         return self.record
     
+    def get_profile(self):
+        return np.array(self.profile_forward).sum(axis=0), \
+                np.array(self.profile_backward).sum(axis=0)[::-1]
+    
     def clear_record(self):
         self.record = []
+        self.profile_forward = []
+        self.profile_backward = []

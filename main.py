@@ -38,23 +38,20 @@ if __name__ == '__main__':
     data = DataProvider()
     data.train_input(x[:1000], y[:1000])
     data.test_input(xt[:200], yt[:200])
-    data.batch_size(32)
+    data.batch_size(16)
 
-    n = 16
     lr = 0.01
     gamma = 0.9
     for epoch in xrange(50):
         print 'Epoch: ', epoch
 
         # Training (Mini-batch)
-        now = time.time()
         for _ in xrange(data.batch_run()):
             net.input(data.next_batch())
             net.forward()
             net.backward(lr)
-        t = time.time() - now
-        now = time.time()
-        print 'Acc: ', np.array(net.get_record()).mean(), 'Time: ', t
+        print 'Acc: ', np.array(net.get_record()).mean()
+        f, b = net.get_profile()
         net.clear_record()
 
         # Testing
@@ -62,6 +59,11 @@ if __name__ == '__main__':
         net.forward()
         print 'Val: ', net.get_record()[0]
         net.clear_record()
+
+        # Profile
+        print 'Forward Time:  ', f
+        print 'Backward Time: ', b
+        print
 
         # Learning rate decay
         lr *= gamma
