@@ -13,11 +13,7 @@ class Linear:
     def _forward(self, x):
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
-        output = []
-        for i in x:
-            imm_result = np.dot(self.weights.T, i) + self.bias
-            output.append(imm_result)
-        return np.array(output)
+        return np.dot(x, self.weights) + self.bias
 
     def _backward(self, err, res):
         self.d_weights = np.dot(np.multiply(err, res).T, self.input).T / err.shape[0]

@@ -14,13 +14,10 @@ class Softmax:
     def _forward(self, x):
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
-        output = []
-        for i in x:
-            imm_result = np.dot(self.weights.T, i) + self.bias
-            calibrate = np.max(imm_result)
-            imm_result -= calibrate
-            output.append(np.exp(imm_result) / np.sum(np.exp(imm_result)))
-        return np.array(output)
+        output = np.dot(x, self.weights) + self.bias
+        calibrate = np.expand_dims(np.max(output, axis=1), 1)
+        output -= calibrate
+        return (np.exp(output).swapaxes(0, 1) / np.sum(np.exp(output), axis=1)).swapaxes(0, 1)
 
     def _backward(self, err, res):
         self.d_weights = np.dot(err.T, self.input).T / err.shape[0]
