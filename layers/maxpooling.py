@@ -33,12 +33,8 @@ class Maxpooling:
             for j in i:
                 origin = j.shape[0]
                 j = j.reshape((j.shape[0] * j.shape[1], 1))
-                for _ in xrange(self.kernel_width-1):
-                    j = np.hstack((j, j))
-                j = j.reshape(origin, self.masks.shape[2])
-                for _ in xrange(self.kernel_height-1):
-                    j = np.hstack((j, j))
-                j = j.reshape(self.masks.shape[2:])
+                j = np.hstack([j]*(self.kernel_width)).reshape(origin, self.masks.shape[2])
+                j = np.hstack([j]*(self.kernel_height)).reshape(self.masks.shape[2:])
                 imm_result.append(j)
             output.append(imm_result)
         return np.multiply(np.array(output), self.masks), None
