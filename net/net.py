@@ -48,7 +48,7 @@ class Net:
     
     def backward(self, lr=0.01):
         pb = []
-        self.output[range(self.output.shape[0]), self.y] -= 1
+        self.output[xrange(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]
         err = self.output
         res = None
