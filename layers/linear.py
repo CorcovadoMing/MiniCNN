@@ -8,7 +8,7 @@ class Linear:
         self.pd_weight = 0
         # Random kernel initialization
         self.weights = np.random.normal(0, 0.1, (i, c))
-        self.bias = np.random.rand()
+        self.bias = np.random.normal(0, 0.001, (1))
     
     def _forward(self, x):
         # Cache the input for backward use
