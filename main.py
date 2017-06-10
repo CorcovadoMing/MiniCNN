@@ -36,12 +36,13 @@ if __name__ == '__main__':
 
     # Data
     data = DataProvider()
-    data.train_input(x[:1000], y[:1000])
-    data.test_input(xt[:200], yt[:200])
+    n = 10001
+    data.train_input(x[:n], y[:n])
+    data.test_input(xt[:n/5], yt[:n/5])
     data.batch_size(16)
 
-    lr = 0.01
-    gamma = 0.9
+    lr = 0.005
+    gamma = 0.95
     for epoch in xrange(50):
         print 'Epoch: ', epoch
 
@@ -63,8 +64,10 @@ if __name__ == '__main__':
         net.clear_record()
 
         # Profile
-        print 'Forward Time:  ', f
-        print 'Backward Time: ', b
+        print 'Forward Time:  ', sum(f)
+        print f
+        print 'Backward Time: ', sum(b)
+        print b
         print
 
         # Learning rate decay
