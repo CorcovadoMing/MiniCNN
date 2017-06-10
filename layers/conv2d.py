@@ -20,7 +20,7 @@ class Conv2d:
     def _forward(self, x):
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
-        
+
         # Although it 10x times slower, but it has better acc result, keep the original code here
         '''
         out_map_size = np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1
@@ -33,7 +33,8 @@ class Conv2d:
         return output
         '''
         
-        out_map_size = [x.shape[0]] + list(self.weights.shape[1:2]) + list(np.array(x.shape[2:])-np.array([4,4]))
+        out_map_size = np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1
+        out_map_size = list(x.shape[:1]) + list(self.weights.shape[1:2]) + list(out_map_size)
         output = np.empty(out_map_size)
         conv2d_op(x, self.weights, output)
         return output
