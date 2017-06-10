@@ -3,7 +3,8 @@ import time
 
 class Net:
     def __init__(self):
-        self.record = []
+        self.record_acc = []
+        self.record_loss = []
         self.layers = []
         self.profile_forward = []
         self.profile_backward = []
@@ -33,18 +34,18 @@ class Net:
         loss = 0.
         for i in xrange(len(self.output)):
             if self.output[i][self.y[i]] == 0:
-                loss -= 0
+                loss -= 0.
             else:
                 loss -= np.log(self.output[i][self.y[i]])
         loss /= len(self.output)
+        self.record_loss.append(loss)
 
         # Evaluation
         count = 0.
         for i in xrange(len(self.output)):
             if self.output[i].argmax() == self.y[i]:
                 count += 1.
-        #print 'Acc: ' + str(count / len(self.y)), 'Loss: ' + str(loss)
-        self.record.append(count / len(self.y))
+        self.record_acc.append(count / len(self.y))
     
     def backward(self, lr=0.01):
         pb = []
@@ -66,13 +67,14 @@ class Net:
             now = time.time()
     
     def get_record(self):
-        return self.record
+        return self.record_acc, self.record_loss
     
     def get_profile(self):
         return np.array(self.profile_forward).sum(axis=0), \
                 np.array(self.profile_backward).sum(axis=0)[::-1]
     
     def clear_record(self):
-        self.record = []
+        self.record_acc = []
+        self.record_loss = []
         self.profile_forward = []
         self.profile_backward = []

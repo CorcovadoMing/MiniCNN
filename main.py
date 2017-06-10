@@ -53,15 +53,20 @@ if __name__ == '__main__':
             net.forward()
             net.backward(lr)
         t = time.time() - now
-        print 'Acc: ', np.array(net.get_record()).mean(), t
+        acc, loss = net.get_record()
+        print 'Acc:    ', np.array(acc).mean()
+        print 'Loss:   ', np.array(loss).mean()
+        print 'Time:   ', t
         f, b = net.get_profile()
         net.clear_record()
 
         # Testing
         net.input(data.test())
         net.forward()
-        print 'Val: ', net.get_record()[0]
+        print 'Val:    ', net.get_record()[0][0]
+        print 'Loss:   ', net.get_record()[1][0]
         net.clear_record()
+        print
 
         # Profile
         print 'Forward Time:  ', sum(f)
