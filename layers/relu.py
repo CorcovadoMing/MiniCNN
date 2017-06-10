@@ -5,13 +5,8 @@ class Relu:
         pass
     
     def _forward(self, x):
-        # Need to unwrap this after operations
-        x = x * [x > 0][0]
-        # Fix the -0.0 issue
-        x += 0.
-        mask = np.ones_like(x)
-        self.mask = mask * [x > 0][0]
-        return x
+        self.mask = (x > 0).astype(int)
+        return x * self.mask + 0.
     
     def _backward(self, err, res):
         return err, self.mask
