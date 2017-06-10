@@ -1219,9 +1219,6 @@ typedef struct {
 static Py_ssize_t __Pyx_zeros[] = {0, 0, 0, 0, 0, 0, 0, 0};
 static Py_ssize_t __Pyx_minusones[] = {-1, -1, -1, -1, -1, -1, -1, -1};
 
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
-
 /* RealImag.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -1321,6 +1318,9 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 #endif
 
 /* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+
+/* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value);
 
 /* CIntFromPy.proto */
@@ -1386,8 +1386,6 @@ static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, char *, char *, int *); /*proto*/
 
 /* Module declarations from 'convop' */
-static CYTHON_INLINE int __pyx_f_6convop_int_max(int, int); /*proto*/
-static CYTHON_INLINE int __pyx_f_6convop_int_min(int, int); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_6convop_DTYPE_t = { "DTYPE_t", NULL, sizeof(__pyx_t_6convop_DTYPE_t), { 0 }, 0, 'R', 0, 0 };
 #define __Pyx_MODULE_NAME "convop"
 int __pyx_module_is_main_convop = 0;
@@ -2117,8 +2115,8 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_t_6convop_uint __pyx_v_output_channel;
   __pyx_t_6convop_uint __pyx_v_w_h;
   __pyx_t_6convop_uint __pyx_v_w_w;
-  int __pyx_v_fil_mid_h;
-  int __pyx_v_fil_mid_w;
+  CYTHON_UNUSED int __pyx_v_fil_mid_h;
+  CYTHON_UNUSED int __pyx_v_fil_mid_w;
   __pyx_t_6convop_uint __pyx_v_batch_size_;
   __pyx_t_6convop_uint __pyx_v_output_ch;
   __pyx_t_6convop_uint __pyx_v_input_ch;
@@ -2129,11 +2127,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_t_6convop_DTYPE_t __pyx_v_err_value;
   int __pyx_v_y;
   int __pyx_v_x;
-  int __pyx_v_y_offset_min;
-  int __pyx_v_y_offset_max;
   int __pyx_v_y_offset;
-  int __pyx_v_x_offset_min;
-  int __pyx_v_x_offset_max;
   int __pyx_v_x_offset;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_data;
   __Pyx_Buffer __pyx_pybuffer_data;
@@ -2159,9 +2153,9 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_t_6convop_uint __pyx_t_10;
   Py_ssize_t __pyx_t_11;
   Py_ssize_t __pyx_t_12;
-  int __pyx_t_13;
+  __pyx_t_6convop_uint __pyx_t_13;
   int __pyx_t_14;
-  int __pyx_t_15;
+  __pyx_t_6convop_uint __pyx_t_15;
   int __pyx_t_16;
   __pyx_t_6convop_uint __pyx_t_17;
   __pyx_t_6convop_uint __pyx_t_18;
@@ -2329,7 +2323,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  *     for batch_size_ in range(batch_size):
  *         for output_ch in range(output_channel):             # <<<<<<<<<<<<<<
  *             for y in range(out_h):
- *                 y_offset_min = int_max(-y, -fil_mid_h)
+ *                 for x in range(out_w):
  */
     __pyx_t_3 = __pyx_v_output_channel;
     for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
@@ -2339,8 +2333,8 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
  *     for batch_size_ in range(batch_size):
  *         for output_ch in range(output_channel):
  *             for y in range(out_h):             # <<<<<<<<<<<<<<
- *                 y_offset_min = int_max(-y, -fil_mid_h)
- *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
+ *                 for x in range(out_w):
+ *                     err_value = err[batch_size_, output_ch, y, x]
  */
       __pyx_t_5 = __pyx_v_out_h;
       for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
@@ -2349,38 +2343,20 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
         /* "convop.pyx":72
  *         for output_ch in range(output_channel):
  *             for y in range(out_h):
- *                 y_offset_min = int_max(-y, -fil_mid_h)             # <<<<<<<<<<<<<<
- *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
- *                 for x in range(out_w):
- */
-        __pyx_v_y_offset_min = __pyx_f_6convop_int_max((-__pyx_v_y), (-__pyx_v_fil_mid_h));
-
-        /* "convop.pyx":73
- *             for y in range(out_h):
- *                 y_offset_min = int_max(-y, -fil_mid_h)
- *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)             # <<<<<<<<<<<<<<
- *                 for x in range(out_w):
- *                     err_value = err[batch_size_, output_ch, y, x]
- */
-        __pyx_v_y_offset_max = __pyx_f_6convop_int_min((__pyx_v_out_h - __pyx_v_y), (__pyx_v_fil_mid_h + 1));
-
-        /* "convop.pyx":74
- *                 y_offset_min = int_max(-y, -fil_mid_h)
- *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
  *                 for x in range(out_w):             # <<<<<<<<<<<<<<
  *                     err_value = err[batch_size_, output_ch, y, x]
- *                     x_offset_min = int_max(-x, -fil_mid_w)
+ *                     for y_offset in range(w_h):
  */
         __pyx_t_7 = __pyx_v_out_w;
         for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
 
-          /* "convop.pyx":75
- *                 y_offset_max = int_min(out_h-y, fil_mid_h+1)
+          /* "convop.pyx":73
+ *             for y in range(out_h):
  *                 for x in range(out_w):
  *                     err_value = err[batch_size_, output_ch, y, x]             # <<<<<<<<<<<<<<
- *                     x_offset_min = int_max(-x, -fil_mid_w)
- *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
+ *                     for y_offset in range(w_h):
+ *                         for x_offset in range(w_w):
  */
           __pyx_t_9 = __pyx_v_batch_size_;
           __pyx_t_10 = __pyx_v_output_ch;
@@ -2388,85 +2364,67 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
           __pyx_t_12 = __pyx_v_x;
           __pyx_v_err_value = (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_err.rcbuffer->pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_err.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_err.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_err.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_err.diminfo[3].strides));
 
-          /* "convop.pyx":76
+          /* "convop.pyx":74
  *                 for x in range(out_w):
  *                     err_value = err[batch_size_, output_ch, y, x]
- *                     x_offset_min = int_max(-x, -fil_mid_w)             # <<<<<<<<<<<<<<
- *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
- *                     for y_offset in range(y_offset_min, y_offset_max):
- */
-          __pyx_v_x_offset_min = __pyx_f_6convop_int_max((-__pyx_v_x), (-__pyx_v_fil_mid_w));
-
-          /* "convop.pyx":77
- *                     err_value = err[batch_size_, output_ch, y, x]
- *                     x_offset_min = int_max(-x, -fil_mid_w)
- *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)             # <<<<<<<<<<<<<<
- *                     for y_offset in range(y_offset_min, y_offset_max):
- *                         for x_offset in range(x_offset_min, x_offset_max):
- */
-          __pyx_v_x_offset_max = __pyx_f_6convop_int_min((__pyx_v_out_w - __pyx_v_x), (__pyx_v_fil_mid_w + 1));
-
-          /* "convop.pyx":78
- *                     x_offset_min = int_max(-x, -fil_mid_w)
- *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
- *                     for y_offset in range(y_offset_min, y_offset_max):             # <<<<<<<<<<<<<<
- *                         for x_offset in range(x_offset_min, x_offset_max):
+ *                     for y_offset in range(w_h):             # <<<<<<<<<<<<<<
+ *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)
  */
-          __pyx_t_13 = __pyx_v_y_offset_max;
-          for (__pyx_t_14 = __pyx_v_y_offset_min; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+          __pyx_t_13 = __pyx_v_w_h;
+          for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_y_offset = __pyx_t_14;
 
-            /* "convop.pyx":79
- *                     x_offset_max = int_min(out_w-x, fil_mid_w+1)
- *                     for y_offset in range(y_offset_min, y_offset_max):
- *                         for x_offset in range(x_offset_min, x_offset_max):             # <<<<<<<<<<<<<<
+            /* "convop.pyx":75
+ *                     err_value = err[batch_size_, output_ch, y, x]
+ *                     for y_offset in range(w_h):
+ *                         for x_offset in range(w_w):             # <<<<<<<<<<<<<<
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)
  */
-            __pyx_t_15 = __pyx_v_x_offset_max;
-            for (__pyx_t_16 = __pyx_v_x_offset_min; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
+            __pyx_t_15 = __pyx_v_w_w;
+            for (__pyx_t_16 = 0; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
               __pyx_v_x_offset = __pyx_t_16;
 
-              /* "convop.pyx":80
- *                     for y_offset in range(y_offset_min, y_offset_max):
- *                         for x_offset in range(x_offset_min, x_offset_max):
+              /* "convop.pyx":76
+ *                     for y_offset in range(w_h):
+ *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)             # <<<<<<<<<<<<<<
  *                             input_x = <uint>(x + x_offset)
- *                             kernel_y = <uint>(fil_mid_w + y_offset)
+ *                             kernel_y = <uint>(y_offset)
  */
               __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
 
-              /* "convop.pyx":81
- *                         for x_offset in range(x_offset_min, x_offset_max):
+              /* "convop.pyx":77
+ *                         for x_offset in range(w_w):
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)             # <<<<<<<<<<<<<<
- *                             kernel_y = <uint>(fil_mid_w + y_offset)
- *                             kernel_x = <uint>(fil_mid_h + x_offset)
+ *                             kernel_y = <uint>(y_offset)
+ *                             kernel_x = <uint>(x_offset)
  */
               __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
 
-              /* "convop.pyx":82
+              /* "convop.pyx":78
  *                             input_y = <uint>(y + y_offset)
  *                             input_x = <uint>(x + x_offset)
- *                             kernel_y = <uint>(fil_mid_w + y_offset)             # <<<<<<<<<<<<<<
- *                             kernel_x = <uint>(fil_mid_h + x_offset)
+ *                             kernel_y = <uint>(y_offset)             # <<<<<<<<<<<<<<
+ *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):
  */
-              __pyx_v_kernel_y = ((__pyx_t_6convop_uint)(__pyx_v_fil_mid_w + __pyx_v_y_offset));
+              __pyx_v_kernel_y = ((__pyx_t_6convop_uint)__pyx_v_y_offset);
 
-              /* "convop.pyx":83
+              /* "convop.pyx":79
  *                             input_x = <uint>(x + x_offset)
- *                             kernel_y = <uint>(fil_mid_w + y_offset)
- *                             kernel_x = <uint>(fil_mid_h + x_offset)             # <<<<<<<<<<<<<<
+ *                             kernel_y = <uint>(y_offset)
+ *                             kernel_x = <uint>(x_offset)             # <<<<<<<<<<<<<<
  *                             for input_ch in range(input_channel):
  *                                 dx[batch_size_, input_ch, input_y, input_x] += \
  */
-              __pyx_v_kernel_x = ((__pyx_t_6convop_uint)(__pyx_v_fil_mid_h + __pyx_v_x_offset));
+              __pyx_v_kernel_x = ((__pyx_t_6convop_uint)__pyx_v_x_offset);
 
-              /* "convop.pyx":84
- *                             kernel_y = <uint>(fil_mid_w + y_offset)
- *                             kernel_x = <uint>(fil_mid_h + x_offset)
+              /* "convop.pyx":80
+ *                             kernel_y = <uint>(y_offset)
+ *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):             # <<<<<<<<<<<<<<
  *                                 dx[batch_size_, input_ch, input_y, input_x] += \
  *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
@@ -2475,7 +2433,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
               for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
                 __pyx_v_input_ch = __pyx_t_18;
 
-                /* "convop.pyx":86
+                /* "convop.pyx":82
  *                             for input_ch in range(input_channel):
  *                                 dx[batch_size_, input_ch, input_y, input_x] += \
  *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value             # <<<<<<<<<<<<<<
@@ -2487,8 +2445,8 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
                 __pyx_t_21 = __pyx_v_kernel_y;
                 __pyx_t_22 = __pyx_v_kernel_x;
 
-                /* "convop.pyx":85
- *                             kernel_x = <uint>(fil_mid_h + x_offset)
+                /* "convop.pyx":81
+ *                             kernel_x = <uint>(x_offset)
  *                             for input_ch in range(input_channel):
  *                                 dx[batch_size_, input_ch, input_y, input_x] += \             # <<<<<<<<<<<<<<
  *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
@@ -2500,7 +2458,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
                 __pyx_t_26 = __pyx_v_input_x;
                 *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_dx.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_dx.diminfo[0].strides, __pyx_t_24, __pyx_pybuffernd_dx.diminfo[1].strides, __pyx_t_25, __pyx_pybuffernd_dx.diminfo[2].strides, __pyx_t_26, __pyx_pybuffernd_dx.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_w.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_w.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_w.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_w.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_w.diminfo[3].strides)) * __pyx_v_err_value);
 
-                /* "convop.pyx":89
+                /* "convop.pyx":85
  * 
  *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \
  *                                 data[batch_size_, input_ch, input_y, input_x] * err_value             # <<<<<<<<<<<<<<
@@ -2512,7 +2470,7 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
                 __pyx_t_29 = __pyx_v_input_y;
                 __pyx_t_30 = __pyx_v_input_x;
 
-                /* "convop.pyx":88
+                /* "convop.pyx":84
  *                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
  * 
  *                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \             # <<<<<<<<<<<<<<
@@ -2532,22 +2490,22 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
     }
   }
 
-  /* "convop.pyx":91
+  /* "convop.pyx":87
  *                                 data[batch_size_, input_ch, input_y, input_x] * err_value
  * 
  *     dw[...] /= batch_size             # <<<<<<<<<<<<<<
  */
   __Pyx_INCREF(Py_Ellipsis);
   __pyx_t_35 = Py_Ellipsis;
-  __pyx_t_36 = PyObject_GetItem(((PyObject *)__pyx_v_dw), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_36 = PyObject_GetItem(((PyObject *)__pyx_v_dw), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_36);
-  __pyx_t_37 = PyInt_FromSsize_t(__pyx_v_batch_size); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_37 = PyInt_FromSsize_t(__pyx_v_batch_size); if (unlikely(!__pyx_t_37)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_37);
-  __pyx_t_38 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_36, __pyx_t_37); if (unlikely(!__pyx_t_38)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_38 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_36, __pyx_t_37); if (unlikely(!__pyx_t_38)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_38);
   __Pyx_DECREF(__pyx_t_36); __pyx_t_36 = 0;
   __Pyx_DECREF(__pyx_t_37); __pyx_t_37 = 0;
-  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_dw), __pyx_t_35, __pyx_t_38) < 0)) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_dw), __pyx_t_35, __pyx_t_38) < 0)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_38); __pyx_t_38 = 0;
   __Pyx_DECREF(__pyx_t_35); __pyx_t_35 = 0;
 
@@ -6918,37 +6876,6 @@ static void __Pyx_ReleaseBuffer(Py_buffer *view) {
         return (target_type) value;\
     }
 
-/* CIntToPy */
-        static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
-    const int neg_one = (int) -1, const_zero = (int) 0;
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(int) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(int) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(int) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(int),
-                                     little, !is_unsigned);
-    }
-}
-
 /* Declarations */
         #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -7258,6 +7185,37 @@ static void __Pyx_ReleaseBuffer(Py_buffer *view) {
         }
     #endif
 #endif
+
+/* CIntToPy */
+        static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
+    const int neg_one = (int) -1, const_zero = (int) 0;
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(int) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(int) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(int) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(int),
+                                     little, !is_unsigned);
+    }
+}
 
 /* CIntToPy */
         static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value) {

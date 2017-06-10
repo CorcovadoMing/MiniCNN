@@ -42,6 +42,12 @@ class Conv2d:
                 
     def _rot180(self, kernel):
         return np.flipud(np.fliplr(kernel))
+    
+    def _rot180_b(self, data):
+        for i in xrange(data.shape[0]):
+            for j in xrange(data.shape[1]):
+                data[i, j, :, :] = self._rot180(data[i, j, :, :])
+        return data
 
     def _backward(self, err, res):
         # Although it 10x times slower, but it has better acc result, keep the original code here
@@ -52,16 +58,19 @@ class Conv2d:
             for in_ch in xrange(self.weights.shape[0]):
                 for out_ch in xrange(self.weights.shape[1]):
                     self.d_weights[in_ch][out_ch] += signal.convolve2d(self._rot180(self.input[i][in_ch]), err[i][out_ch], mode='valid')
-                    output[i] += signal.convolve2d(err[i][out_ch], self._rot180(self.weights[in_ch][out_ch]))
+                    output[i][in_ch] += signal.convolve2d(err[i][out_ch], self._rot180(self.weights[in_ch][out_ch]))
         self.d_weights /= err.shape[0]
+        self.d_bias = (np.sum(err, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
         return output, None
         '''
         
         self.d_weights = np.zeros_like(self.weights)
         output = np.zeros_like(self.input)
-        deconv2d_op(self._rot180(self.input), err, self._rot180(self.weights), output, self.d_weights)
+        deconv2d_op(self.input, err, self._rot180_b(self.weights), output, self.d_weights)
+        self._rot180_b(self.weights) # Rotate back
         self.d_bias = (np.sum(err, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
-        return output, None
+        return output[:, :, ::-1, ::-1], None
+        
         
     
     def _update(self, step, mom, decay):

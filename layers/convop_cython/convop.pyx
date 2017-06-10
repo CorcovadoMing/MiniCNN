@@ -69,18 +69,14 @@ def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,
     for batch_size_ in range(batch_size):
         for output_ch in range(output_channel):
             for y in range(out_h):
-                y_offset_min = int_max(-y, -fil_mid_h)
-                y_offset_max = int_min(out_h-y, fil_mid_h+1)
                 for x in range(out_w):
                     err_value = err[batch_size_, output_ch, y, x]
-                    x_offset_min = int_max(-x, -fil_mid_w)
-                    x_offset_max = int_min(out_w-x, fil_mid_w+1)
-                    for y_offset in range(y_offset_min, y_offset_max):
-                        for x_offset in range(x_offset_min, x_offset_max):
+                    for y_offset in range(w_h):
+                        for x_offset in range(w_w):
                             input_y = <uint>(y + y_offset)
                             input_x = <uint>(x + x_offset)
-                            kernel_y = <uint>(fil_mid_w + y_offset)
-                            kernel_x = <uint>(fil_mid_h + x_offset)
+                            kernel_y = <uint>(y_offset)
+                            kernel_x = <uint>(x_offset)
                             for input_ch in range(input_channel):
                                 dx[batch_size_, input_ch, input_y, input_x] += \
                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value
