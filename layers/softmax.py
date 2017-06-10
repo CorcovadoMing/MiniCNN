@@ -3,8 +3,6 @@ import copy
 
 class Softmax:
     def __init__(self, i, c):
-        self.input_size = i
-        self.classes = c
         self.pd_weight = 0
         # Random kernel initialization
         self.weights = np.random.normal(0, 0.1, (i, c))
