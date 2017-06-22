@@ -15,7 +15,7 @@ if __name__ == '__main__':
         x -= x.mean()
         x /= x.std()
         return x
-    
+
     x = preprocessing(x)
     xt = preprocessing(xt)
     #x = np.random.random((n, 1, 28, 28))
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     data = DataProvider()
     n = 10001
     data.train_input(x[:n], y[:n])
-    data.test_input(xt[:n/5], yt[:n/5])
+    data.test_input(xt, yt)
     data.batch_size(16)
 
     lr = 0.005
