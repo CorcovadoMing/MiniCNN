@@ -30,22 +30,20 @@ if __name__ == '__main__':
     net.push(Maxpooling(2, 2)) # 4x24x24 -> 4x12x12
     net.push(Conv2d(3, 3, 4, 8)) # 4x12x12 -> 8x10x10
     net.push(Relu())
-    net.push(Conv2d(3, 3, 8, 8)) # 8x10x10 -> 8x8x8
+    net.push(Maxpooling(2, 2)) # 8x10x10 -> 8x5x5
+    net.push(Reshape((200)))
+    net.push(Linear(200, 64))
     net.push(Relu())
-    net.push(Maxpooling(2, 2)) # 8x8x8 -> 8x4x4
-    net.push(Reshape((128)))
-    net.push(Linear(128, 32))
-    net.push(Relu())
-    net.push(Softmax(32, 10))
+    net.push(Softmax(64, 10))
 
     # Data
     data = DataProvider()
     n = 10001
     data.train_input(x[:n], y[:n])
     data.test_input(xt, yt)
-    data.batch_size(16)
+    data.batch_size(64)
 
-    lr = 0.005
+    lr = 0.01
     gamma = 0.99
     for epoch in xrange(50):
         print 'Epoch: ', epoch

@@ -47,7 +47,6 @@ class Net:
         self.record_acc.append(count / len(self.y))
 
     def backward(self, lr=0.01):
-        #print self.output
         pb = []
         self.output[xrange(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]
@@ -63,7 +62,7 @@ class Net:
 
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(lr, 0.90, 1e-4)
+            i._update(lr, 0.99, 1e-5)
             now = time.time()
 
     def get_record(self):

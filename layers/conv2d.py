@@ -14,8 +14,8 @@ class Conv2d:
         # Momentum
         self.pd_weight = 0
         # Random kernel initialization
-        self.weights = np.random.normal(0, 0.1, (input_channel, output_channel, kw, kh))
-        self.bias = np.random.normal(0, 0.01, (1, output_channel, 1, 1))
+        self.weights = np.random.normal(0, 1e-1, (input_channel, output_channel, kw, kh))
+        self.bias = np.random.normal(0, 1e-4, (1, output_channel, 1, 1))
 
     def _forward(self, x):
         # Cache the input for backward use
@@ -25,7 +25,7 @@ class Conv2d:
         output = np.empty(out_map_size)
         conv2d_op(x, self._rot180_b(self.weights), output)
         self._rot180_b(self.weights) # Rotate back
-        return output + self.bias
+        return output #+ self.bias
                 
     def _rot180(self, kernel):
         return np.flipud(np.fliplr(kernel))
@@ -46,9 +46,9 @@ class Conv2d:
         return output, None
     
     def _update(self, step, mom, decay):
-        var = (self.pd_weight * mom) - (step * self.d_weights)
+        var = (self.pd_weight * mom) - (step * self.d_weights) - (decay * self.weights)
         self.pd_weight = var
         self.weights += var
-        self.weights -= (decay * self.weights)
-        #self.weights -= step * self.d_weights
-        self.bias -= step * self.d_bias
+        # self.weights -= (decay * self.weights)
+        # self.weights -= step * self.d_weights
+        # self.bias -= step * self.d_bias
