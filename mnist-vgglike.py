@@ -5,6 +5,8 @@ import numpy as np
 import time
 from keras.datasets import mnist
 
+from progressive.bar import Bar
+
 if __name__ == '__main__':
     (x, y), (xt, yt) = mnist.load_data()
 
@@ -50,10 +52,15 @@ if __name__ == '__main__':
 
         # Training (Mini-batch)
         now = time.time()
-        for _ in xrange(data.batch_run()):
+        bar = Bar(max_value=n)
+        bar.cursor.clear_lines(2)  # Make some room
+        bar.cursor.save()  # Mark starting line
+        for run in xrange(data.batch_run()):
             net.input(data.next_batch())
             net.forward()
             net.backward(lr)
+            bar.cursor.restore()  # Return cursor to start
+            bar.draw(value=run*64)
         t = time.time() - now
         acc, loss = net.get_record()
         print 'Acc:    ', np.array(acc).mean()

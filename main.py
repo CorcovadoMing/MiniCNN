@@ -41,7 +41,7 @@ if __name__ == '__main__':
     data.test_input(xt, yt)
     data.batch_size(16)
 
-    lr = 0.001
+    lr = 0.01
     gamma = 0.99
     for epoch in xrange(50):
         print 'Epoch: ', epoch

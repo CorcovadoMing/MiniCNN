@@ -25,7 +25,7 @@ class Conv2d:
         output = np.empty(out_map_size)
         conv2d_op(x, self._rot180_b(self.weights), output)
         self._rot180_b(self.weights) # Rotate back
-        return output #+ self.bias
+        return output + self.bias
                 
     def _rot180(self, kernel):
         return np.flipud(np.fliplr(kernel))
@@ -49,6 +49,4 @@ class Conv2d:
         var = (self.pd_weight * mom) - (step * self.d_weights) - (decay * self.weights)
         self.pd_weight = var
         self.weights += var
-        # self.weights -= (decay * self.weights)
-        # self.weights -= step * self.d_weights
-        # self.bias -= step * self.d_bias
+        self.bias -= step * self.d_bias
