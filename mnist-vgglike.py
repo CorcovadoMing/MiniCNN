@@ -47,8 +47,9 @@ if __name__ == '__main__':
 
     lr = 0.01
     gamma = 0.99
-    for epoch in xrange(50):
-        print 'Epoch: ', epoch
+    total_epoch = 50
+    for epoch in xrange(total_epoch):
+        print 'Epoch: {}/{}'.format(epoch, total_epoch)
 
         # Training (Mini-batch)
         now = time.time()
