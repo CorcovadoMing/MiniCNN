@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
     # Data
     data = DataProvider()
-    n = 6400
+    n = 60000
     data.train_input(x[:n], y[:n])
     data.test_input(xt, yt)
     data.batch_size(64)
