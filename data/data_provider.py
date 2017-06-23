@@ -21,14 +21,22 @@ class DataProvider:
     def batch_size(self, bs):
         self.bs = bs
     
+    def get_batch_size(self):
+        return self.bs
+    
+    def get_count(self):
+        return self.current
+    
     def batch_run(self):
         return (int(len(self.train_x)) / int(self.bs)) + 1
 
     def next_batch(self):
+        if self.current == len(self.train_x):
+            self.current = 0
         start, end = self.current, None
         if self.current + self.bs > len(self.train_x):
             end = len(self.train_x)
-            self.current = 0
+            self.current = end
         else:
             end = self.current + self.bs
             self.current += self.bs

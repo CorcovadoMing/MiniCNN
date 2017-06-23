@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
     # Data
     data = DataProvider()
-    n = 10001
+    n = 6400
     data.train_input(x[:n], y[:n])
     data.test_input(xt, yt)
     data.batch_size(64)
@@ -55,12 +55,12 @@ if __name__ == '__main__':
         bar = Bar(max_value=n)
         bar.cursor.clear_lines(2)  # Make some room
         bar.cursor.save()  # Mark starting line
-        for run in xrange(data.batch_run()):
+        for _ in xrange(data.batch_run()):
             net.input(data.next_batch())
             net.forward()
             net.backward(lr)
             bar.cursor.restore()  # Return cursor to start
-            bar.draw(value=run*64)
+            bar.draw(value=data.get_count())
         t = time.time() - now
         acc, loss = net.get_record()
         print 'Acc:    ', np.array(acc).mean()
