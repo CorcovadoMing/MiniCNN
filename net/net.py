@@ -8,7 +8,7 @@ class Net:
         self.layers = []
         self.profile_forward = []
         self.profile_backward = []
-    
+
     def push(self, layer):
         self.layers.append(layer)
 
@@ -36,8 +36,7 @@ class Net:
             if self.output[i][self.y[i]] == 0:
                 loss -= 0.
             else:
-                loss -= np.log(self.output[i][self.y[i]])
-        loss /= len(self.output)
+                loss -= (np.log(self.output[i][self.y[i]]) / len(self.output))
         self.record_loss.append(loss)
 
         # Evaluation
@@ -46,8 +45,9 @@ class Net:
             if self.output[i].argmax() == self.y[i]:
                 count += 1.
         self.record_acc.append(count / len(self.y))
-    
+
     def backward(self, lr=0.01):
+        #print self.output
         pb = []
         self.output[xrange(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]
@@ -60,19 +60,19 @@ class Net:
             pb.append(time.time() - now)
             now = time.time()
         self.profile_backward.append(pb)
-        
+
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(lr, 0.90, 1e-6)
+            i._update(lr, 0.90, 1e-4)
             now = time.time()
-    
+
     def get_record(self):
         return self.record_acc, self.record_loss
-    
+
     def get_profile(self):
         return np.array(self.profile_forward).sum(axis=0), \
                 np.array(self.profile_backward).sum(axis=0)[::-1]
-    
+
     def clear_record(self):
         self.record_acc = []
         self.record_loss = []
