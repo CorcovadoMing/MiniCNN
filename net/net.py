@@ -46,7 +46,7 @@ class Net:
                 count += 1.
         self.record_acc.append(count / len(self.y))
 
-    def backward(self, lr=0.01, mom=0.99, l2_decay=1e-5):
+    def backward(self, lr=0.01, mom=0.99, l2_decay=1e-3):
         pb = []
         self.output[xrange(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]

@@ -45,7 +45,7 @@ class Conv2d:
         return output, None
     
     def _update(self, step, mom, decay):
-        var = (self.pd_weight * mom) - (step * self.d_weights) - (decay * self.weights)
+        var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
         self.pd_weight = var
         self.weights += var
         self.bias -= step * self.d_bias
