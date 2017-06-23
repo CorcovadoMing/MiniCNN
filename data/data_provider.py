@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 class DataProvider:
     def __init__(self):
@@ -28,7 +29,7 @@ class DataProvider:
         return self.current
     
     def batch_run(self):
-        return (int(len(self.train_x)) / int(self.bs)) + 1
+        return int(math.ceil((int(len(self.train_x)) / float(self.bs))))
 
     def next_batch(self):
         if self.current == len(self.train_x):
