@@ -47,6 +47,8 @@ if __name__ == '__main__':
 
     lr = 0.01
     gamma = 0.99
+    mom = 0.99
+    l2_decay = 1e-5
     total_epoch = 50
     for epoch in xrange(total_epoch):
         print 'Epoch: {}/{}'.format(epoch, total_epoch)
@@ -59,7 +61,7 @@ if __name__ == '__main__':
         for _ in xrange(data.batch_run()):
             net.input(data.next_batch())
             net.forward()
-            net.backward(lr)
+            net.backward(lr, mom, l2_decay)
             bar.cursor.restore()  # Return cursor to start
             bar.draw(value=data.get_count())
         t = time.time() - now
