@@ -23,24 +23,23 @@ class Conv2d:
         out_map_size = np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1
         out_map_size = list(x.shape[:1]) + list(self.weights.shape[1:2]) + list(out_map_size)
         output = np.empty(out_map_size)
-        conv2d_op(x, self._rot180_b(self.weights), output)
-        self._rot180_b(self.weights) # Rotate back
+        conv2d_op(x, self._rot180_matrix(self.weights), output)
         return output + self.bias
                 
     def _rot180(self, kernel):
         return np.flipud(np.fliplr(kernel))
     
-    def _rot180_b(self, data):
+    def _rot180_matrix(self, data):
+        result = np.zeros_like(data)
         for i in xrange(data.shape[0]):
             for j in xrange(data.shape[1]):
-                data[i, j, :, :] = self._rot180(data[i, j, :, :])
-        return data
+                result[i, j, :, :] = self._rot180(data[i, j, :, :])
+        return result
 
     def _backward(self, err, res):
         self.d_weights = np.zeros_like(self.weights)
         output = np.zeros_like(self.input)
-        deconv2d_op(self.input, err, self._rot180_b(self.weights), output, self.d_weights)
-        self._rot180_b(self.weights) # Rotate back
+        deconv2d_op(self.input, err, self._rot180_matrix(self.weights), output, self.d_weights)
         self.d_weights = self.d_weights[:, :, ::-1, ::-1]
         self.d_bias = (np.sum(err, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
         return output, None
