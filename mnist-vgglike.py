@@ -78,11 +78,11 @@ if __name__ == '__main__':
         print
 
         # Profile
-        print 'Forward Time:  ', sum(f)
-        print f
-        print 'Backward Time: ', sum(b)
-        print b
-        print
+        #print 'Forward Time:  ', sum(f)
+        #print f
+        #print 'Backward Time: ', sum(b)
+        #print b
+        #print
 
         # Learning rate decay
         lr *= gamma
