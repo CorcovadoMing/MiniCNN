@@ -25,10 +25,10 @@ class Conv2d:
         output = np.empty(out_map_size)
         conv2d_op(x, self._rot180_matrix(self.weights), output)
         return output + self.bias
-                
+
     def _rot180(self, kernel):
         return np.flipud(np.fliplr(kernel))
-    
+
     def _rot180_matrix(self, data):
         result = np.zeros_like(data)
         for i in xrange(data.shape[0]):
@@ -43,7 +43,7 @@ class Conv2d:
         self.d_weights = self.d_weights[:, :, ::-1, ::-1]
         self.d_bias = (np.sum(err, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
         return output, None
-    
+
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
         self.pd_weight = var

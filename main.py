@@ -36,13 +36,13 @@ if __name__ == '__main__':
 
     # Data
     data = DataProvider()
-    n = 10001
+    n = 10000
     data.train_input(x[:n], y[:n])
     data.test_input(xt, yt)
     data.batch_size(16)
 
-    lr = 0.01
-    gamma = 0.99
+    lr = 0.0009
+    gamma = 0.9
     for epoch in xrange(50):
         print 'Epoch: ', epoch
 
