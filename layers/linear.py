@@ -14,9 +14,10 @@ class Linear:
         return np.dot(x, self.weights) + self.bias
 
     def _backward(self, err, res):
-        self.d_weights = np.dot(np.multiply(err, res).T, self.input).T / err.shape[0]
-        self.d_bias = np.multiply(err, res).sum(axis=0) / err.shape[0]
-        return np.dot(err, self.weights.T), None
+        delta = np.multiply(err, res)
+        self.d_weights = np.dot(delta.T, self.input).T / err.shape[0]
+        self.d_bias = delta.sum(axis=0) / err.shape[0]
+        return np.dot(delta, self.weights.T), None
 
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
