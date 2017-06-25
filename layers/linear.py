@@ -7,7 +7,7 @@ class Linear:
         # Random kernel initialization
         self.weights = np.random.normal(0, 1e-1, (i, c))
         self.bias = np.random.normal(0, 1e-4, (c))
-    
+
     def _forward(self, x):
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
@@ -17,7 +17,7 @@ class Linear:
         self.d_weights = np.dot(np.multiply(err, res).T, self.input).T / err.shape[0]
         self.d_bias = np.multiply(err, res).sum(axis=0) / err.shape[0]
         return np.dot(err, self.weights.T), None
-    
+
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
         self.pd_weight = var
