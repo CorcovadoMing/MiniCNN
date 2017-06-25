@@ -26,20 +26,10 @@ class Conv2d:
         conv2d_op(x, self.weights, output)
         return output + self.bias
 
-    def _rot180(self, kernel):
-        return np.flipud(np.fliplr(kernel))
-
-    def _rot180_matrix(self, data):
-        result = np.zeros_like(data)
-        for i in xrange(data.shape[0]):
-            for j in xrange(data.shape[1]):
-                result[i, j, :, :] = self._rot180(data[i, j, :, :])
-        return result
-
     def _backward(self, err, res):
         self.d_weights = np.zeros_like(self.weights)
         output = np.zeros_like(self.input)
-        deconv2d_op(self.input, err, self._rot180_matrix(self.weights), output, self.d_weights)
+        deconv2d_op(self.input, err, self.weights[:, :, ::-1, ::-1], output, self.d_weights)
         self.d_bias = (np.sum(err, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
         return output, None
 
