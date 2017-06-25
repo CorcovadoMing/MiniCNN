@@ -29,14 +29,16 @@ class Conv2d:
         return output + self.bias
 
     def _backward(self, err, res):
-        d = np.multiply(err, res)
-        delta = d.transpose(1,0,2,3).reshape(err.shape[1], -1)
+        delta = np.multiply(err, res)
+        delta_vector = delta.transpose(1,0,2,3).reshape(err.shape[1], -1)
         s = self.weights.transpose(1,2,3,0).shape 
-        self.d_weights = (delta.dot(self.input_col.T) / err.shape[0]).reshape(s).transpose(3,0,1,2)
-        self.d_bias = (np.sum(d, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
-        d_ = im2col(d, self.weights.shape[2], self.weights.shape[3], 2, 1)
+        self.d_weights = (delta_vector.dot(self.input_col.T) / err.shape[0]).reshape(s).transpose(3,0,1,2)
+
+        self.d_bias = (np.sum(delta, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
+        
+        delta_col = im2col(delta, self.weights.shape[2], self.weights.shape[3], 2, 1)
         w_ = self.weights[:,:,::-1,::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
-        return w_.dot(d_).reshape(self.input_shape), None
+        return w_.dot(delta_col).reshape(self.input_shape), None
 
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
