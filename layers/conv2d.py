@@ -2,6 +2,7 @@ import numpy as np
 import copy
 from scipy import signal
 from convop import conv2d_op, deconv2d_op
+from gemm import im2col
 
 class Conv2d:
     def __init__(self, kw, kh, input_channel, output_channel, pw=0, ph=0, sw=1, sh=1):
@@ -21,9 +22,13 @@ class Conv2d:
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
         out_map_size = np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1
-        out_map_size = list(x.shape[:1]) + list(self.weights.shape[1:2]) + list(out_map_size)
-        output = np.empty(out_map_size)
-        conv2d_op(x, self.weights, output)
+        #out_map_size = list(x.shape[:1]) + list(self.weights.shape[1:2]) + list(out_map_size)
+        #output = np.empty(out_map_size)
+        #conv2d_op(x, self.weights, output)
+        x_ = im2col(x, self.weights.shape[2], self.weights.shape[3], 0, 1)
+        w_ = self.weights.transpose(1,2,3,0).reshape(self.weights.shape[1], -1)
+        out_map_size = list(self.weights.shape[1:2]) + list(x.shape[:1]) + list(out_map_size)
+        output = w_.dot(x_).reshape(out_map_size).transpose(1,0,2,3)
         return output + self.bias
 
     def _backward(self, err, res):
