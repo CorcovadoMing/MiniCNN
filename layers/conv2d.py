@@ -32,10 +32,11 @@ class Conv2d:
         return output + self.bias
 
     def _backward(self, err, res):
+        delta = np.multiply(err, res)
         self.d_weights = np.zeros_like(self.weights)
         output = np.zeros_like(self.input)
-        deconv2d_op(self.input, err, self.weights[:, :, ::-1, ::-1], output, self.d_weights)
-        self.d_bias = (np.sum(err, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
+        deconv2d_op(self.input, delta, self.weights[:, :, ::-1, ::-1], output, self.d_weights)
+        self.d_bias = (np.sum(delta, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
         return output, None
 
     def _update(self, step, mom, decay):
