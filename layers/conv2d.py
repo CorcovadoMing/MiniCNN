@@ -31,14 +31,14 @@ class Conv2d:
     def _backward(self, err, res):
         delta = np.multiply(err, res)
         delta_vector = delta.transpose(1,0,2,3).reshape(err.shape[1], -1)
-        s = self.weights.transpose(1,2,3,0).shape 
+        s = self.weights.transpose(1,2,3,0).shape
         self.d_weights = (delta_vector.dot(self.input_col.T) / err.shape[0]).reshape(s).transpose(3,0,1,2)
 
         self.d_bias = (np.sum(delta, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
-        
+
         padding = self.weights.shape[3] - 1
         delta_col = im2col(delta, self.weights.shape[2], self.weights.shape[3], padding, 1)
-        w_ = self.weights[:,:,::-1,::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
+        w_ = self.weights[:, :, ::-1, ::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
         return w_.dot(delta_col).reshape(self.input_shape), None
 
     def _update(self, step, mom, decay):
