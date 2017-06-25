@@ -45,10 +45,10 @@ if __name__ == '__main__':
     data.test_input(xt, yt)
     data.batch_size(64)
 
-    lr = 0.001
+    lr = 0.01
     gamma = 0.99
     mom = 0.99
-    l2_decay = 1e-3
+    l2_decay = 1e-4
     total_epoch = 50
     for epoch in xrange(total_epoch):
         print 'Epoch: {}/{}'.format(epoch, total_epoch)
