@@ -19,22 +19,31 @@ class Conv2d:
         self.bias = np.random.normal(0, 1e-4, (1, output_channel, 1, 1))
 
     def _forward(self, x):
-        # Cache the input for backward use
-        self.input = copy.deepcopy(x)
+        self.input_shape = x.shape # Cache the input for backward use
         out_map_size = np.array(x.shape[2:]) - np.array(self.weights.shape[2:]) + 1
         out_map_size = list(self.weights.shape[1:2]) + list(x.shape[:1]) + list(out_map_size)
         x_ = im2col(x, self.weights.shape[2], self.weights.shape[3], 0, 1)
+        self.input_col = x_ # Cache the input for backward use
         w_ = self.weights.transpose(1,2,3,0).reshape(self.weights.shape[1], -1)
         output = w_.dot(x_).reshape(out_map_size).transpose(1,0,2,3)
         return output + self.bias
 
     def _backward(self, err, res):
+        '''
         delta = np.multiply(err, res)
         self.d_weights = np.zeros_like(self.weights)
         output = np.zeros_like(self.input)
         deconv2d_op(self.input, delta, self.weights[:, :, ::-1, ::-1], output, self.d_weights)
         self.d_bias = (np.sum(delta, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
-        return output, None
+        '''
+        d = np.multiply(err, res)
+        delta = d.transpose(1,0,2,3).reshape(err.shape[1], -1)
+        s = self.weights.transpose(1,2,3,0).shape 
+        self.d_weights = (delta.dot(self.input_col.T) / err.shape[0]).reshape(s).transpose(3,0,1,2)
+        self.d_bias = (np.sum(d, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
+        d_ = im2col(d, self.weights.shape[2], self.weights.shape[3], 2, 1)
+        w_ = self.weights[:,:,::-1,::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
+        return w_.dot(d_).reshape(self.input_shape), None
 
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
