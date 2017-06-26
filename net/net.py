@@ -10,6 +10,8 @@ class Net:
         self.profile_backward = []
 
     def push(self, layer):
+        if not len(self.layers):
+            layer.set_first()
         self.layers.append(layer)
 
     def pop(self):

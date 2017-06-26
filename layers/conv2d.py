@@ -11,12 +11,17 @@ class Conv2d:
         self.padding_height = ph
         self.stride_width = sw
         self.stride_height = sh
-
+        # Control flag
+        self.is_first_layer = False
         # Momentum
         self.pd_weight = 0
         # Random kernel initialization
         self.weights = np.random.normal(0, 1e-1, (input_channel, output_channel, kw, kh))
         self.bias = np.random.normal(0, 1e-4, (1, output_channel, 1, 1))
+
+    def set_first(self):
+        self.is_first_layer = True
+        return self.is_first_layer
 
     def _forward(self, x):
         self.input_shape = x.shape # Cache the input for backward use
@@ -36,10 +41,13 @@ class Conv2d:
 
         self.d_bias = (np.sum(delta, axis=(0, 2, 3)) / err.shape[0])[None, :, None, None]
 
-        padding = self.weights.shape[3] - 1
-        delta_col = im2col(delta, self.weights.shape[2], self.weights.shape[3], padding, 1)
-        w_ = self.weights[:, :, ::-1, ::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
-        return w_.dot(delta_col).reshape(self.input_shape), None
+        if not self.is_first_layer:
+            padding = self.weights.shape[3] - 1
+            delta_col = im2col(delta, self.weights.shape[2], self.weights.shape[3], padding, 1)
+            w_ = self.weights[:, :, ::-1, ::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
+            return w_.dot(delta_col).reshape(self.input_shape), None
+        else:
+            return None, None
 
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
