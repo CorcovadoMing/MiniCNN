@@ -25,12 +25,12 @@ if __name__ == '__main__':
 
     # Model
     net = Net()
-    net.push(Conv2d(3, 3, 1, 4)) # 1x28x28 -> 4x26x26
+    net.push(Conv2d(3, 3, 1, 4), no_bias=True) # 1x28x28 -> 4x26x26
     net.push(Relu())
-    net.push(Conv2d(3, 3, 4, 4)) # 4x26x26 -> 4x24x24
+    net.push(Conv2d(3, 3, 4, 4), no_bias=True) # 4x26x26 -> 4x24x24
     net.push(Relu())
     net.push(Maxpooling(2, 2)) # 4x24x24 -> 4x12x12
-    net.push(Conv2d(3, 3, 4, 8)) # 4x12x12 -> 8x10x10
+    net.push(Conv2d(3, 3, 4, 8), no_bias=True) # 4x12x12 -> 8x10x10
     net.push(Relu())
     net.push(Maxpooling(2, 2)) # 8x10x10 -> 8x5x5
     net.push(Reshape((200)))
