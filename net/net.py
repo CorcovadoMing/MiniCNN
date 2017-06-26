@@ -9,9 +9,11 @@ class Net:
         self.profile_forward = []
         self.profile_backward = []
 
-    def push(self, layer):
+    def push(self, layer, no_bias=False):
         if not len(self.layers):
             layer.set_first()
+        if no_bias:
+            layer.set_no_bias()
         self.layers.append(layer)
 
     def pop(self):
