@@ -10,7 +10,7 @@ class Softmax:
 
     def softmax_derivative(self, probs):
         return np.diag(probs) - np.dot(np.expand_dims(probs, 1), np.expand_dims(probs, 0))
-    
+
     def _forward(self, x):
         # Cache the input for backward use
         self.input = copy.deepcopy(x)
@@ -23,7 +23,7 @@ class Softmax:
         self.d_weights = np.dot(err.T, self.input).T / err.shape[0]
         self.d_bias = err.sum(axis=0) / err.shape[0]
         return np.dot(err, self.weights.T), None
-    
+
     def _update(self, step, mom, decay):
         var = (self.pd_weight * mom) - (step * self.d_weights) - (step * decay * self.weights)
         self.pd_weight = var
