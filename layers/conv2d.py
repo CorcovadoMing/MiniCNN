@@ -1,7 +1,7 @@
 import numpy as np
-import copy
-from scipy import signal
-from convop import conv2d_op, deconv2d_op
+#import copy
+#from scipy import signal
+#from convop import conv2d_op, deconv2d_op
 from gemm import im2col
 
 class Conv2d:
