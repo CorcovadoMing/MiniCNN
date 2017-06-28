@@ -15,7 +15,7 @@ class Linear:
 
     def _backward(self, err, res):
         delta = np.multiply(err, res)
-        self.d_weights = np.dot(delta.T, self.input).T / err.shape[0]
+        self.d_weights = self.input.dot(delta) / err.shape[0]
         self.d_bias = delta.sum(axis=0) / err.shape[0]
         return np.dot(delta, self.weights.T), None
 
