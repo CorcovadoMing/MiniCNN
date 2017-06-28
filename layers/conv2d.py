@@ -50,7 +50,7 @@ class Conv2d:
         if not self.is_first_layer:
             padding = self.weights.shape[3] - 1
             delta_col = im2col(delta, self.weights.shape[2], self.weights.shape[3], padding, 1)
-            w_ = self.weights[:, :, ::-1, ::-1].transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
+            w_ = self.weights.transpose(0,2,3,1).reshape(self.weights.shape[0], -1)
             return w_.dot(delta_col).reshape(self.input_shape), None
         else:
             return None, None
