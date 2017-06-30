@@ -8,7 +8,7 @@ class BatchNorm:
     def _forward(self, x):
         x_mean = x.mean(axis=0) # size: single image
         x_var = x.var(axis=0) # size: single image
-        eps = 1e-8
+        eps = 1e-10
         self.inv_var = (x_var + eps)**0.5 # size: single image
         self.x_hat = (x - x_mean) / self.inv_var # size: batched image
         return self.gamma * self.x_hat + self.beta
