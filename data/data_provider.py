@@ -36,6 +36,12 @@ class DataProvider:
     def get_count_test(self):
         return self.current_test
 
+    def shuffle(self):
+        rng_state = np.random.get_state()
+        np.random.shuffle(self.train_x)
+        np.random.set_state(rng_state)
+        np.random.shuffle(self.train_y)
+
     def batch_run(self):
         return int(math.ceil((int(len(self.train_x)) / float(self.bs))))
 
