@@ -12,15 +12,15 @@ class BatchNorm:
         self.inv_var = (x_var + eps)**0.5 # size: single image
         self.x_hat = (x - x_mean) / self.inv_var # size: batched image
         return self.gamma * self.x_hat + self.beta
-        
+
     def _backward(self, err, res):
         N = err.shape[0]
         self.d_gamma = np.multiply(err, self.x_hat).sum()
         self.d_beta = err.sum()
-        dx_hat = err * self.gamma 
-        output = (1. / N) * self.inv_var * (N * dx_hat - dx_hat.sum(axis=0) - self.x_hat * np.sum(dx_hat * self.x_hat, axis=0))        
+        dx_hat = err * self.gamma
+        output = (1. / N) * self.inv_var * (N * dx_hat - dx_hat.sum(axis=0) - self.x_hat * np.sum(dx_hat * self.x_hat, axis=0))
         return output, None
 
-    def _update(self, step, mom, decay):
+    def _update(self, step, mom, decay, epoch):
         self.gamma -= step * self.d_gamma
         self.beta -= step * self.d_beta
