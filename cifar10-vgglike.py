@@ -4,7 +4,6 @@ from net import Net
 import numpy as np
 import time
 from keras.datasets import cifar10
-
 from progressive.bar import Bar
 
 if __name__ == '__main__':
@@ -27,50 +26,57 @@ if __name__ == '__main__':
     y = y.ravel()
     yt = yt.ravel()
 
+
+    n = 50000
+    nt = 10000
+    x = x[:n]
+    y = y[:n]
+    xt = xt[:nt]
+    yt = yt[:nt]
+
     # Model
     net = Net()
-    net.push(Conv2d(5, 5, 3, 6)) # 3x32 -> 6x28
+    net.push(Conv2d(5, 5, 3, 20)) # 3x32 -> 10x28
     net.push(Relu())
     net.push(BatchNorm())
-    net.push(Maxpooling(2, 2)) # 6x28 -> 6x14
-    net.push(Conv2d(5, 5, 6, 16)) # 6x14x14 -> 16x10x10
-    net.push(Relu())
-    net.push(BatchNorm())
-    net.push(Maxpooling(2, 2)) # 16x10x10 -> 16x5x5
-    net.push(Reshape((400)))
-    net.push(Linear(400, 200))
+    net.push(Maxpooling(4, 4)) # 10x28 -> 10x7
+    #net.push(Conv2d(5, 5, 10, 20)) # 20x14 -> 30x10
+    #net.push(Relu())
+    #net.push(BatchNorm())
+    #net.push(Maxpooling(2, 2)) # 50x10 -> 50x5
+    net.push(Reshape((980)))
+    net.push(Linear(980, 200))
     net.push(Relu())
     net.push(BatchNorm())
     net.push(Softmax(200, 10))
 
     # Data
     data = DataProvider()
-    n = 50000
-    nt = 10000
-    data.train_input(x[:n], y[:n])
-    data.test_input(xt[:nt], yt[:nt])
+    data.train_input(x, y)
+    data.test_input(xt, yt)
     data.batch_size(32)
     data.batch_size_test(1000)
 
-    lr = 0.001
+    lr = 1e-3
     gamma = 1
-    mom = 0.95
-    l2_decay = 1e-3
+    beta_1 = 0.9
+    beta_2 = 0.999
     total_epoch = 1000
 
-    loss_cache = 100
-    for epoch in xrange(total_epoch):
+    loss_cache = 10
+    for epoch in xrange(1, total_epoch):
         print 'Epoch: {}/{}'.format(epoch, total_epoch)
 
         # Training (Mini-batch)
         now = time.time()
+        data.shuffle()
         bar = Bar(max_value=n)
         bar.cursor.clear_lines(2)  # Make some room
         bar.cursor.save()  # Mark starting line
         for _ in xrange(data.batch_run()):
             net.input(data.next_batch())
             net.forward()
-            net.backward(lr, mom, l2_decay)
+            net.backward(lr, beta_1, beta_2, epoch)
             bar.cursor.restore()  # Return cursor to start
             bar.draw(value=data.get_count())
         t = time.time() - now
@@ -101,8 +107,8 @@ if __name__ == '__main__':
         print
 
         # Profile
-        #print 'Forward Time:  ', sum(f)
-        #print f
-        #print 'Backward Time: ', sum(b)
-        #print b
-        #print
+        print 'Forward Time:  ', sum(f)
+        print f
+        print 'Backward Time: ', sum(b)
+        print b
+        print
