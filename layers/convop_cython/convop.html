@@ -286,75 +286,6 @@ body.cython { font-family: courier; font-size: 12; }
 .cython.score-252 {background-color: #FFFF09;}
 .cython.score-253 {background-color: #FFFF09;}
 .cython.score-254 {background-color: #FFFF09;}
-.cython .hll { background-color: #ffffcc }
-.cython  { background: #f8f8f8; }
-.cython .c { color: #408080; font-style: italic } /* Comment */
-.cython .err { border: 1px solid #FF0000 } /* Error */
-.cython .k { color: #008000; font-weight: bold } /* Keyword */
-.cython .o { color: #666666 } /* Operator */
-.cython .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.cython .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.cython .cp { color: #BC7A00 } /* Comment.Preproc */
-.cython .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.cython .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.cython .cs { color: #408080; font-style: italic } /* Comment.Special */
-.cython .gd { color: #A00000 } /* Generic.Deleted */
-.cython .ge { font-style: italic } /* Generic.Emph */
-.cython .gr { color: #FF0000 } /* Generic.Error */
-.cython .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.cython .gi { color: #00A000 } /* Generic.Inserted */
-.cython .go { color: #888888 } /* Generic.Output */
-.cython .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.cython .gs { font-weight: bold } /* Generic.Strong */
-.cython .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.cython .gt { color: #0044DD } /* Generic.Traceback */
-.cython .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.cython .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.cython .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.cython .kp { color: #008000 } /* Keyword.Pseudo */
-.cython .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.cython .kt { color: #B00040 } /* Keyword.Type */
-.cython .m { color: #666666 } /* Literal.Number */
-.cython .s { color: #BA2121 } /* Literal.String */
-.cython .na { color: #7D9029 } /* Name.Attribute */
-.cython .nb { color: #008000 } /* Name.Builtin */
-.cython .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.cython .no { color: #880000 } /* Name.Constant */
-.cython .nd { color: #AA22FF } /* Name.Decorator */
-.cython .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.cython .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.cython .nf { color: #0000FF } /* Name.Function */
-.cython .nl { color: #A0A000 } /* Name.Label */
-.cython .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.cython .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.cython .nv { color: #19177C } /* Name.Variable */
-.cython .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.cython .w { color: #bbbbbb } /* Text.Whitespace */
-.cython .mb { color: #666666 } /* Literal.Number.Bin */
-.cython .mf { color: #666666 } /* Literal.Number.Float */
-.cython .mh { color: #666666 } /* Literal.Number.Hex */
-.cython .mi { color: #666666 } /* Literal.Number.Integer */
-.cython .mo { color: #666666 } /* Literal.Number.Oct */
-.cython .sa { color: #BA2121 } /* Literal.String.Affix */
-.cython .sb { color: #BA2121 } /* Literal.String.Backtick */
-.cython .sc { color: #BA2121 } /* Literal.String.Char */
-.cython .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.cython .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.cython .s2 { color: #BA2121 } /* Literal.String.Double */
-.cython .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.cython .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.cython .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.cython .sx { color: #008000 } /* Literal.String.Other */
-.cython .sr { color: #BB6688 } /* Literal.String.Regex */
-.cython .s1 { color: #BA2121 } /* Literal.String.Single */
-.cython .ss { color: #19177C } /* Literal.String.Symbol */
-.cython .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.cython .fm { color: #0000FF } /* Name.Function.Magic */
-.cython .vc { color: #19177C } /* Name.Variable.Class */
-.cython .vg { color: #19177C } /* Name.Variable.Global */
-.cython .vi { color: #19177C } /* Name.Variable.Instance */
-.cython .vm { color: #19177C } /* Name.Variable.Magic */
-.cython .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
     <script>
     function toggleDiv(id) {
@@ -371,20 +302,20 @@ body.cython { font-family: courier; font-size: 12; }
     Click on a line that starts with a "<code>+</code>" to see the C code that Cython generated for it.
 </p>
 <p>Raw output: <a href="convop.c">convop.c</a></p>
-<div class="cython"><pre class="cython line score-11" onclick='toggleDiv(this)'>+<span class="">01</span>: <span class="k">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span></pre>
+<div class="cython"><pre class="cython line score-11" onclick='toggleDiv(this)'>+<span class="">01</span>: from __future__ import division</pre>
 <pre class='cython code score-11 '>  __pyx_t_2 = <span class='py_c_api'>PyDict_New</span>(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_test, __pyx_t_2) &lt; 0) __PYX_ERR(0, 1, __pyx_L1_error)
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-</pre><pre class="cython line score-8" onclick='toggleDiv(this)'>+<span class="">02</span>: <span class="k">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></pre>
+</pre><pre class="cython line score-8" onclick='toggleDiv(this)'>+<span class="">02</span>: import numpy as np</pre>
 <pre class='cython code score-8 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_Import</span>(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_np, __pyx_t_1) &lt; 0) __PYX_ERR(0, 2, __pyx_L1_error)
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">03</span>: <span class="k">import</span> <span class="nn">cython</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">04</span>: <span class="k">cimport</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">03</span>: import cython</pre>
+<pre class="cython line score-0">&#xA0;<span class="">04</span>: cimport numpy as np</pre>
 <pre class="cython line score-0">&#xA0;<span class="">05</span>: </pre>
-<pre class="cython line score-11" onclick='toggleDiv(this)'>+<span class="">06</span>: <span class="n">DTYPE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span></pre>
+<pre class="cython line score-11" onclick='toggleDiv(this)'>+<span class="">06</span>: DTYPE = np.float</pre>
 <pre class='cython code score-11 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_1, __pyx_n_s_float); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
@@ -392,15 +323,15 @@ body.cython { font-family: courier; font-size: 12; }
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_DTYPE, __pyx_t_2) &lt; 0) __PYX_ERR(0, 6, __pyx_L1_error)
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">07</span>: <span class="k">ctypedef</span> <span class="n">np</span><span class="o">.</span><span class="n">float_t</span> <span class="n">DTYPE_t</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">07</span>: ctypedef np.float_t DTYPE_t</pre>
 <pre class='cython code score-0 '>typedef __pyx_t_5numpy_float_t __pyx_t_6convop_DTYPE_t;
-</pre><pre class="cython line score-0">&#xA0;<span class="">08</span>: <span class="k">ctypedef</span> <span class="n">Py_ssize_t</span> <span class="n">uint</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">08</span>: ctypedef Py_ssize_t uint</pre>
 <pre class="cython line score-0">&#xA0;<span class="">09</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">10</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">11</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">boundscheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">12</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">wraparound</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">13</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-83" onclick='toggleDiv(this)'>+<span class="">14</span>: <span class="k">def</span> <span class="nf">conv2d_op</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">data</span><span class="p">,</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">11</span>: @cython.boundscheck(False)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">12</span>: @cython.wraparound(False)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">13</span>: @cython.nonecheck(False)</pre>
+<pre class="cython line score-83" onclick='toggleDiv(this)'>+<span class="">14</span>: def conv2d_op(np.ndarray[DTYPE_t, ndim=4] data,</pre>
 <pre class='cython code score-83 '>/* Python wrapper */
 static PyObject *__pyx_pw_6convop_1conv2d_op(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyMethodDef __pyx_mdef_6convop_1conv2d_op = {"conv2d_op", (PyCFunction)__pyx_pw_6convop_1conv2d_op, METH_VARARGS|METH_KEYWORDS, 0};
@@ -566,68 +497,68 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_conv2d_op, __pyx_t_2) &lt; 0) __PYX_ERR(0, 14, __pyx_L1_error)
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_codeobj__11 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(3, 0, 22, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_Ming_Dropbox_Workspace_Pr, __pyx_n_s_conv2d_op, 14, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 14, __pyx_L1_error)
-</pre><pre class="cython line score-0">&#xA0;<span class="">15</span>:             <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">w</span><span class="p">,</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">16</span>:             <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">out</span><span class="p">):</span></pre>
+  __pyx_codeobj__11 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(3, 0, 22, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_ming_Dropbox_Workspace_Pro, __pyx_n_s_conv2d_op, 14, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 14, __pyx_L1_error)
+</pre><pre class="cython line score-0">&#xA0;<span class="">15</span>:             np.ndarray[DTYPE_t, ndim=4] w,</pre>
+<pre class="cython line score-0">&#xA0;<span class="">16</span>:             np.ndarray[DTYPE_t, ndim=4] out):</pre>
 <pre class="cython line score-0">&#xA0;<span class="">17</span>: </pre>
-<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">18</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">batch_size</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span></pre>
+<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">18</span>:     cdef uint batch_size = data.shape[0]</pre>
 <pre class='cython code score-0 '>  __pyx_v_batch_size = (__pyx_v_data-&gt;dimensions[0]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">19</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">out_h</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">19</span>:     cdef uint out_h = out.shape[2]</pre>
 <pre class='cython code score-0 '>  __pyx_v_out_h = (__pyx_v_out-&gt;dimensions[2]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">20</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">out_w</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">20</span>:     cdef uint out_w = out.shape[3]</pre>
 <pre class='cython code score-0 '>  __pyx_v_out_w = (__pyx_v_out-&gt;dimensions[3]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">21</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">input_channel</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">21</span>:     cdef uint input_channel = w.shape[0]</pre>
 <pre class='cython code score-0 '>  __pyx_v_input_channel = (__pyx_v_w-&gt;dimensions[0]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">22</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">output_channel</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">22</span>:     cdef uint output_channel = w.shape[1]</pre>
 <pre class='cython code score-0 '>  __pyx_v_output_channel = (__pyx_v_w-&gt;dimensions[1]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">23</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">w_h</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">23</span>:     cdef uint w_h = w.shape[2]</pre>
 <pre class='cython code score-0 '>  __pyx_v_w_h = (__pyx_v_w-&gt;dimensions[2]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">24</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">w_w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">24</span>:     cdef uint w_w = w.shape[3]</pre>
 <pre class='cython code score-0 '>  __pyx_v_w_w = (__pyx_v_w-&gt;dimensions[3]);
 </pre><pre class="cython line score-0">&#xA0;<span class="">25</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">26</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">batch_size_</span><span class="p">,</span> <span class="nf">input_ch</span><span class="p">,</span> <span class="nf">output_ch</span><span class="p">,</span> <span class="nf">y</span><span class="p">,</span> <span class="nf">x</span><span class="p">,</span> <span class="nf">y_offset</span><span class="p">,</span> <span class="nf">x_offset</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">27</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">input_y</span><span class="p">,</span> <span class="nf">input_x</span><span class="p">,</span> <span class="nf">kernel_y</span><span class="p">,</span> <span class="nf">kernel_x</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">28</span>:     <span class="k">cdef</span> <span class="kt">DTYPE_t</span> <span class="nf">value</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">26</span>:     cdef uint batch_size_, input_ch, output_ch, y, x, y_offset, x_offset</pre>
+<pre class="cython line score-0">&#xA0;<span class="">27</span>:     cdef uint input_y, input_x, kernel_y, kernel_x</pre>
+<pre class="cython line score-0">&#xA0;<span class="">28</span>:     cdef DTYPE_t value</pre>
 <pre class="cython line score-0">&#xA0;<span class="">29</span>: </pre>
-<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">30</span>:     <span class="k">for</span> <span class="n">batch_size_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span></pre>
+<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">30</span>:     for batch_size_ in range(batch_size):</pre>
 <pre class='cython code score-0 '>  __pyx_t_1 = __pyx_v_batch_size;
   for (__pyx_t_2 = 0; __pyx_t_2 &lt; __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_batch_size_ = __pyx_t_2;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">31</span>:         <span class="k">for</span> <span class="n">output_ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">output_channel</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">31</span>:         for output_ch in range(output_channel):</pre>
 <pre class='cython code score-0 '>    __pyx_t_3 = __pyx_v_output_channel;
     for (__pyx_t_4 = 0; __pyx_t_4 &lt; __pyx_t_3; __pyx_t_4+=1) {
       __pyx_v_output_ch = __pyx_t_4;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">32</span>:             <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">out_h</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">32</span>:             for y in range(out_h):</pre>
 <pre class='cython code score-0 '>      __pyx_t_5 = __pyx_v_out_h;
       for (__pyx_t_6 = 0; __pyx_t_6 &lt; __pyx_t_5; __pyx_t_6+=1) {
         __pyx_v_y = __pyx_t_6;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">33</span>:                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">out_w</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">33</span>:                 for x in range(out_w):</pre>
 <pre class='cython code score-0 '>        __pyx_t_7 = __pyx_v_out_w;
         for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">34</span>:                     <span class="n">value</span> <span class="o">=</span> <span class="mf">0.0</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">34</span>:                     value = 0.0</pre>
 <pre class='cython code score-0 '>          __pyx_v_value = 0.0;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">35</span>:                     <span class="k">for</span> <span class="n">y_offset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">w_h</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">35</span>:                     for y_offset in range(w_h):</pre>
 <pre class='cython code score-0 '>          __pyx_t_9 = __pyx_v_w_h;
           for (__pyx_t_10 = 0; __pyx_t_10 &lt; __pyx_t_9; __pyx_t_10+=1) {
             __pyx_v_y_offset = __pyx_t_10;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">36</span>:                         <span class="k">for</span> <span class="n">x_offset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">w_w</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">36</span>:                         for x_offset in range(w_w):</pre>
 <pre class='cython code score-0 '>            __pyx_t_11 = __pyx_v_w_w;
             for (__pyx_t_12 = 0; __pyx_t_12 &lt; __pyx_t_11; __pyx_t_12+=1) {
               __pyx_v_x_offset = __pyx_t_12;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">37</span>:                             <span class="n">input_y</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">y</span> <span class="o">+</span> <span class="n">y_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">37</span>:                             input_y = &lt;uint&gt;(y + y_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">38</span>:                             <span class="n">input_x</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">38</span>:                             input_x = &lt;uint&gt;(x + x_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">39</span>:                             <span class="n">kernel_y</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">y_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">39</span>:                             kernel_y = &lt;uint&gt;(y_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_kernel_y = ((__pyx_t_6convop_uint)__pyx_v_y_offset);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">40</span>:                             <span class="n">kernel_x</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">x_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">40</span>:                             kernel_x = &lt;uint&gt;(x_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_kernel_x = ((__pyx_t_6convop_uint)__pyx_v_x_offset);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">41</span>:                             <span class="k">for</span> <span class="n">input_ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_channel</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">41</span>:                             for input_ch in range(input_channel):</pre>
 <pre class='cython code score-0 '>              __pyx_t_13 = __pyx_v_input_channel;
               for (__pyx_t_14 = 0; __pyx_t_14 &lt; __pyx_t_13; __pyx_t_14+=1) {
                 __pyx_v_input_ch = __pyx_t_14;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">42</span>:                                 <span class="n">value</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">batch_size_</span><span class="p">,</span> <span class="n">input_ch</span><span class="p">,</span> <span class="n">input_y</span><span class="p">,</span> <span class="n">input_x</span><span class="p">]</span> <span class="o">*</span> \</pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">42</span>:                                 value += data[batch_size_, input_ch, input_y, input_x] * \</pre>
 <pre class='cython code score-0 '>                __pyx_t_15 = __pyx_v_batch_size_;
                 __pyx_t_16 = __pyx_v_input_ch;
                 __pyx_t_17 = __pyx_v_input_y;
@@ -637,12 +568,12 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
               }
             }
           }
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">43</span>:                                                 <span class="n">w</span><span class="p">[</span><span class="n">input_ch</span><span class="p">,</span> <span class="n">output_ch</span><span class="p">,</span> <span class="n">kernel_y</span><span class="p">,</span> <span class="n">kernel_x</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">43</span>:                                                 w[input_ch, output_ch, kernel_y, kernel_x]</pre>
 <pre class='cython code score-0 '>                __pyx_t_19 = __pyx_v_input_ch;
                 __pyx_t_20 = __pyx_v_output_ch;
                 __pyx_t_21 = __pyx_v_kernel_y;
                 __pyx_t_22 = __pyx_v_kernel_x;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">44</span>:                     <span class="n">out</span><span class="p">[</span><span class="n">batch_size_</span><span class="p">,</span> <span class="n">output_ch</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">44</span>:                     out[batch_size_, output_ch, y, x] = value</pre>
 <pre class='cython code score-0 '>          __pyx_t_9 = __pyx_v_batch_size_;
           __pyx_t_10 = __pyx_v_output_ch;
           __pyx_t_11 = __pyx_v_y;
@@ -653,10 +584,10 @@ static PyObject *__pyx_pf_6convop_conv2d_op(CYTHON_UNUSED PyObject *__pyx_self, 
     }
   }
 </pre><pre class="cython line score-0">&#xA0;<span class="">45</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">46</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">boundscheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">47</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">wraparound</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">48</span>: <span class="nd">@cython</span><span class="o">.</span><span class="n">nonecheck</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></pre>
-<pre class="cython line score-119" onclick='toggleDiv(this)'>+<span class="">49</span>: <span class="k">def</span> <span class="nf">deconv2d_op</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">data</span><span class="p">,</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">46</span>: @cython.boundscheck(False)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">47</span>: @cython.wraparound(False)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">48</span>: @cython.nonecheck(False)</pre>
+<pre class="cython line score-119" onclick='toggleDiv(this)'>+<span class="">49</span>: def deconv2d_op(np.ndarray[DTYPE_t, ndim=4] data,</pre>
 <pre class='cython code score-119 '>/* Python wrapper */
 static PyObject *__pyx_pw_6convop_3deconv2d_op(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyMethodDef __pyx_mdef_6convop_3deconv2d_op = {"deconv2d_op", (PyCFunction)__pyx_pw_6convop_3deconv2d_op, METH_VARARGS|METH_KEYWORDS, 0};
@@ -872,86 +803,86 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_deconv2d_op, __pyx_t_2) &lt; 0) __PYX_ERR(0, 49, __pyx_L1_error)
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">50</span>:                     <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">err</span><span class="p">,</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">51</span>:                     <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">w</span><span class="p">,</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">52</span>:                     <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">dx</span><span class="p">,</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">53</span>:                     <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">DTYPE_t</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mf">4</span><span class="p">]</span> <span class="n">dw</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">50</span>:                     np.ndarray[DTYPE_t, ndim=4] err,</pre>
+<pre class="cython line score-0">&#xA0;<span class="">51</span>:                     np.ndarray[DTYPE_t, ndim=4] w,</pre>
+<pre class="cython line score-0">&#xA0;<span class="">52</span>:                     np.ndarray[DTYPE_t, ndim=4] dx,</pre>
+<pre class="cython line score-0">&#xA0;<span class="">53</span>:                     np.ndarray[DTYPE_t, ndim=4] dw):</pre>
 <pre class="cython line score-0">&#xA0;<span class="">54</span>: </pre>
-<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">55</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">batch_size</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span></pre>
+<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">55</span>:     cdef uint batch_size = err.shape[0]</pre>
 <pre class='cython code score-0 '>  __pyx_v_batch_size = (__pyx_v_err-&gt;dimensions[0]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">56</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">out_h</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">56</span>:     cdef uint out_h = err.shape[2]</pre>
 <pre class='cython code score-0 '>  __pyx_v_out_h = (__pyx_v_err-&gt;dimensions[2]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">57</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">out_w</span> <span class="o">=</span> <span class="n">err</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">57</span>:     cdef uint out_w = err.shape[3]</pre>
 <pre class='cython code score-0 '>  __pyx_v_out_w = (__pyx_v_err-&gt;dimensions[3]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">58</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">input_channel</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">58</span>:     cdef uint input_channel = w.shape[0]</pre>
 <pre class='cython code score-0 '>  __pyx_v_input_channel = (__pyx_v_w-&gt;dimensions[0]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">59</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">output_channel</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">59</span>:     cdef uint output_channel = w.shape[1]</pre>
 <pre class='cython code score-0 '>  __pyx_v_output_channel = (__pyx_v_w-&gt;dimensions[1]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">60</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">w_h</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">60</span>:     cdef uint w_h = w.shape[2]</pre>
 <pre class='cython code score-0 '>  __pyx_v_w_h = (__pyx_v_w-&gt;dimensions[2]);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">61</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">w_w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">61</span>:     cdef uint w_w = w.shape[3]</pre>
 <pre class='cython code score-0 '>  __pyx_v_w_w = (__pyx_v_w-&gt;dimensions[3]);
 </pre><pre class="cython line score-0">&#xA0;<span class="">62</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">63</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">batch_size_</span><span class="p">,</span> <span class="nf">output_ch</span><span class="p">,</span> <span class="nf">input_ch</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">64</span>:     <span class="k">cdef</span> <span class="kt">uint</span> <span class="nf">input_y</span><span class="p">,</span> <span class="nf">input_x</span><span class="p">,</span> <span class="nf">kernel_y</span><span class="p">,</span> <span class="nf">kernel_x</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">65</span>:     <span class="k">cdef</span> <span class="kt">DTYPE_t</span> <span class="nf">err_value</span></pre>
-<pre class="cython line score-0">&#xA0;<span class="">66</span>:     <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">y</span><span class="p">,</span> <span class="nf">x</span><span class="p">,</span> <span class="nf">y_offset</span><span class="p">,</span> <span class="nf">x_offset</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">63</span>:     cdef uint batch_size_, output_ch, input_ch</pre>
+<pre class="cython line score-0">&#xA0;<span class="">64</span>:     cdef uint input_y, input_x, kernel_y, kernel_x</pre>
+<pre class="cython line score-0">&#xA0;<span class="">65</span>:     cdef DTYPE_t err_value</pre>
+<pre class="cython line score-0">&#xA0;<span class="">66</span>:     cdef int y, x, y_offset, x_offset</pre>
 <pre class="cython line score-0">&#xA0;<span class="">67</span>: </pre>
-<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">68</span>:     <span class="k">for</span> <span class="n">batch_size_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span></pre>
+<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">68</span>:     for batch_size_ in range(batch_size):</pre>
 <pre class='cython code score-0 '>  __pyx_t_1 = __pyx_v_batch_size;
   for (__pyx_t_2 = 0; __pyx_t_2 &lt; __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_batch_size_ = __pyx_t_2;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">69</span>:         <span class="k">for</span> <span class="n">output_ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">output_channel</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">69</span>:         for output_ch in range(output_channel):</pre>
 <pre class='cython code score-0 '>    __pyx_t_3 = __pyx_v_output_channel;
     for (__pyx_t_4 = 0; __pyx_t_4 &lt; __pyx_t_3; __pyx_t_4+=1) {
       __pyx_v_output_ch = __pyx_t_4;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">70</span>:             <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">out_h</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">70</span>:             for y in range(out_h):</pre>
 <pre class='cython code score-0 '>      __pyx_t_5 = __pyx_v_out_h;
       for (__pyx_t_6 = 0; __pyx_t_6 &lt; __pyx_t_5; __pyx_t_6+=1) {
         __pyx_v_y = __pyx_t_6;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">71</span>:                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">out_w</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">71</span>:                 for x in range(out_w):</pre>
 <pre class='cython code score-0 '>        __pyx_t_7 = __pyx_v_out_w;
         for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
           __pyx_v_x = __pyx_t_8;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">72</span>:                     <span class="n">err_value</span> <span class="o">=</span> <span class="n">err</span><span class="p">[</span><span class="n">batch_size_</span><span class="p">,</span> <span class="n">output_ch</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">72</span>:                     err_value = err[batch_size_, output_ch, y, x]</pre>
 <pre class='cython code score-0 '>          __pyx_t_9 = __pyx_v_batch_size_;
           __pyx_t_10 = __pyx_v_output_ch;
           __pyx_t_11 = __pyx_v_y;
           __pyx_t_12 = __pyx_v_x;
           __pyx_v_err_value = (*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_err.rcbuffer-&gt;pybuffer.buf, __pyx_t_9, __pyx_pybuffernd_err.diminfo[0].strides, __pyx_t_10, __pyx_pybuffernd_err.diminfo[1].strides, __pyx_t_11, __pyx_pybuffernd_err.diminfo[2].strides, __pyx_t_12, __pyx_pybuffernd_err.diminfo[3].strides));
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">73</span>:                     <span class="k">for</span> <span class="n">y_offset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">w_h</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">73</span>:                     for y_offset in range(w_h):</pre>
 <pre class='cython code score-0 '>          __pyx_t_13 = __pyx_v_w_h;
           for (__pyx_t_14 = 0; __pyx_t_14 &lt; __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_y_offset = __pyx_t_14;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">74</span>:                         <span class="k">for</span> <span class="n">x_offset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">w_w</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">74</span>:                         for x_offset in range(w_w):</pre>
 <pre class='cython code score-0 '>            __pyx_t_15 = __pyx_v_w_w;
             for (__pyx_t_16 = 0; __pyx_t_16 &lt; __pyx_t_15; __pyx_t_16+=1) {
               __pyx_v_x_offset = __pyx_t_16;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">75</span>:                             <span class="n">input_y</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">y</span> <span class="o">+</span> <span class="n">y_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">75</span>:                             input_y = &lt;uint&gt;(y + y_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_input_y = ((__pyx_t_6convop_uint)(__pyx_v_y + __pyx_v_y_offset));
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">76</span>:                             <span class="n">input_x</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">76</span>:                             input_x = &lt;uint&gt;(x + x_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_input_x = ((__pyx_t_6convop_uint)(__pyx_v_x + __pyx_v_x_offset));
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">77</span>:                             <span class="n">kernel_y</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">y_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">77</span>:                             kernel_y = &lt;uint&gt;(y_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_kernel_y = ((__pyx_t_6convop_uint)__pyx_v_y_offset);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">78</span>:                             <span class="n">kernel_x</span> <span class="o">=</span> <span class="p">&lt;</span><span class="kt">uint</span><span class="p">&gt;(</span><span class="n">x_offset</span><span class="p">)</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">78</span>:                             kernel_x = &lt;uint&gt;(x_offset)</pre>
 <pre class='cython code score-0 '>              __pyx_v_kernel_x = ((__pyx_t_6convop_uint)__pyx_v_x_offset);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">79</span>:                             <span class="k">for</span> <span class="n">input_ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_channel</span><span class="p">):</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">79</span>:                             for input_ch in range(input_channel):</pre>
 <pre class='cython code score-0 '>              __pyx_t_17 = __pyx_v_input_channel;
               for (__pyx_t_18 = 0; __pyx_t_18 &lt; __pyx_t_17; __pyx_t_18+=1) {
                 __pyx_v_input_ch = __pyx_t_18;
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">80</span>:                                 <span class="n">dx</span><span class="p">[</span><span class="n">batch_size_</span><span class="p">,</span> <span class="n">input_ch</span><span class="p">,</span> <span class="n">input_y</span><span class="p">,</span> <span class="n">input_x</span><span class="p">]</span> <span class="o">+=</span> \</pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">80</span>:                                 dx[batch_size_, input_ch, input_y, input_x] += \</pre>
 <pre class='cython code score-0 '>                __pyx_t_23 = __pyx_v_batch_size_;
                 __pyx_t_24 = __pyx_v_input_ch;
                 __pyx_t_25 = __pyx_v_input_y;
                 __pyx_t_26 = __pyx_v_input_x;
                 *__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_dx.rcbuffer-&gt;pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_dx.diminfo[0].strides, __pyx_t_24, __pyx_pybuffernd_dx.diminfo[1].strides, __pyx_t_25, __pyx_pybuffernd_dx.diminfo[2].strides, __pyx_t_26, __pyx_pybuffernd_dx.diminfo[3].strides) += ((*__Pyx_BufPtrStrided4d(__pyx_t_6convop_DTYPE_t *, __pyx_pybuffernd_w.rcbuffer-&gt;pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_w.diminfo[0].strides, __pyx_t_20, __pyx_pybuffernd_w.diminfo[1].strides, __pyx_t_21, __pyx_pybuffernd_w.diminfo[2].strides, __pyx_t_22, __pyx_pybuffernd_w.diminfo[3].strides)) * __pyx_v_err_value);
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">81</span>:                                 <span class="n">w</span><span class="p">[</span><span class="n">input_ch</span><span class="p">,</span> <span class="n">output_ch</span><span class="p">,</span> <span class="n">kernel_y</span><span class="p">,</span> <span class="n">kernel_x</span><span class="p">]</span> <span class="o">*</span> <span class="n">err_value</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">81</span>:                                 w[input_ch, output_ch, kernel_y, kernel_x] * err_value</pre>
 <pre class='cython code score-0 '>                __pyx_t_19 = __pyx_v_input_ch;
                 __pyx_t_20 = __pyx_v_output_ch;
                 __pyx_t_21 = __pyx_v_kernel_y;
                 __pyx_t_22 = __pyx_v_kernel_x;
 </pre><pre class="cython line score-0">&#xA0;<span class="">82</span>: </pre>
-<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">83</span>:                                 <span class="n">dw</span><span class="p">[</span><span class="n">input_ch</span><span class="p">,</span> <span class="n">output_ch</span><span class="p">,</span> <span class="n">kernel_y</span><span class="p">,</span> <span class="n">kernel_x</span><span class="p">]</span> <span class="o">+=</span> \</pre>
+<pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">83</span>:                                 dw[input_ch, output_ch, kernel_y, kernel_x] += \</pre>
 <pre class='cython code score-0 '>                __pyx_t_31 = __pyx_v_input_ch;
                 __pyx_t_32 = __pyx_v_output_ch;
                 __pyx_t_33 = __pyx_v_kernel_y;
@@ -964,13 +895,13 @@ static PyObject *__pyx_pf_6convop_2deconv2d_op(CYTHON_UNUSED PyObject *__pyx_sel
       }
     }
   }
-</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">84</span>:                                 <span class="n">data</span><span class="p">[</span><span class="n">batch_size_</span><span class="p">,</span> <span class="n">input_ch</span><span class="p">,</span> <span class="n">input_y</span><span class="p">,</span> <span class="n">input_x</span><span class="p">]</span> <span class="o">*</span> <span class="n">err_value</span></pre>
+</pre><pre class="cython line score-0" onclick='toggleDiv(this)'>+<span class="">84</span>:                                 data[batch_size_, input_ch, input_y, input_x] * err_value</pre>
 <pre class='cython code score-0 '>                __pyx_t_27 = __pyx_v_batch_size_;
                 __pyx_t_28 = __pyx_v_input_ch;
                 __pyx_t_29 = __pyx_v_input_y;
                 __pyx_t_30 = __pyx_v_input_x;
 </pre><pre class="cython line score-0">&#xA0;<span class="">85</span>: </pre>
-<pre class="cython line score-22" onclick='toggleDiv(this)'>+<span class="">86</span>:     <span class="n">dw</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">/=</span> <span class="n">batch_size</span></pre>
+<pre class="cython line score-22" onclick='toggleDiv(this)'>+<span class="">86</span>:     dw[...] /= batch_size</pre>
 <pre class='cython code score-22 '>  <span class='pyx_macro_api'>__Pyx_INCREF</span>(Py_Ellipsis);
   __pyx_t_35 = Py_Ellipsis;
   __pyx_t_36 = <span class='py_c_api'>PyObject_GetItem</span>(((PyObject *)__pyx_v_dw), __pyx_t_35); if (unlikely(!__pyx_t_36)) __PYX_ERR(0, 86, __pyx_L1_error)
