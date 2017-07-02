@@ -50,7 +50,7 @@ class Net:
                 count += 1.
         self.record_acc.append(count / len(self.y))
 
-    def backward(self, lr=0.01, mom=0.99, l2_decay=1e-3):
+    def backward(self, lr=0.01, beta_1=0.9, beta_2=0.999, epoch=0):
         pb = []
         self.output[xrange(self.output.shape[0]), self.y] -= 1
         self.output /= self.output.shape[0]
@@ -66,7 +66,7 @@ class Net:
 
         for i in self.layers[::-1]:
             now = time.time()
-            i._update(lr, mom, l2_decay)
+            i._update(lr, beta_1, beta_2, epoch)
             now = time.time()
 
     def get_record(self):
