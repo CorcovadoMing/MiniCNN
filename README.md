@@ -1,2 +1,3 @@
 # MiniCNN
-Minimal Convolutional Neural Network (CNN) framework for research
+
+Prove of concept framwork / Aim to run on low-cost embedded system
