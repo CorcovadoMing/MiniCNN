@@ -4,5 +4,6 @@ from maxpooling import *
 from softmax import *
 from relu import *
 from leaky_relu import *
+from absolute_relu import *
 from reshape import *
 from batchnorm import *

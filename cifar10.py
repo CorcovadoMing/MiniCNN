@@ -1,4 +1,4 @@
-from layers import Conv2d, Linear, Maxpooling, Relu, LeakyRelu, Softmax, Reshape, BatchNorm
+from layers import Conv2d, Linear, Maxpooling, Relu, LeakyRelu, AbsRelu, Softmax, Reshape, BatchNorm
 from data import DataProvider
 from net import Net
 import numpy as np
@@ -40,10 +40,6 @@ if __name__ == '__main__':
     net.push(Relu())
     net.push(BatchNorm())
     net.push(Maxpooling(4, 4)) # 10x28 -> 10x7
-    #net.push(Conv2d(5, 5, 10, 20)) # 20x14 -> 30x10
-    #net.push(Relu())
-    #net.push(BatchNorm())
-    #net.push(Maxpooling(2, 2)) # 50x10 -> 50x5
     net.push(Reshape((980)))
     net.push(Linear(980, 200))
     net.push(Relu())
@@ -61,10 +57,10 @@ if __name__ == '__main__':
     gamma = 1
     beta_1 = 0.9
     beta_2 = 0.999
-    total_epoch = 1000
+    total_epoch = 100
 
     loss_cache = 10
-    for epoch in xrange(1, total_epoch):
+    for epoch in xrange(1, total_epoch+1):
         print 'Epoch: {}/{}'.format(epoch, total_epoch)
 
         # Training (Mini-batch)
